@@ -1,0 +1,10 @@
+.stat-container {
+  background: #ffffff;
+  box-shadow: 12px 12px 24px rgba(106, 82, 253, 0.15);
+  width: 100%;
+}
+.stat-container .item-one {
+  background: #ffffff;
+  box-shadow: 0px 12px 24px rgba(106, 82, 253, 0.1);
+  border-radius: 10px;
+}

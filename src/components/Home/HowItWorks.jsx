@@ -1,0 +1,71 @@
+import React from "react";
+import hiw_profile from "../../assets/images/hiw_profile.svg";
+import hiw_profile_two from "../../assets/images/hiw_profile_two.png";
+import hiw_main_img from "../../assets/images/hiw_main_img.svg";
+import hiw_sub_img from "../../assets/images/hiw_sub_img.svg";
+import hiw_sub_two from "../../assets/images/hiw_sub_two.svg";
+
+import "./HowItWorks.css";
+
+const HowItWorks = () => {
+    return (
+        <div className="how-it-works">
+            <div className="bg-white justify-content-center align-items-center text-center pt-4 d-flex flex-column">
+                <h2>How It Works</h2>
+                <p>Your experience here is of the ultimate priority. Quickdate has decided to make it <br /> a simple yet memorable one for you. </p>
+            </div>
+            <div className="mb-4">
+                <div className="d-flex hiw-image-container justify-content-between align">
+                    <div className="d-flex justify-content-center align-items-start pt-4">
+                        <img className="m-2" src={hiw_profile} alt="profile" />
+                        <div className="m-2">
+                            <h3>Set up profile details</h3>
+                            <p>Our community is filled with unique individuals such as yourself. <br />
+                            Therefore, the need for you to provide neccessary information about <br /> yourself. </p>
+                        </div>
+                    </div>
+                    <div className="hiw-image">
+                        <div><img src={hiw_main_img} className="rounded" alt="main" /></div>
+                        <div className="sub"><img src={hiw_sub_img} className="rounded" alt="sub" /></div>
+                    </div>
+                </div>
+            </div>
+            <div className="mb-4">
+                <div className="d-flex hiw-image-container justify-content-between align">
+                    <div className="hiw-image">
+                        <div><img src={hiw_sub_two} className="rounded" alt="main" /></div>
+                        <div className="sub"><img src={hiw_sub_img} className="rounded" alt="sub" /></div>
+                    </div>
+                    <div className="d-flex justify-content-center align-items-start mt-4">
+                        <img className="m-2" src={hiw_profile_two} alt="profile" />
+                        <div className="mt-2">
+                            <h3>Explore our commnity</h3>
+                            <p>
+                                You explore our community to meet people and create connections <br />
+                                that will become something magical to say the least. This feature <br />
+                                allows you to meet people and choose those you want to meet.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        <div className="mb-4">
+                <div className="d-flex hiw-image-container justify-content-between align">
+                    <div className="d-flex justify-content-center align-items-start pt-4">
+                        <img className="m-2" src={hiw_profile_two} alt="profile" />
+                        <div className="m-2">
+                            <h3>Go On Date</h3>
+                            <p>Our platform allows you to post a date request to know people that might be interested in going for drink, dinner or downtown. You can talk more on the details in the chat.</p>
+                        </div>
+                    </div>
+                    <div className="hiw-image">
+                        <div><img src={hiw_main_img} className="rounded" alt="main" /></div>
+                        <div className="sub"><img src={hiw_sub_img} className="rounded" alt="sub" /></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default HowItWorks;

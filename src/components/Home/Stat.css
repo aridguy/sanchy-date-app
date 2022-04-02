@@ -1,7 +1,6 @@
 .stat-container {
   background: #ffffff;
-  box-shadow: 12px 12px 24px rgba(106, 82, 253, 0.15);
-  width: 100%;
+  box-shadow: 0 12px 24px rgba(106, 82, 253, 0.15);
 }
 .stat-container .item-one {
   background: #ffffff;

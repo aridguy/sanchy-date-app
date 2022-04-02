@@ -1,8 +1,12 @@
 import React from 'react';
-
+import Header from '../../components/Header/Header';
+import Banner from '../../components/Home/Banner';
 const Home =()=>{
     return(
-        <div>Landing page</div>
+        <div>
+            <Header />
+            <Banner />
+        </div>
     )
 }
 

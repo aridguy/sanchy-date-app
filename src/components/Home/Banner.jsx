@@ -1,6 +1,7 @@
 import React from "react";
 import './Banner.css';
 import banner_couples from "../../assets/images/banner-couples.png";
+import banner_couples_small from "../../assets/images/banner-couples.svg";
 const Banner =()=>{
     return (
         <div className=" d-flex justify-content-between align-items-center text-white banner-container">
@@ -12,7 +13,8 @@ const Banner =()=>{
                     <button className="text-white border-0 how-it-works"><span className="how-it-works">See how it works</span></button>
                 </div>
             </div>
-            <img src={banner_couples} alt="banner-couples" />
+            <img src={banner_couples} alt="banner-couples" className="banner-couples-lg" />
+            <img src={banner_couples_small} alt="banner-couples" className="banner-couples-sm" />
         </div>
     )
 }

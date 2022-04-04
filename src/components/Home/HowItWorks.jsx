@@ -7,15 +7,15 @@ import hiw_sub_two from "../../assets/images/hiw_sub_two.svg";
 import chat_img from "../../assets/images/hiw_chat.png";
 import chat_img_two from "../../assets/images/hiw_chat_two.png";
 import hiw_profile_three from "../../assets/images/hiw_chat_three.svg";
+import hiw_sm from "../../assets/images/hiw_sm.svg";
 
 import "./HowItWorks.css";
 
 const HowItWorks = () => {
     return (
         <div className="how-it-works">
-            <div className="bg-white justify-content-center align-items-center text-center pt-4 d-flex flex-column">
-                <h2>How It Works</h2>
-                <p>Your experience here is of the ultimate priority. Quickdate has decided to make it <br /> a simple yet memorable one for you. </p>
+            <div>
+                <img className="w-100" src={hiw_sm} alt="how it works" />
             </div>
             <div className="mb-4">
                 <div className="d-flex hiw-image-container justify-content-between align">
@@ -29,7 +29,8 @@ const HowItWorks = () => {
                     </div>
                     <div className="hiw-image">
                         <div><img src={hiw_main_img} className="rounded" alt="main" /></div>
-                        <div className="sub"><img src={hiw_sub_img} className="rounded" alt="sub" /></div>
+                        {/* <div><img src={hiw_main_img} className="rounded" alt="main" /></div> */}
+                        {/* <div className="sub"><img src={hiw_sub_img} className="rounded" alt="sub" /></div> */}
                     </div>
                 </div>
             </div>

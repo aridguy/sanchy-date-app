@@ -22,7 +22,8 @@ const Header = () => {
                 <div>
                     {!showNav ?
                         <div className='toggle' onClick={() => setShowNav(!showNav)}></div>
-                        : <div className="closeToggle" onClick={() => setShowNav(!showNav)}></div>
+                        : 
+                        <div className="closeToggle" onClick={() => setShowNav(!showNav)}></div>
                     }
                 </div>
                 <div className="nav-content">

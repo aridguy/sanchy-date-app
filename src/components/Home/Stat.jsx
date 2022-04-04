@@ -1,7 +1,4 @@
 import React from "react";
-import num_of_countries from "../../assets/images/num_of_countries.svg";
-import stat_pie from "../../assets/images/stat_pie.svg";
-import stat_star from "../../assets/images/stat_star.svg";
 import stat_sm from "../../assets/images/stat-sm.svg";
 
 import './Stat.css';

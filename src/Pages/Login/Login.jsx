@@ -21,7 +21,7 @@ const Login =()=>{
 
     return(
         <div className="login-container">
-            <Header />
+            {/* <Header /> */}
             <div className="login-content-wrapper">
                 <img className="login-left-img" src={LoginImg} alt="" />
                 <img className="login-left-img-mobile" src={LoginImgMobile} alt="" />

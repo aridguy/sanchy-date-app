@@ -10,6 +10,9 @@
 .banner-container .section-one {
   padding-left: 50px;
 }
+.banner-couples-lg{
+  width: 65%;
+}
 .banner-container .section-one .how-it-works {
   background: none;
   margin-left: 5px;

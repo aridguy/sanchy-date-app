@@ -28,7 +28,7 @@ const Header = () => {
                 </div>
                 <div className="nav-content">
                     <button className="border-0 bg-transparent m-2" onClick={linkToSignUp}>Don't have an Account?</button>
-                    <button className="border border-danger rounded-pill bg-white pl-4 pr-4" onClick={linkToLogin}>
+                    <button className="border border-danger rounded-pill bg-white pl-4 pr-4 add-pad" onClick={linkToLogin}>
                         Login
                     </button>
                 </div>

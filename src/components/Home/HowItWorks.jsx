@@ -37,7 +37,7 @@ const HowItWorks = () => {
             <div className="mb-4">
                 <div className="hiw_sub_two d-flex hiw-image-container justify-content-between">
                     <div className="hiw-image ">
-                        <div><img src={hiw_sub_two} alt="main" /></div>
+                        {/* <div><img src={hiw_sub_two} alt="main" /></div> */}
                     </div>
                     <div className="d-flex community-item-2 justify-content-center align-items-start mt-4">
                         <img className="m-2" src={hiw_profile_two} alt="profile" />
@@ -71,11 +71,11 @@ const HowItWorks = () => {
                 </div>
             </div>
             <div className="mb-4">
-                <div className="d-flex hiw-image-container justify-content-between align">
+                <div className="d-flex hiw_sub_two hiw-image-container justify-content-between align">
                     <div>
                         <div className="hiw-chat_img"><img src={chat_img_two} className="rounded" alt="main" /></div>
                     </div>
-                    <div className="d-flex justify-content-center align-items-start pt-4">
+                    <div className="d-flex community-item-2 justify-content-center align-items-start pt-4">
                         <img className="m-2" src={hiw_profile_three} alt="profile" />
                         <div className="m-2">
                             <h3>Chat with people</h3>

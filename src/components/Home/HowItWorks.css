@@ -28,7 +28,10 @@
     padding-bottom: 12px;
   }
   .hiw_sub_two{
-    display: flex;
+    display: flex !important;
     flex-direction: column-reverse;
+  }
+  .community-item-2{
+    display: block !important;
   }
 }

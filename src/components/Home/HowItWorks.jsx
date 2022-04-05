@@ -35,11 +35,11 @@ const HowItWorks = () => {
                 </div>
             </div>
             <div className="mb-4">
-                <div className="hiw_sub_two d-flex hiw-image-container justify-content-between align">
-                    <div className="hiw-image w-75">
-                        <div><img src={hiw_sub_two} className="rounded" alt="main" /></div>
+                <div className="hiw_sub_two d-flex hiw-image-container justify-content-between">
+                    <div className="hiw-image ">
+                        <div><img src={hiw_sub_two} alt="main" /></div>
                     </div>
-                    <div className="d-flex justify-content-center align-items-start mt-4">
+                    <div className="d-flex community-item-2 justify-content-center align-items-start mt-4">
                         <img className="m-2" src={hiw_profile_two} alt="profile" />
                         <div className="mt-2">
                             <h3>Explore our commnity</h3>
@@ -54,19 +54,19 @@ const HowItWorks = () => {
             </div>
             <div className="mb-4">
                 <div className="d-flex hiw-image-container justify-content-between align">
-                    <div className="d-flex justify-content-center align-items-start pt-4">
+                    <div className="d-flex community-item-2 justify-content-center align-items-start pt-4">
                         <img className="m-2" src={hiw_profile_two} alt="profile" />
-                        <div className="m-2">
+                        <div className="m-2 w-75">
                             <h3>Go On Date</h3>
-                            <p>
-                                Our platform allows you to post a date request to know people <br />
-                                that might be interested in going for drink, dinner or downtown. <br />
+                            <p className="i-f-s">
+                                Our platform allows you to post a date request to know people 
+                                that might be interested in going for drink, dinner or downtown. 
                                 You can talk more on the details in the chat.
                             </p>
                         </div>
                     </div>
                     <div>
-                        <div className="hiw-chat_img"><img src={chat_img} className="rounded" alt="main" /></div>
+                        <div className="hiw-chat_img"><img src={chat_img} className="img-test" alt="main" /></div>
                     </div>
                 </div>
             </div>

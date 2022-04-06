@@ -1,0 +1,238 @@
+/* logo */
+.logo{
+    Width:135px;
+    Height:35px
+}
+.notiIcon{
+    color: red;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 8.47%;
+    right: 8.75%;
+    top: 4.93%;
+    bottom: 14.06%;
+/* New primary color */
+background: #6A52FD;
+}
+
+.profilePicsHeader{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #311eac;
+}
+
+.contentsLeft{
+   align-items: center;
+}
+/* side nav  */
+.sideNav{
+ position: absolute;
+width: 395px;
+height: 641.07px;
+left: 27px;
+top: 142px;
+
+}
+.manImage{
+position: absolute;
+width: 91.89px;
+height: 91.89px;
+left: 159.16px;
+top: 0px;
+background: url(../../assets/images/man.png);
+}
+
+.location{
+    width: 10px;
+    margin-right: 4px;
+}
+.community {
+    background: #6A52FD;
+    border-radius: 100px;
+    width: 250px;
+    margin-left: 46px;
+    height: 39px;
+    margin-top: 38px;
+    border: none;
+    color: white;
+}
+.communityIcon{
+    width: 10px;
+    margin-right: 8px;
+}
+
+.post {
+    background: none;
+    border-radius: 100px;
+    width: 282px;
+    margin-left: 4px;
+    height: 39px;
+    margin-top: 10px;
+    border: none;
+    color: black;
+}
+.postIcon{
+    width: 10px;
+    margin-right: 8px;
+}
+.dating {
+    background: none;
+    border-radius: 100px;
+    width: 282px;
+    margin-left: 12px;
+    height: 39px;
+    margin-top: 0px;
+    border: none;
+    color: black;
+}
+.datingIcon{
+    width: 10px;
+    margin-right: 8px;
+}
+
+.chats {
+    background: none;
+    border-radius: 100px;
+    width: 282px;
+    margin-left: 9px;
+    height: 39px;
+    margin-top: 0px;
+    border: none;
+    color: black;
+}
+.chatIcon{
+    width: 10px;
+    margin-right: 8px;
+}
+
+.buyToken {
+    background: none;
+    border-radius: 100px;
+    width: 282px;
+    margin-left: 29px;
+    height: 39px;
+    margin-top: 0px;
+    border: none;
+    color: black;
+}
+.buy-tokenIcon{
+    width: 10px;
+    margin-right: 8px;
+}
+.logOut {
+    background: none;
+    border-radius: 100px;
+    width: 282px;
+    margin-left: 14px;
+    height: 39px;
+    margin-top: 0px;
+    border: none;
+    color: rgb(251, 0, 0);
+    
+}
+.logoutIcon{
+    width: 10px;
+    margin-right: 8px;
+}
+
+/* STORY SECTION IMAGES HERE */
+.story-section{
+    margin-top: 30px;
+}
+.pretty, .valery, .escstacy, .nice, .story, .roman, .celine{
+    margin-left: 30px;
+    width: 75px;
+}
+/* chevrons on the story section */
+.chevright{
+    margin-left: 30px;
+    width: 25px;
+}
+.chevleft{
+    margin-left: 30px;
+    width: 25px;
+}
+
+/* hot pics section */
+.hp-viewall{
+    margin-left: 32px;
+    margin-top: 100px;
+}
+.hpicks{
+    font-weight: 700;
+}
+.gendertype{
+    font-size: 13px;
+    font-family: poppins;
+}
+.genderbackgd{
+    height: 20px;
+    background-color: #F6F4FF;
+    margin-left: 17px;
+    width: 21px;
+    border-radius: 50px;
+}
+.viewall {
+    color: blue;
+    float: right;
+    margin-right: 53px;
+}
+/* hookup images */
+.hotpicksimages{
+    width: 255px;
+    position: relative;
+}
+.hook1{
+    border-radius: 20px;
+    margin-top: 14px;
+   
+}
+.h-imgs{
+    margin-left: 15px;
+}
+.hooksfoot{
+    background-color: #0000004b;
+    width: 255px;
+    position: absolute;
+    bottom: 0px;
+    border-radius: 0 0 20px 20px;
+    padding-left: 15px;
+    color: white;
+    height: 32px;
+}
+.ratings{
+    position: absolute;
+    top:30px;
+    right: 0;
+}
+.cam-vidcam{
+    position: absolute;
+    right: 30px;
+}
+.cam{
+    margin-right: 16px;
+}
+
+.filter {
+    width: 30px;
+    float: right;
+    margin-right: 53px;
+    margin-top: 5px;
+}
+.usersearchbox {
+    height: 40px;
+    border: none;
+    left: 1222px;
+    right: 109px;
+    background: #F6F4FF;
+    border-radius: 50px;
+    padding: 22px;
+    margin-left: 33rem;
+    width: 317px;
+    outline: none;
+}
+.usersearchbox:focus {
+    border: none;
+}

@@ -10,7 +10,7 @@ const Banner =()=>{
                 <p className="mt-4 mb-4">Quick date is a one stop platform to meet new people, Share your photo & Videos, go on a paid date.</p>
                 <div>
                     <button className="mr-2 p-4 border-0 rounded-pill">Create an Account</button>
-                    <button className="text-white border-0 how-it-works"><span className="how-it-works">See how it works</span></button>
+                    <button className="text-white border-0 how-it-works see-hiw"><span className="how-it-works">See how it works</span></button>
                 </div>
             </div>
             <img src={banner_couples} alt="banner-couples" className="banner-couples-lg" />

@@ -9,6 +9,17 @@
   height: 300px;
 }
 
-.review-container .item-one .name{
-    color: #979797;
+.review-container .item-one .name {
+  color: #979797;
+}
+@media only screen and (max-width: 767px) {
+  .review-container {
+    padding: 0;
+    margin-bottom: 30px;
+    width: auto;
+  }
+  .review-container .item-one {
+    height: auto;
+  }
+
 }

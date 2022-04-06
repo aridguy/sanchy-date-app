@@ -1,40 +1,40 @@
-.login-container{
+.signup-container{
     position: relative;
     min-height: 100%;
     color: #292929;
     /* background-color: red; */
 }
 
-.login-left-img{
+.signup-left-img{
     position: absolute;
     top: 0px;
     left: 0;
     width: 54%;
     height: 100%;
-    /* -o-object-fit: contain; */
-       /* object-fit: contain; */
+    /* -o-object-fit: cover; */
+       /* -o-object-fit: contain; */
+          /* object-fit: contain; */
 }
 
-.login-left-img-mobile{
+.signup-left-img-mobile{
     display: none;
 
 }
 
-.login-btm-right-img{
+.signup-btm-right-img{
     position: absolute;
     bottom: 0%;
     right: 0%;
     width: 15%;
 }
 
-.login-content-wrapper{
+.signup-content-wrapper{
     display: grid;
     grid-template-columns: 1.5fr 2fr;
 }
 
 .right-input-wrapper{
     padding:50px 100px;
-    /* background-color: red; */
 }
 
 .right-input-fields-wrapper{
@@ -46,72 +46,73 @@
 
 }
 
-.login-input-container{
+.signup-input-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.login-input-container .login-heading{
-    /* font-weight: bold; */
+.signup-input-container .signup-heading-container{
     margin-bottom: 40px;
+    text-align: center;
+}
+
+.signup-input-container .signup-heading-one{
+    /* font-weight: bold; */
+    
     font-size: 24px;
 }
 
-.login-input-container .input-option-tab{
-    display: flex;
-    border: 1px solid #EAEAEA;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    cursor: pointer;
-}
-
-.login-input-container .input-option-tab > div{
-    padding: 20px 80px;
-    background-color: #fff;
-    border-radius: 10px;
+.signup-input-container .signup-heading-two{
+    /* font-weight: bold; */
+    
+    font-size: 14px;
 }
 
 
-.login-input-container .input-option-tab > div:first-child{
+
+
+
+.signup-input-container .input-option-tab > div:first-child{
 
 }
 
-.login-input-container .input-option-tab > div:nth-child(2){
+.signup-input-container .input-option-tab > div:nth-child(2){
     /* padding: 20px 80px; */
     border-radius: 10px;
 }
 
-.login-input-container .input-option-tab .login-tab-active,.em-selected{
+.signup-input-container .input-option-tab .signup-tab-active,.em-selected{
     background-color: #EAEAEA;
 }
 
-form .login-input-wrapper{
+form .signup-input-wrapper{
     display: flex;
     flex-direction: column;
-    margin-bottom: 50px;
-}
-
-.login-input-form{
-    display: flex;
-    flex-direction: column;
-}
-
-form .login-input-wrapper:nth-child(2){
     margin-bottom: 10px;
 }
 
-form .login-input-wrapper label{
+.signup-input-form{
+    display: flex;
+    flex-direction: column;
+}
+
+form .signup-input-wrapper:nth-child(2){
+    /* margin-bottom: 10px; */
+}
+
+form .signup-input-wrapper label{
     margin-bottom: 10px;
 }
 
-form .login-input-wrapper input{
-    border: 1px solid #535353;
-    border-radius: 50px;
+form .signup-input-wrapper input{
+    border: none;
+    border-radius: 10px;
     outline: none;
     padding: 10px 40px;
     min-width: 400px;
+    background-color: #F6F4FF;
 }
 
 .forgot-pword{
@@ -120,7 +121,7 @@ form .login-input-wrapper input{
     margin-bottom: 50px;
 }
 
-.login-input-form button{
+.signup-input-form button{
     background-color: #7B61FF;
     border-radius: 50px;
     border: 1px solid #7B61FF;
@@ -129,7 +130,7 @@ form .login-input-wrapper input{
     outline: none;
     margin-bottom: 18px;
     width: 90%;
-    align-self: center;
+    /* align-self: center; */
 }
 
 
@@ -141,3 +142,14 @@ form .login-input-wrapper input{
     color: #6A52FD;
 }
 
+
+.signup-checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.signup-checkbox-wrapper > input{
+    margin-right: 10px;
+}

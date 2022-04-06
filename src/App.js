@@ -10,6 +10,8 @@ import Home from './Pages/Home/Home';
 import Signup from "./Pages/Signup/Signup";
 import Community from "./Pages/Community/Community";
 import './App.css';
+import OtpVerification from "./Pages/OtpVerification/OtpVerification";
+import AccountSetup from "./Pages/AccountSetup/AccountSetup";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/otp-verification" element={<OtpVerification />} />
+          <Route path="/acct-setup" element={<AccountSetup />} />
           <Route path="/Community" element={<Community />} />
         </Routes>
       </Router>

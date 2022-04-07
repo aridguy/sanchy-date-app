@@ -6,7 +6,7 @@ import hiw_sub_two from "../../assets/images/hiw_sub_two.svg";
 import chat_img from "../../assets/images/hiw_chat.png";
 import chat_img_two from "../../assets/images/hiw_chat_two.png";
 import hiw_profile_three from "../../assets/images/hiw_chat_three.svg";
-// import hiw_sm from "../../assets/images/hiw_sm.svg";
+import hiw_chat_2 from "../../assets/images/hiw_chat-2.svg";
 
 import "./HowItWorks.css";
 
@@ -37,7 +37,7 @@ const HowItWorks = () => {
             <div className="mb-4">
                 <div className="hiw_sub_two d-flex hiw-image-container justify-content-between">
                     <div className="hiw-image ">
-                        {/* <div><img src={hiw_sub_two} alt="main" /></div> */}
+                        <div><img src={hiw_sub_two} className="img-test" alt="main" /></div>
                     </div>
                     <div className="d-flex community-item-2 justify-content-center align-items-start mt-4">
                         <img className="m-2" src={hiw_profile_two} alt="profile" />
@@ -73,7 +73,7 @@ const HowItWorks = () => {
             <div className="mb-4">
                 <div className="d-flex hiw_sub_two hiw-image-container justify-content-between align">
                     <div>
-                        <div className="hiw-chat_img"><img src={chat_img_two} className="rounded" alt="main" /></div>
+                        <div className="hiw-chat_img"><img src={chat_img_two} className="rounded img-test" alt="main" /></div>
                     </div>
                     <div className="d-flex community-item-2 justify-content-center align-items-start pt-4">
                         <img className="m-2" src={hiw_profile_three} alt="profile" />

@@ -34,4 +34,7 @@
   .community-item-2{
     display: block !important;
   }
+  .img-test{
+    width: 50%
+  }
 }

@@ -17,9 +17,12 @@
     padding: 0;
     margin-bottom: 30px;
     width: auto;
+    overflow: hidden;
+    overflow-x: scroll;
   }
   .review-container .item-one {
     height: auto;
+    margin-bottom: 15px;
   }
 
 }

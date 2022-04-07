@@ -236,3 +236,147 @@ background: url(../../assets/images/man.png);
 .usersearchbox:focus {
     border: none;
 }
+
+/* media query for mobile (responsiveness)*/
+@media only screen and (max-width: 767px) {
+    .logo{
+        Width:90px;
+        Height:35px;
+    }
+
+    .noti {
+        color: #6A52FD;
+        width: 19px;
+        height: 18px;
+        position: absolute;
+        left: 239px;
+        top: 4.93%;
+    }
+    
+    .profilePicsHeader {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #311eac;
+        right: 47px;
+        position: absolute;
+    }
+    .caret{
+        position:absolute;
+        right: 15px;
+    }
+    .h-contents{
+        margin-right: 10px;
+    }
+
+    .sideNavBtns{
+       display: none;  
+       }
+       .navprofile{
+           display: none!important;
+       }
+       .celine, .valery, .pretty{
+           display: none;
+       }
+       .story-section {
+        display: flex;
+        position: absolute;
+        top: 70px;
+        left: 15px;
+    }
+       .chevleft {
+        margin-left: 4px;
+        width: 13px;
+    }
+    .escstacy, .nice, .story, .roman, .celine {
+        margin-left: 14px;
+        width: 54px;
+    }
+    .chevright {
+        margin-left: 16px;
+        width: 13px;
+    }
+    .hp-viewall {
+        margin-left: 32px;
+        margin-top: 59px;
+    }
+    .viewall {
+        color: blue;
+        float: right;
+        margin-right: -36px;
+        font-size: 14px;
+    }
+    .hook1 {
+        border-radius: 20px;
+        margin-top: 14px;
+        width: 150px;
+        margin-right: -28px;
+    }
+    .hooksfoot {
+        background-color: #0000004b;
+        width: 150px;
+        position: absolute;
+        bottom: 0px;
+        border-radius: 0 0 20px 20px;
+        padding-left: 15px;
+        color: white;
+        height: 32px;
+    }
+    .hotpicksimages1, .hotpicksimages2{
+        display: none;
+    }
+
+   .hpname {
+        font-size: 12px;
+    }
+    .cam-vidcam {
+       
+        right: 0px!important;
+    }
+    .cam, .vidcam {
+        margin-right: 16px;
+        width: 14px;
+    }
+
+    .ratings {
+        position: absolute;
+        top: 30px;
+        right: -15px;
+        width: 12px;
+    }
+    .hpicks {
+        font-weight: 700;
+        font-size: 12px;
+    }
+    .hpicks2 {
+        font-size: 10px;
+    }
+    .gendertype {
+        font-size: 9px;
+        font-family: poppins;
+    }
+    .genderbackgd {
+        height: 0px;
+        background-color: white;
+    }
+    .usersearchbox {
+        height: 27px;
+        /* right: 11px; */
+        background: #ffffff;
+        border-radius: 50px;
+        padding: 22px;
+        margin-left: -76rem;
+        width: 120px;
+        font-size: 10px;
+        position: relative;
+        top: 0rem;
+    }
+
+    .filter {
+        width: 21px;
+        float: right;
+        margin-right: -53px;
+        margin-top: 11px;
+    }
+  
+}

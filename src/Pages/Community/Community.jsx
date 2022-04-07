@@ -34,15 +34,16 @@ import filter from "../../assets/images/filter.svg"
 
 const Community = () => {
     return (
+
         <div>
             <header>
-                <nav className="shadow-sm p-4 mb-4 bg-white">
+                <nav className="shadow-sm p-4 mb-4 bg-white topNav">
                     <div className="h-contents d-flex justify-content-between">
                         {/* header logo */}
                         <img className="logo" src={Logo} alt="Logo.svg" />
                         {/* profile pics and notifications icon */}
-                        <div className="d-flex justify-content-between align-items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+                        <div className=" h-contents d-flex justify-content-between align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell noti" viewBox="0 0 16 16">
                                 <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
                             </svg>
                             <div className="profilePicsHeader"></div>
@@ -51,9 +52,10 @@ const Community = () => {
                     </div>
                 </nav>
             </header>
+
             {/* side nav */}
-            <div className="d-flex mr-2 ml-2">
-                <div className="w-25 d-flex flex-column justify-content-start align-items-center">
+            <div className="d-flex mr-2 ml-2 ">
+                <div className="navprofile w-25 d-flex flex-column justify-content-start align-items-center">
                     <div><img src={sidenav_profile} /></div>
                     <h3>Makayla <sup>30</sup></h3>
                     <span><img className="location" src={location} /><span>Location, Nigeria</span></span>
@@ -66,6 +68,7 @@ const Community = () => {
                         <button className="logOut"> <img className="logoutIcon" src={logout} /> Logout</button>
                     </div>
                 </div>
+
                 <div className="w-75 m-4">
                     <div className="story-section">
                         <img className="chevleft" src={chev1} />
@@ -91,7 +94,7 @@ const Community = () => {
                                 <img className="hook1" src={hookup1} alt="" />
                                 <img className="ratings" src={rate} alt="rating.svg" />
                                 <div className="hooksfoot">
-                                    <span>Elena</span> <small><img src={verified} alt="verified.svg" /></small>
+                                    <span className="hpname">Elena</span> <small><img src={verified} alt="verified.svg" /></small>
                                     <span className="cam-vidcam">
                                         <img className="cam" src={cam} alt="camera.svg" />
                                         <img className="vidcam" src={vidcam} alt="vidcam.svg" />
@@ -104,7 +107,7 @@ const Community = () => {
                                 <img className="hook1" src={hookup2} alt="" />
                                 <img className="ratings" src={rate} alt="rating.svg" />
                                 <div className="hooksfoot">
-                                    <span>Elena</span> <small><img src={verified} alt="verified.svg" /></small>
+                                    <span className="hpname">Elena</span> <small><img src={verified} alt="verified.svg" /></small>
                                     <span className="cam-vidcam">
                                         <img className="cam" src={cam} alt="camera.svg" />
                                         <img className="vidcam" src={vidcam} alt="vidcam.svg" />
@@ -112,7 +115,7 @@ const Community = () => {
                                 </div>
                             </div>
                         </section>
-                        <section className="hotpicksimages">
+                        <section className="hotpicksimages hotpicksimages1">
                             <div className="h-imgs">
                                 <img className="hook1" src={hookup1} alt="" />
                                 <img className="ratings" src={rate} alt="rating.svg" />
@@ -125,12 +128,12 @@ const Community = () => {
                                 </div>
                             </div>
                         </section>
-                        <section className="hotpicksimages">
+                        <section className="hotpicksimages hotpicksimages2">
                             <div className="h-imgs">
                                 <img className="hook1" src={hookup1} alt="" />
                                 <img className="ratings" src={rate} alt="rating.svg" />
                                 <div className="hooksfoot">
-                                    <span>Elena</span> <small><img src={verified} alt="verified.svg" /></small>
+                                    <span className="hfname">Elena</span> <small><img className="hfverify" src={verified} alt="verified.svg" /></small>
                                     <span className="cam-vidcam">
                                         <img className="cam" src={cam} alt="camera.svg" />
                                         <img className="vidcam" src={vidcam} alt="vidcam.svg" />

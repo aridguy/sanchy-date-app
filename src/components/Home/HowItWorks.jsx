@@ -6,7 +6,6 @@ import hiw_sub_two from "../../assets/images/hiw_sub_two.svg";
 import chat_img from "../../assets/images/hiw_chat.png";
 import chat_img_two from "../../assets/images/hiw_chat_two.png";
 import hiw_profile_three from "../../assets/images/hiw_chat_three.svg";
-import hiw_chat_2 from "../../assets/images/hiw_chat-2.svg";
 
 import "./HowItWorks.css";
 

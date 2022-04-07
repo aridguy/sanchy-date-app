@@ -12,6 +12,7 @@ import Community from "./Pages/Community/Community";
 import './App.css';
 import OtpVerification from "./Pages/OtpVerification/OtpVerification";
 import AccountSetup from "./Pages/AccountSetup/AccountSetup";
+import Notification from "./Pages/Notification/Notification";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/otp-verification" element={<OtpVerification />} />
           <Route path="/acct-setup" element={<AccountSetup />} />
           <Route path="/Community" element={<Community />} />
+          <Route path="/Notification" element={<Notification />} />
         </Routes>
       </Router>
     </div>

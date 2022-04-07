@@ -1,19 +1,15 @@
 .active-side-nav{
-    background: #6A52FD;
+    background: #6A52FD !important;
     border-radius: 100px;
-    width: 250px;
-    margin-left: 46px;
-    height: 39px;
-    border: none;
     color: white;
 }
 .inactive-side-nav{
-    background: none;
+    background: #fff;
     border-radius: 100px;
-    width: 282px;
-    margin-left: 4px;
+    width: 100%;
     height: 39px;
     margin-top: 10px;
     border: none;
-    color: black;
+    text-align: justify;
+    padding-left: 32%;
 }

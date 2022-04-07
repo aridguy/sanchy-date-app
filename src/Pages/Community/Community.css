@@ -15,7 +15,11 @@
 /* New primary color */
 background: #6A52FD;
 }
-
+.hot-picks-title{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+}
 .profilePicsHeader{
     width: 40px;
     height: 40px;
@@ -137,14 +141,6 @@ background: url(../../assets/images/man.png);
     margin-right: 8px;
 }
 
-/* STORY SECTION IMAGES HERE */
-.story-section{
-    margin-top: 30px;
-}
-.pretty, .valery, .escstacy, .nice, .story, .roman, .celine{
-    margin-left: 30px;
-    width: 75px;
-}
 /* chevrons on the story section */
 .chevright{
     margin-left: 30px;
@@ -278,12 +274,7 @@ background: url(../../assets/images/man.png);
        .celine, .valery, .pretty{
            display: none;
        }
-       .story-section {
-        display: flex;
-        position: absolute;
-        top: 70px;
-        left: 15px;
-    }
+       
        .chevleft {
         margin-left: 4px;
         width: 13px;

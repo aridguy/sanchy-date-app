@@ -1,0 +1,19 @@
+.active-side-nav{
+    background: #6A52FD;
+    border-radius: 100px;
+    width: 250px;
+    margin-left: 46px;
+    height: 39px;
+    border: none;
+    color: white;
+}
+.inactive-side-nav{
+    background: none;
+    border-radius: 100px;
+    width: 282px;
+    margin-left: 4px;
+    height: 39px;
+    margin-top: 10px;
+    border: none;
+    color: black;
+}

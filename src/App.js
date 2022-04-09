@@ -35,8 +35,6 @@ function App() {
           <Route path="/dates" element={<Dates />} />
           <Route path="/chats" element={<Chats />} />
           <Route path="/buy-tokens" element={<BuyTokens />} />
-          
-
         </Routes>
       </Router>
     </div>

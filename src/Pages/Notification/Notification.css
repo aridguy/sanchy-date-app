@@ -206,42 +206,24 @@ small {
     }
 
     .footcontentsparent {
-        position: relative;
-        left: 13rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline;
+        gap: 20px;
+        /* padding: 20px; */
     }
 
+    .small-mobile{
+        font-size: 10px;
+    }
     .notfoot {
-        width: 104px;
+        width: 80px;
+        /* background: linear-gradient(180deg, #6A52FD 0%, #B259E3 48.44%, #FF60C8 100%); */
+        /* box-shadow: 0px 8px 8px rgba(50, 50, 71, 0.08), 0px 8px 16px rgba(50, 50, 71, 0.06); */
     }
 
 
-    .comfoot {
-        width: 72px;
-        position: relative;
-        right: 80px;
-        bottom: 12px;
-    }
-
-    .postfoot {
-        width: 43px;
-        position: relative;
-        right: 30px;
-        bottom: 10px;
-    }
-
-    .chatfoot {
-        position: relative;
-        bottom: 94px;
-        left: 21rem;
-        width: 42px;
-    }
-
-    .dating {
-        width: 40px;
-        position: relative;
-        bottom: 9px;
-        left: 31px;
-    }
+    
 
 
     /* .comfoot, .postfoot, .notfoot, .chatfoot, .datefoot{

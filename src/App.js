@@ -28,8 +28,8 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/otp-verification" element={<OtpVerification />} />
           <Route path="/acct-setup" element={<AccountSetup />} />
-          <Route path="/Community" element={<Community />} />
-          <Route path="/Notification" element={<Notification />} />
+          <Route path="/community" element={<Community />} />
+          <Route path="/notification" element={<Notification />} />
           <Route path="/community" element={<Community />} />
           <Route path="/post" element={<Post />} />
           <Route path="/dates" element={<Dates />} />

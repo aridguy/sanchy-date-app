@@ -8,13 +8,16 @@ import lock from "../../assets/images/lock.svg";
 import token from "../../assets/images/token.svg";
 import adnoti from "../../assets/images/addnoti.svg";
 // footer icons
-import community from "../../assets/images/comunityfooticon.svg";
-import post from "../../assets/images/postfooticon.svg";
+import community from "../../assets/images/community-mobile.svg";
+import post from "../../assets/images/post-mobileview.svg";
 import adnotfoot from "../../assets/images/notificationfooter.svg";
-import chats from "../../assets/images/chaticonfoot.svg";
-import date from "../../assets/images/datingiconfoot.svg";
+import chats from "../../assets/images/chats-mobile-view.svg";
+import date from "../../assets/images/dating-mobile-view.svg";
+import { useNavigate } from "react-router-dom";
+
 
 const Notification = () => {
+    const navigate = useNavigate();
     return (
         // navbar
         <div>
@@ -103,11 +106,11 @@ const Notification = () => {
                 </div>
                 <footer className="foot">
                     <div className="footcontentsparent">
-                        <span><img className="comfoot" src={community} alt="community" /></span>
-                         <span><img className="postfoot" src={post} alt="posts" /></span>
-                         <span><img className="notfoot" src={adnotfoot} alt="noti" /></span>
-                         <span><img className="datefoot" src={date} alt="dating" /> <br /></span>
-                         <span><img className="chatfoot" src={chats} alt="chats" /></span>
+                        <div className="text-center" onClick={() => navigate('/community')}><img className="comfoot" src={community} alt="community" /> <br /> <span className="small-mobile">Community</span> </div>
+                         <div><img className="postfoot" src={post} alt="posts" /> <br /> <span className="small-mobile">Post</span> </div>
+                         <div><img className="notfoot" src={adnotfoot} alt="noti" /> </div>
+                         <div><img className="datefoot" src={date} alt="dating" /> <br /> <span className="small-mobile">Dating</span></div>
+                         <div><img className="chatfoot" src={chats} alt="chats" /> <br /> <span className="small-mobile">Chats</span></div>
                     </div>
                 </footer>
             </div>

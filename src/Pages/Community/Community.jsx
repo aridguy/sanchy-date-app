@@ -1,372 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Community.css";
 
 
 // hookup images around this section
 import hookup1 from "../../assets/images/hookup1.svg";
 import hookup2 from "../../assets/images/hookup2.svg";
-// hook images
-import verified from "../../assets/images/verified.svg";
-import rate from "../../assets/images/rating.svg";
-import cam from "../../assets/images/camera.svg";
-import vidcam from "../../assets/images/vidcam.svg";
+import testPic from "../../assets/images/test.png";
 
 // member section here
 import filter from "../../assets/images/filter.svg"
 import Sidebar from "../../components/Sidebar/Sidebar";
 import LoggedInHeader from "../../components/LoggedInHeader/LoggedInHeader";
+import HotpicksHolder from "../../components/HotpicksHolder/HotpicksHolder";
 import Status from "../../components/Status/Status";
 
 const Community = () => {
+    const hotPicks = [{ image: testPic, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }]
+    const members = [{ image: testPic, id: 1, rate: false, verified: true }, { image: hookup1, id: 1, rate: false, verified: true }, { image: hookup2, id: 1, rate: false, verified: false }, { image: hookup1, id: 1, rate: false, verified: true }, { image: hookup2, id: 1, rate: false, verified: false }, { image: hookup1, id: 1, rate: false, verified: false }, { image: hookup2, id: 1, rate: false, verified: false }, { image: hookup1, id: 1, rate: false, verified: false }, { image: hookup2, id: 1, rate: false, verified: false }]
+    const [showMoreHotpicks, setShowMoreHotpicks] = useState(false);
     return (
         <div>
             <LoggedInHeader />
-            <div className="d-flex mr-2 ml-2 ">
+            <div className="d-flex">
                 <Sidebar activeLink={'community'} />
-                <div className="w-75 m-4">
+                <div className="w-75 m-4 left-content">
                     <Status />
                     {/* hot pics below here */}
                     <section className="hot-picks-title">
-                        <div>
-                            <span className="hpicks">Hot Picks</span>
-                            <span className="genderbackgd"><small className="gendertype">Gender:Female</small></span>
+                        <div className="d-flex justify-content-center gap-2 align-items-baseline">
+                            <h3 className="hpicks">Hot Picks</h3>
+                            <p className="genderbackgd"><b>Gender</b>: Female</p>
                         </div>
-                        <p className="">View all</p>
+                        <p className="viewall" onClick={() => setShowMoreHotpicks(!showMoreHotpicks)}> {!showMoreHotpicks? 'View all' : 'View less'} </p>
                     </section>
                     {/* hotpicks images */}
-                    <div className="allhookpicksimages d-flex gap-4 ">
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup1} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span className="hpname">Elena</span> <small><img src={verified} alt="verified.svg" /></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup2} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span className="hpname">Elena</span> <small><img src={verified} alt="verified.svg" /></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                        <section className="hotpicksimages hotpicksimages1">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup1} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span>Elena</span> <small><img src={verified} alt="verified.svg" /></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                        <section className="hotpicksimages hotpicksimages2">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup1} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span className="hfname">Elena</span> <small><img className="hfverify" src={verified} alt="verified.svg" /></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
+                    <div className="allhookpicksimages">
+                        {hotPicks.map((user, userID) =>
+                            <div key={userID}>{showMoreHotpicks || userID < 4 ? <HotpicksHolder userData={user} /> : null}</div>
+                        )}
                     </div>
 
                     {/*member head section */}
-                    <section className="hp-viewall">
-                        <span className="hpicks">Members</span>
-                        <span className="genderbackgd"><small className="gendertype">Gender:Female</small></span>
+                    <section className="hot-picks-title">
+                        <div className="d-flex justify-content-center gap-2 align-items-baseline">
+                            <h3 className="hpicks">Members</h3>
+                            <p className="genderbackgd"><b>Gender</b>: Female</p>
+                        </div>
                         <span className="searchusers"><input className="usersearchbox" placeholder="search members" type="text" /></span>
                         <img className="filter" src={filter} alt="filter.svg" />
                     </section>
-                    <div className="allhookpicksimages d-flex gap-4 ">
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup1} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span>Elena</span> <small></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup2} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span>Elena</span> <small></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup1} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span>Elena</span> <small></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup1} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span>Elena</span> <small></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
+                    <div className="allhookpicksimages">
+                        {members.map((user, userID) =>
+                            <div key={userID}><HotpicksHolder userData={user} /></div>
+                        )}
                     </div>
-                    <div className="allhookpicksimages d-flex gap-4 ">
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup1} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span>Elena</span> <small></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup2} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span>Elena</span> <small></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup1} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span>Elena</span> <small></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup1} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span>Elena</span> <small></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                    <div className="allhookpicksimages d-flex gap-4 ">
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup1} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span>Elena</span> <small></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup2} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span>Elena</span> <small></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup1} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span>Elena</span> <small></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup1} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span>Elena</span> <small></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                    <div className="allhookpicksimages d-flex gap-4 ">
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup1} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span>Elena</span> <small></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup2} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span>Elena</span> <small></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup1} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span>Elena</span> <small></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup1} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span>Elena</span> <small></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                    <div className="allhookpicksimages d-flex gap-4 ">
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup1} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span>Elena</span> <small></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup2} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span>Elena</span> <small></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup1} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span>Elena</span> <small></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                        <section className="hotpicksimages">
-                            <div className="h-imgs">
-                                <img className="hook1" src={hookup1} alt="" />
-                                <img className="ratings" src={rate} alt="rating.svg" />
-                                <div className="hooksfoot">
-                                    <span>Elena</span> <small></small>
-                                    <span className="cam-vidcam">
-                                        <img className="cam" src={cam} alt="camera.svg" />
-                                        <img className="vidcam" src={vidcam} alt="vidcam.svg" />
-                                    </span>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-
                 </div>
             </div>
         </div>

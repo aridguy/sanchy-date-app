@@ -6,6 +6,7 @@ import "./Community.css";
 import hookup1 from "../../assets/images/hookup1.svg";
 import hookup2 from "../../assets/images/hookup2.svg";
 import testPic from "../../assets/images/test.png";
+import arrow_left from "../../assets/images/arrow-left.png";
 
 // member section here
 import filter from "../../assets/images/filter.svg"
@@ -28,10 +29,11 @@ const Community = () => {
                     {/* hot pics below here */}
                     <section className="hot-picks-title">
                         <div className="d-flex justify-content-center gap-2 align-items-baseline">
+                            {showMoreHotpicks ? <img src={arrow_left} alt={'back'} onClick={() => setShowMoreHotpicks(!showMoreHotpicks)} /> : null}
                             <h3 className="hpicks">Hot Picks</h3>
                             <p className="genderbackgd"><b>Gender</b>: Female</p>
                         </div>
-                        <p className="viewall" onClick={() => setShowMoreHotpicks(!showMoreHotpicks)}> {!showMoreHotpicks? 'View all' : 'View less'} </p>
+                        <p className="viewall" onClick={() => setShowMoreHotpicks(!showMoreHotpicks)}> {!showMoreHotpicks ? 'View All' : 'Close List'} </p>
                     </section>
                     {/* hotpicks images */}
                     <div className="allhookpicksimages">
@@ -41,19 +43,24 @@ const Community = () => {
                     </div>
 
                     {/*member head section */}
-                    <section className="hot-picks-title">
-                        <div className="d-flex justify-content-center gap-2 align-items-baseline">
-                            <h3 className="hpicks">Members</h3>
-                            <p className="genderbackgd"><b>Gender</b>: Female</p>
+                    {!showMoreHotpicks?
+                        <div>
+                            <section className="hot-picks-title member-block">
+                                <div className="d-flex justify-content-center item-one gap-2 align-items-baseline">
+                                    <h3 className="hpicks">Members</h3>
+                                    <p className="genderbackgd"><b>Gender</b>: Female</p>
+                                </div>
+                                <span className="searchusers"><input className="usersearchbox" placeholder="search members" type="text" /></span>
+                                <img className="filter" src={filter} alt="filter.svg" />
+                            </section>
+                            <div className="allhookpicksimages">
+                                {members.map((user, userID) =>
+                                    <div key={userID}><HotpicksHolder userData={user} /></div>
+                                )}
+                            </div>
                         </div>
-                        <span className="searchusers"><input className="usersearchbox" placeholder="search members" type="text" /></span>
-                        <img className="filter" src={filter} alt="filter.svg" />
-                    </section>
-                    <div className="allhookpicksimages">
-                        {members.map((user, userID) =>
-                            <div key={userID}><HotpicksHolder userData={user} /></div>
-                        )}
-                    </div>
+                        : null
+                    }
                 </div>
             </div>
         </div>

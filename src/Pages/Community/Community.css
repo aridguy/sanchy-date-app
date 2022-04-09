@@ -25,6 +25,7 @@ background: #6A52FD;
     height: 40px;
     border-radius: 50%;
     background-color: #311eac;
+    margin: 0 15px;
 }
 
 .contentsLeft{
@@ -207,5 +208,22 @@ background: url(../../assets/images/man.png);
     .left-content{
         width: 100% !important;
         margin: 0 !important;
+    }
+    .hpicks{
+        font-size: 20px;
+    }
+    .hot-picks-title{
+        padding: 15px;
+    }
+    .member-block{
+        display: block;
+    }
+    .member-block .item-one{
+        justify-content: start !important;
+        gap: 10px;
+    }
+    .usersearchbox{
+        margin-right: 15px;
+        width: 70%;
     }
 }

@@ -23,7 +23,7 @@ const Notification = () => {
         <div>
             <LoggedInHeader />
             {/* side nav */}
-            <div className="d-flex mr-2 ml-2 ">
+            <div className="d-flex">
                 <Sidebar activeLink={''} />
                 <div className="container">
                     <div className="row">

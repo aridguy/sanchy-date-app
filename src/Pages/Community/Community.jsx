@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Community.css";
 
-
 // hookup images around this section
 import hookup1 from "../../assets/images/hookup1.svg";
 import hookup2 from "../../assets/images/hookup2.svg";

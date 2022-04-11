@@ -10,14 +10,14 @@ const ProfileAboutSection = () => {
   return (
     <div className='profile-abt-section-container'>
         <div className='profile-abt-info-tab-control'>
-            <div>About</div>
-            <div>Info</div>
+            <div onClick={()=> toggleTab(1)} className={toggleState === 1 ?"profile-tab-active": ""}>About</div>
+            <div onClick={()=> toggleTab(2)} className={toggleState === 2 ?"profile-tab-active": ""}>Info</div>
         </div>
 
         {
-            toggleState === 2 ?
+            toggleState === 1 ?
             (
-                <div></div>
+                <div className='profile-abt-section-info-container'></div>
             ):
             (
                 <div className='profile-abt-section-info-container'>

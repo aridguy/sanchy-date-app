@@ -11,6 +11,8 @@ import midImgTwo from '../../assets/images/prof-placeholder-two.png'
 
 import sidenav_profile from "../../assets/images/sidenav-profile.svg";
 import ProfileAboutSection from '../../components/ProfileAboutSection/ProfileAboutSection';
+import UserContentSection from '../../components/UserContentSection/UserContentSection';
+import HotpicksHolder from '../../components/HotpicksHolder/HotpicksHolder';
 
 const UserProfile = () => {
   return (
@@ -78,11 +80,28 @@ const UserProfile = () => {
 
                         <ProfileAboutSection />
 
-                        <div></div>
+                        <UserContentSection />
+
                     </div>
 
 
-                    <div>world</div>
+                    <div>
+
+                        <div>Recommendations</div>
+
+                        <div className='profile-recommended-section'>
+                            <HotpicksHolder userData={null} />
+                            <HotpicksHolder userData={null} />
+                            <HotpicksHolder userData={null} />
+                            <HotpicksHolder userData={null} />
+                            <HotpicksHolder userData={null} />
+                            <HotpicksHolder userData={null} />
+                            <HotpicksHolder userData={null} />
+                            <HotpicksHolder userData={null} />
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
         </div>

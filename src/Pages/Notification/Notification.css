@@ -1,0 +1,245 @@
+li {
+    display: inline-flex;
+
+}
+
+.rightone {
+    position: relative;
+    left: 28rem;
+    display: inline-flex;
+    color: #6a52fd;
+}
+
+.leftone {
+    float: right;
+    float: right;
+    position: relative;
+    left: 42rem;
+    display: inline-flex;
+}
+
+.markicon {
+    margin-right: 21px;
+    width: 18px;
+    position: relative;
+    bottom: 6px;
+}
+
+.chevleft {
+    width: 20px;
+    display: inline-flex;
+    position: relative;
+    bottom: 5px;
+    right: 16px;
+}
+
+.thenotitext1 {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+/* notofication contents */
+.notisection {
+    background: rgba(106, 82, 253, 0.15);
+    width: 90%;
+    height: 118px;
+    float: right;
+    margin-top: 13px;
+}
+
+.noticontents1 {
+    position: relative;
+    right: 130px;
+    top: 22px;
+}
+
+.notiplaceicon {
+    position: relative;
+    left: 45rem;
+    top: 3rem;
+}
+
+.notiplaceicon3 {
+    position: relative;
+    top: 13rem;
+    left: 45rem;
+}
+
+.noticontents2 {
+    right: 23rem;
+}
+
+.tokenicon {
+    position: relative;
+    top: 8rem;
+    left: 45rem;
+}
+
+.tokenicon3 {
+    position: relative;
+    top: 18rem;
+    left: 45rem;
+}
+
+.addnoti {
+    position: relative;
+    left: 51rem;
+    bottom: 3rem;
+    width: 100px;
+}
+
+.small,
+small {
+    position: relative;
+    font-size: .875em;
+    right: 6rem;
+    top: 1rem;
+}
+
+.second,
+.third,
+.fourth {
+    background-color: rgba(255, 255, 255, 0);
+    border-bottom: 1px solid grey;
+}
+
+/* media query */
+@media screen and (max-width: 767px) {
+
+    .thenotitext1 {
+        font-size: 24px;
+        font-weight: 800;
+        position: relative;
+        bottom: 28px;
+    }
+
+    .chevleft {
+        width: 20px;
+        display: inline-flex;
+        position: relative;
+        bottom: 5px;
+        right: 16px;
+        bottom: 35px;
+    }
+
+    .rightone {
+        position: relative;
+        left: 28rem;
+        display: inline-flex;
+        color: #6a52fd;
+        left: 11rem;
+        top: 38px;
+    }
+
+    .notisection {
+        border-bottom: 1px solid grey;
+        width: 90%;
+        height: 118px;
+        float: right;
+        margin-top: 13px;
+        background: rgb(253 253 253 / 15%);
+    }
+
+    .notiplaceicon {
+        position: relative;
+        left: 27rem;
+        top: 3rem;
+        width: -11rem;
+    }
+
+    .noticontents1 {
+        position: relative;
+        right: 43px;
+        top: 22px;
+    }
+
+    .small,
+    small {
+        position: relative;
+        font-size: .875em;
+        right: 0rem;
+        top: 1rem;
+    }
+
+    .tokenicon {
+        position: relative;
+        top: 8rem;
+        left: 27rem;
+    }
+
+    .notiplaceicon3 {
+        position: relative;
+        top: 13rem;
+        left: 27rem;
+        display: none;
+    }
+
+    .tokenicon3 {
+        position: relative;
+        top: 18rem;
+        left: 27rem;
+        display: none;
+    }
+
+    .addnoti {
+        position: relative;
+        left: 33rem;
+        bottom: 3rem;
+        width: 81px;
+    }
+
+    .third,
+    .fourth {
+        display: none;
+    }
+
+    .foot {
+        position: fixed;
+        height: 90px;
+        bottom: 0;
+        width: 100%;
+        background-color: rgb(255 255 255);
+        box-shadow: 23px 14px 21px;
+        border: none;
+        padding: 4px;
+        margin-left: 3;
+    }
+
+    .footcontentsparent {
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline;
+        gap: 20px;
+        /* padding: 20px; */
+    }
+
+    .small-mobile{
+        font-size: 10px;
+    }
+    .notfoot {
+        width: 80px;
+        /* background: linear-gradient(180deg, #6A52FD 0%, #B259E3 48.44%, #FF60C8 100%); */
+        /* box-shadow: 0px 8px 8px rgba(50, 50, 71, 0.08), 0px 8px 16px rgba(50, 50, 71, 0.06); */
+    }
+
+
+    
+
+
+    /* .comfoot, .postfoot, .notfoot, .chatfoot, .datefoot{
+        
+    } */
+
+
+
+
+
+
+
+}
+
+@media screen and (min-width: 1024px) {
+.foot{
+    display: none;
+}
+}

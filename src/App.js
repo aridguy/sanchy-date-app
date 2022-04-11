@@ -12,6 +12,7 @@ import Community from "./Pages/Community/Community";
 import './App.css';
 import OtpVerification from "./Pages/OtpVerification/OtpVerification";
 import AccountSetup from "./Pages/AccountSetup/AccountSetup";
+import Notification from "./Pages/Notification/Notification";
 import Post from "./Pages/Post/Post";
 import Dates from "./Pages/Dates/Dates";
 import Chats from "./Pages/Chats/Chats";
@@ -29,13 +30,13 @@ function App() {
           <Route path="/otp-verification" element={<OtpVerification />} />
           <Route path="/acct-setup" element={<AccountSetup />} />
           <Route path="/community" element={<Community />} />
+          <Route path="/notification" element={<Notification />} />
+          <Route path="/community" element={<Community />} />
           <Route path="/post" element={<Post />} />
           <Route path="/dates" element={<Dates />} />
           <Route path="/chats" element={<Chats />} />
           <Route path="/buy-tokens" element={<BuyTokens />} />
           <Route path="/profile" element={<UserProfile />} />
-          
-
         </Routes>
       </Router>
     </div>

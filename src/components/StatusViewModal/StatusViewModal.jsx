@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./StatusViewModal.css";
 import BlockUserModal from "../../components/BlockUserModal/BlockUserModal";
 import ReportUserModal from "../../components/ReportUserModal/ReportUserModal";
+import SuccessModal from "../../components/SuccessModal/SuccessModal";
 import close_btn from "../../assets/images/close-btn.svg";
 import verified from "../../assets/images/status-verified.svg";
 import more_options from "../../assets/images/more-options.svg";
@@ -19,6 +20,7 @@ const StatusViewModal = ({statusToBeViewed, setShowStatusViewModal}) => {
     const [showTray, setShowTray] = useState(false);
     const [openBlockModal, setOpenBlockModal] = useState(false);
     const [openReportModal, setOpenReportModal] = useState(false);
+    const [openSuccesModal, setOpenSuccessModal] =useState(false);
 
     const handleReportOrBlockUser = (request)=>{
         if(request === 'block'){
@@ -28,6 +30,15 @@ const StatusViewModal = ({statusToBeViewed, setShowStatusViewModal}) => {
             setShowTray(false);
             setOpenReportModal(true);
         }
+    }
+    const reportAction =()=>{
+        setOpenReportModal(false);
+        setOpenSuccessModal(true);
+    }
+    const blockAction =(action)=>{
+        console.log(action.target.id);
+        setOpenBlockModal(false);
+        setOpenSuccessModal(true);
     }
     return (
         <div className="modal-container">
@@ -41,7 +52,7 @@ const StatusViewModal = ({statusToBeViewed, setShowStatusViewModal}) => {
                     {showTray?
                     <div className="viewMore-action">
                         <div className="text">
-                            <p onClick={()=> handleReportOrBlockUser('block')}><img src={flag_user} alt="flag user" /> Report</p>
+                            <p onClick={()=> handleReportOrBlockUser('report')}><img src={flag_user} alt="flag user" /> Report</p>
                             <p onClick={()=> handleReportOrBlockUser('block')}><img src={block_user} alt="block user" /> Block</p>
                         </div>
                         <img src={report_user} alt="report" className="report-tray" />
@@ -57,8 +68,9 @@ const StatusViewModal = ({statusToBeViewed, setShowStatusViewModal}) => {
                     <div className="main-status"><img src={statusToBeViewed.image} alt="main-status" /></div>
                 </div>
             </div>
-            {openBlockModal? <BlockUserModal /> : null}
-            {openReportModal? <ReportUserModal /> : null} 
+            {openBlockModal? <BlockUserModal username={statusToBeViewed.username} blockAction={()=>blockAction} setOpenReportModal={()=>setOpenBlockModal(false)} /> : null}
+            {openReportModal? <ReportUserModal username={statusToBeViewed.username} reportAction={reportAction} setOpenReportModal={()=>setOpenReportModal(false)} /> : null} 
+            {openSuccesModal? <SuccessModal /> : null}
         </div>
     )
 }

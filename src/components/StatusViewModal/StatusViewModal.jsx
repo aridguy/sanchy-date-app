@@ -9,15 +9,18 @@ import more_options from "../../assets/images/more-options.svg";
 import report_user from "../../assets/images/report-user.svg";
 import flag_user from "../../assets/images/flag-user.svg";
 import block_user from "../../assets/images/block-user.svg";
+import { useNavigate } from "react-router-dom";
 
 const StatusViewModal = ({statusToBeViewed, setShowStatusViewModal}) => {
-    // useEffect(()=>{
-    //     const timeout = setTimeout(setShowStatusViewModal, 10000);
-    //     return ()=>{
-    //         clearTimeout(timeout);
-    //     }
-    // },[setShowStatusViewModal])
+    useEffect(()=>{
+        const timeout = setTimeout(setShowStatusViewModal, 10000);
+        return ()=>{
+            clearTimeout(timeout);
+        }
+    },[setShowStatusViewModal])
+    const navigate = useNavigate()
     const [showTray, setShowTray] = useState(false);
+    const [verb, setVerb] = useState('');
     const [openBlockModal, setOpenBlockModal] = useState(false);
     const [openReportModal, setOpenReportModal] = useState(false);
     const [openSuccesModal, setOpenSuccessModal] =useState(false);
@@ -33,13 +36,16 @@ const StatusViewModal = ({statusToBeViewed, setShowStatusViewModal}) => {
     }
     const reportAction =()=>{
         setOpenReportModal(false);
+        setVerb('reported');
         setOpenSuccessModal(true);
     }
     const blockAction =(action)=>{
         console.log(action.target.id);
         setOpenBlockModal(false);
+        setVerb('blocked');
         setOpenSuccessModal(true);
     }
+    const gotoUserProfile =()=> {navigate(`/user/${statusToBeViewed.username}`)}
     return (
         <div className="modal-container">
             <div className="item-one">
@@ -60,7 +66,7 @@ const StatusViewModal = ({statusToBeViewed, setShowStatusViewModal}) => {
                     }
                 </div>
                 <div className="userprofile">
-                    <img src={statusToBeViewed.image} className="user-head" alt="status" />
+                    <img src={statusToBeViewed.image} className="user-head" alt="status" onClick={gotoUserProfile} />
                     <div>
                         <p>{statusToBeViewed.username} <img src={verified} alt="user verified" /></p>
                         <p>{statusToBeViewed.time_posted}</p>
@@ -70,7 +76,7 @@ const StatusViewModal = ({statusToBeViewed, setShowStatusViewModal}) => {
             </div>
             {openBlockModal? <BlockUserModal username={statusToBeViewed.username} blockAction={()=>blockAction} setOpenReportModal={()=>setOpenBlockModal(false)} /> : null}
             {openReportModal? <ReportUserModal username={statusToBeViewed.username} reportAction={reportAction} setOpenReportModal={()=>setOpenReportModal(false)} /> : null} 
-            {openSuccesModal? <SuccessModal /> : null}
+            {openSuccesModal? <SuccessModal username={statusToBeViewed.username} verb={verb} closeModal={()=> setOpenSuccessModal(false)} /> : null}
         </div>
     )
 }

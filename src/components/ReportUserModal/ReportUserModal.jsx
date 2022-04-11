@@ -7,7 +7,7 @@ const ReportUserModal = ({ username, setOpenReportModal, reportAction }) => {
             <div className="report-action">
                 <h3>Report Account</h3>
                 <p>Do you want to report {username}?</p>
-                <div>
+                <div className="report-btns-container">
                     <button className="report-btn" onClick={reportAction}>Report</button>
                     <button className="cancel-btn" onClick={setOpenReportModal}>Cancel</button>
                 </div>

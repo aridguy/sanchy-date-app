@@ -16,6 +16,7 @@ import Post from "./Pages/Post/Post";
 import Dates from "./Pages/Dates/Dates";
 import Chats from "./Pages/Chats/Chats";
 import BuyTokens from "./Pages/BuyTokens/BuyTokens";
+import UserProfile from "./Pages/UserProfile/UserProfile";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/dates" element={<Dates />} />
           <Route path="/chats" element={<Chats />} />
           <Route path="/buy-tokens" element={<BuyTokens />} />
+          <Route path="/profile" element={<UserProfile />} />
           
 
         </Routes>

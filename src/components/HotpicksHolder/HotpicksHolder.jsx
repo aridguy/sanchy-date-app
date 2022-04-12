@@ -11,13 +11,13 @@ const HotpicksHolder = ({ userData }) => {
         <div>
             <section className="hotpicksimages">
                 <div className="h-imgs">
-                    <img className="hook1" src={userData.image} alt="fancy" />
-                    {userData.rate ? <img className="ratings" src={rate} alt="rating.svg" /> : null}
+                    <img className="hook1" src={userData?.image} alt="fancy" />
+                    {userData?.rate ? <img className="ratings" src={rate} alt="rating.svg" /> : null}
 
                 </div>
                 <div className="hooksfoot">
                     <span className="hpname">Elena</span>
-                    {userData.verified ? <small><img src={verified} alt="verified.svg" /></small> : null}
+                    {userData?.verified ? <small><img src={verified} alt="verified.svg" /></small> : null}
                     <span className="cam-vidcam">
                         <img className="cam" src={cam} alt="camera.svg" />
                         <img className="vidcam" src={vidcam} alt="vidcam.svg" />

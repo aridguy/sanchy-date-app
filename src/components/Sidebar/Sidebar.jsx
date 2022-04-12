@@ -22,7 +22,7 @@ const Sidebar = ({ activeLink }) => {
     const logoutUser = () => console.log('log out user');
     return (
         <div className="navprofile w-25 d-flex flex-column justify-content-start align-items-center">
-            <div><img src={sidenav_profile} alt="my profile" /></div>
+            <div onClick={()=> navigate('/personal-profile')}><img src={sidenav_profile} alt="my profile" /></div>
             <h3>Makayla <sup>30</sup></h3>
             <span className="mb-4"><img className="location" src={location} alt="location" /><span>Location, Nigeria</span></span>
             <div className="sideNavBtns">

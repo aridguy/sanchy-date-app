@@ -14,7 +14,12 @@ import ProfileAboutSection from '../../components/ProfileAboutSection/ProfileAbo
 import UserContentSection from '../../components/UserContentSection/UserContentSection';
 import HotpicksHolder from '../../components/HotpicksHolder/HotpicksHolder';
 
+import hookup1 from "../../assets/images/hookup1.svg";
+import hookup2 from "../../assets/images/hookup2.svg";
+import testPic from "../../assets/images/test.png";
+
 const UserProfile = () => {
+    const hotPicks = [{ image: testPic, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: false }]
   return (
     <div>
         <LoggedInHeader />
@@ -90,14 +95,9 @@ const UserProfile = () => {
                         <div>Recommendations</div>
 
                         <div className='profile-recommended-section'>
-                            <HotpicksHolder userData={null} />
-                            <HotpicksHolder userData={null} />
-                            <HotpicksHolder userData={null} />
-                            <HotpicksHolder userData={null} />
-                            <HotpicksHolder userData={null} />
-                            <HotpicksHolder userData={null} />
-                            <HotpicksHolder userData={null} />
-                            <HotpicksHolder userData={null} />
+                            {hotPicks.map((user, userID) =>
+                                <div key={userID}> <HotpicksHolder userData={user} /></div>
+                            )}
                         </div>
 
                     </div>

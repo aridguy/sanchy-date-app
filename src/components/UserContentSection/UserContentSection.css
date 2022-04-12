@@ -1,0 +1,22 @@
+
+.user-content-section-container{
+    
+}
+
+.user-content-section-container .profile-user-content-tab-control{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* justify-content: space-between; */
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #9E9E9E;
+}
+
+
+.profile-user-content-tab-active{
+    background-color: #6A52FD;
+    color: #fff;
+    padding: 10px 40px;
+    margin-right: 40%;
+    border-radius: 50px;
+}

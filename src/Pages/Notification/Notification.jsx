@@ -1,120 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 import LoggedInHeader from "../../components/LoggedInHeader/LoggedInHeader";
 import Sidebar from "../../components/Sidebar/Sidebar";
+import SidebarMobile from "../../components/Sidebar/SidebarMobile";
 import "./Notification.css";
 import chev1 from "../../assets/images/chevleft.svg";
 import mark from "../../assets/images/markasread.svg";
 import lock from "../../assets/images/lock.svg";
-import token from "../../assets/images/token.svg";
-import adnoti from "../../assets/images/addnoti.svg";
-// footer icons
-import community from "../../assets/images/community-mobile.svg";
-import post from "../../assets/images/post-mobileview.svg";
-import adnotfoot from "../../assets/images/notificationfooter.svg";
-import chats from "../../assets/images/chats-mobile-view.svg";
-import date from "../../assets/images/dating-mobile-view.svg";
-import { useNavigate } from "react-router-dom";
 
 
 const Notification = () => {
-    const navigate = useNavigate();
+    const [currentNotification, setCurrentNotification] = useState(0); 
+    let notificationsArray = [
+        {text: 'Your password has been successfully changed', time: 'August 25, 2022 10:45pm'}, 
+        {text: 'You have received a welcome gift of 100 Token.', time: 'August 25, 2022 10:45pm'},
+        {text: 'Your password has been successfully changed', time: 'August 25, 2022 10:45pm'},
+    ]
     return (
         // navbar
         <div>
             <LoggedInHeader />
             {/* side nav */}
             <div className="d-flex">
-                <Sidebar activeLink={''} />
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-2"></div>
-                        <div className="col-md-8">
-                            <div className="notifititle totimobile">
-                                <div className="notitexts notitextsmobile d-flex">
-                                    <ul>
-                                        <li className="lefttone lefttone-mobile">
-                                            <img className="chevleft" src={chev1} alt="navigate left" />
-                                            <p className="thenotitext1">Notification</p>
-                                        </li>
-                                        
-                                        <li className="rightone rightone-mobile">
-                                            <img className="markicon" src={mark} alt="navigate left" />
-                                            <p className="thenotitext2">Mark as read</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            {/* next */}
-                            <div className="container notisection">
-                                <div className="row">
-                                    <div className="col-md-2"></div>
-                                    <div className="col-md-8">
-                                        <ul className="noticontents1">
-                                            <li>Your password has been successfully changed</li>
-                                        </ul>
-                                        <small className="notocontents2">August 25, 2022 10:45pm</small>
-                                    </div>
-                                    <div className="col-md-2"></div>
-                                </div>
-                            </div>
-                            <img className="notiplaceicon" src={lock} alt="icon" />
-                            <div className="container notisection second">
-                                <div className="row">
-                                    <div className="col-md-2"></div>
-                                    <div className="col-md-8">
-                                        <ul className="noticontents1">
-                                            <li>You have received a welcome gift of 100 tokens</li>
-                                        </ul>
-                                        <small className="notocontents2">August 25, 2022 10:45pm</small>
-                                    </div>
-                                    <div className="col-md-2"></div>
-                                </div>
-                            </div>
-                            <img className="tokenicon" src={token} alt="token" />
-                            <div className="container notisection third">
-                                <div className="row">
-                                    <div className="col-md-2"></div>
-                                    <div className="col-md-8">
-                                        <ul className="noticontents1">
-                                            <li>Your password has been successfully changed</li>
-                                        </ul>
-                                        <small className="notocontents2">August 25, 2022 10:45pm</small>
-                                    </div>
-                                    <div className="col-md-2"></div>
-                                </div>
-                            </div>
-                            <img className="notiplaceicon3" src={lock} alt="icon" />
-                            <div className="container notisection fourth">
-                                <div className="row">
-                                    <div className="col-md-2"></div>
-                                    <div className="col-md-8">
-                                        <ul className="noticontents1">
-                                            <li>You have received a welcome gift of 100 tokens</li>
-                                        </ul>
-                                        <small className="notocontents2">May 25, 2022 3:45pm</small>
-                                    </div>
-                                    <div className="col-md-2"></div>
-                                </div>
-                            </div>
-                            <img className="tokenicon3" src={token} alt="token" />
-                            <div className="col-md-2">
-                            <img className="addnoti" src={adnoti} alt="token" />
-                            </div>
+                <Sidebar />
+                <div className="notification-container">
+                    <div className="notification-title d-flex justify-content-between align-items-baseline">
+                        <div className="d-flex align-items-baseline">
+                            <img className="chevleft" src={chev1} alt="navigate left" />
+                            <p className="thenotitext1">
+                                Notification
+                            </p>
                         </div>
+                        <div className="d-flex align-items-center">
+                            <img className="markicon" src={mark} alt="navigate left" />
+                            <p className="thenotitext2">
+                                Mark as read
+                            </p>
                         </div>
+
                     </div>
+                    {/* next */}
+                    {notificationsArray.map((notification, key) =>
+                    <div key={key} className={`container notisection ${currentNotification===key ? 'active-note' : 'inactive-note'}`} onClick={() => setCurrentNotification(key)}>
+                        <div className="">
+                            <div className="">
+                                <ul className="">
+                                    <li>
+                                        <div className="d-flex justify-content-between align-items-center">
+                                            <div className="w-75">
+                                                <p>{notification.text}</p>
+                                                <p>{notification.time}</p>
+                                            </div>
+                                            <div className="w-25 noti-icon">
+                                                <img src={lock} alt="icon" />
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>)}
                 </div>
-                <footer className="foot">
-                    <div className="footcontentsparent">
-                        <div className="text-center" onClick={() => navigate('/community')}><img className="comfoot" src={community} alt="community" /> <br /> <span className="small-mobile">Community</span> </div>
-                         <div><img className="postfoot" src={post} alt="posts" /> <br /> <span className="small-mobile">Post</span> </div>
-                         <div><img className="notfoot" src={adnotfoot} alt="noti" /> </div>
-                         <div><img className="datefoot" src={date} alt="dating" /> <br /> <span className="small-mobile">Dating</span></div>
-                         <div><img className="chatfoot" src={chats} alt="chats" /> <br /> <span className="small-mobile">Chats</span></div>
-                    </div>
-                </footer>
             </div>
-            )
+            <SidebarMobile /> 
+        </div>
+    )
 }
 
-            export default Notification;
+export default Notification;

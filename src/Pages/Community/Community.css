@@ -21,13 +21,14 @@ background: #6A52FD;
     margin-top: 70px;
 }
 .profilePicsHeader{
-    width: 40px;
-    height: 40px;
     border-radius: 50%;
-    background-color: #311eac;
     margin: 0 15px;
 }
-
+.profilePicsHeader img{
+    width: 40px;
+    height: 40x;
+    border-radius: 50%;
+}
 .contentsLeft{
    align-items: center;
 }

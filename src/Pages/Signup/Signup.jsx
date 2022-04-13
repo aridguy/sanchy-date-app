@@ -1,23 +1,23 @@
-import React, { useState } from "react";
-import Header from "../../components/Header/Header";
+import React from "react";
+// import Header from "../../components/Header/Header";
 import './Signup.css';
 import './SignupMobile.css';
 import LoginImg from '../../assets/images/login_left_img.png';
 import LoginImgMobile from '../../assets/images/login_left_img_mobile.png';
 import LoginBtmRightImg from '../../assets/images/login_btm_right_img.png';
 
-import {AiOutlineArrowLeft} from 'react-icons/ai';
-import LoginEmailInput from "../../components/LoginEmailInput/LoginEmailInput";
-import {BiEnvelope} from 'react-icons/bi';
-import {BsPhone} from 'react-icons/bs'
-import LoginPhoneInput from "../../components/LoginPhoneInput/LoginPhoneInput";
+// import {AiOutlineArrowLeft} from 'react-icons/ai';
+// import LoginEmailInput from "../../components/LoginEmailInput/LoginEmailInput";
+// import {BiEnvelope} from 'react-icons/bi';
+// import {BsPhone} from 'react-icons/bs'
+// import LoginPhoneInput from "../../components/LoginPhoneInput/LoginPhoneInput";
 
 const Signup =()=>{
-    const [toggleState, setToggleState] = useState(1);
+    // const [toggleState, setToggleState] = useState(1);
 
-    const toggleTab = (tab) =>{
-        setToggleState(tab)
-    }
+    // const toggleTab = (tab) =>{
+    //     setToggleState(tab)
+    // }
 
     return(
         <div className="signup-container">

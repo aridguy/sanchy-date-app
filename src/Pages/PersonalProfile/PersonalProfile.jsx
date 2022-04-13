@@ -2,16 +2,16 @@ import React from 'react'
 import './PersonalProfile.css'
 import LoggedInHeader from '../../components/LoggedInHeader/LoggedInHeader'
 import Sidebar from '../../components/Sidebar/Sidebar'
-import { BsArrowLeft, BsCameraVideo } from 'react-icons/bs';
-import { MdLocationPin, MdOutlineMessage } from 'react-icons/md';
-import { VscDeviceCamera } from 'react-icons/vsc';
-import midImgOne from '../../assets/images/prof-placeholder-one.png'
-import midImgTwo from '../../assets/images/prof-placeholder-two.png'
+import { BsArrowLeft } from 'react-icons/bs';
+import { MdLocationPin } from 'react-icons/md';
+// import { VscDeviceCamera } from 'react-icons/vsc';
+// import midImgOne from '../../assets/images/prof-placeholder-one.png'
+// import midImgTwo from '../../assets/images/prof-placeholder-two.png'
 
 
 import sidenav_profile from "../../assets/images/sidenav-profile.svg";
-import ProfileAboutSection from '../../components/ProfileAboutSection/ProfileAboutSection';
-import UserContentSection from '../../components/UserContentSection/UserContentSection';
+// import ProfileAboutSection from '../../components/ProfileAboutSection/ProfileAboutSection';
+// import UserContentSection from '../../components/UserContentSection/UserContentSection';
 import HotpicksHolder from '../../components/HotpicksHolder/HotpicksHolder';
 
 import hookup1 from "../../assets/images/hookup1.svg";

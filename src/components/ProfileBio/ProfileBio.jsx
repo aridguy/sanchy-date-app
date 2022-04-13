@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './ProfileBio.css'
 
 const ProfileBio = () => {
-    const [toggleState, setToggleState] = useState(1);
-    const toggleTab = (tab) =>{
-        setToggleState(tab)
-    }
+    // const [toggleState, setToggleState] = useState(1);
+    // const toggleTab = (tab) =>{
+    //     setToggleState(tab)
+    // }
 
   return (
     <div className='profile-abt-section-container'>

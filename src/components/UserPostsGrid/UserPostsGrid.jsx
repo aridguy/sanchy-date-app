@@ -1,17 +1,16 @@
 import React from 'react';
 import  './UserPostsGrid.css';
 import image_placeholder from '../../assets/images/image_placeholder.png'
+import UserSinglePost from '../UserSinglePost/UserSinglePost';
+
 
 
 const UserPostsGrid = () => {
   return (
     <div className='user-posts-grid'>
-        <img src={image_placeholder} alt="" />
-        <img src={image_placeholder} alt="" />
-        <img src={image_placeholder} alt="" />
-        <img src={image_placeholder} alt="" />
-        <img src={image_placeholder} alt="" />
-        <img src={image_placeholder} alt="" />
+      <UserSinglePost />
+      <UserSinglePost />
+      <UserSinglePost />
     </div>
   )
 }

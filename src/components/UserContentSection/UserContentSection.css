@@ -10,6 +10,14 @@
     margin-bottom: 10px;
     cursor: pointer;
     color: #9E9E9E;
+    margin-bottom:40px;
+    /* background-color: red; */
+    gap: 20px;
+}
+
+.user-content-section-container .profile-user-content-tab-control >div{
+    /* background-color: red; */
+    
 }
 
 
@@ -17,6 +25,10 @@
     background-color: #6A52FD;
     color: #fff;
     padding: 10px 40px;
-    margin-right: 40%;
+    margin-right: 10%;
     border-radius: 50px;
+}
+
+.profile-user-content-tab-active:last-child{
+    margin-right: 0%;
 }

@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import './ProfileAboutSection.css'
+import React, { useState } from 'react';
+import './ProfileAboutSection.css';
+import './ProfileAboutSectionMobile.css';
 
 const ProfileAboutSection = () => {
     const [toggleState, setToggleState] = useState(1);

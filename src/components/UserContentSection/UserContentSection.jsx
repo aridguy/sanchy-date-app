@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import UsersPicturesGrid from '../UserPicturesGrid/UsersPicturesGrid';
 import UserPostsGrid from '../UserPostsGrid/UserPostsGrid';
 import './UserContentSection.css';
+import './UserContentSectionMobile.css';
 
 const UserContentSection = () => {
     const [toggleState, setToggleState] = useState(1);
@@ -21,9 +23,9 @@ const UserContentSection = () => {
             toggleState === 1?(
                <UserPostsGrid />
             ): toggleState === 2 ?(
-                <UserPostsGrid />
+                <UsersPicturesGrid />
             ):(
-                <UserPostsGrid />
+                <UsersPicturesGrid />
             )
         }
     </div>

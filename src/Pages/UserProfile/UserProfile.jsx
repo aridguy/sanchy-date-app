@@ -1,5 +1,6 @@
 import React from 'react'
 import './UserProfile.css'
+import './UserProfileMobile.css'
 import LoggedInHeader from '../../components/LoggedInHeader/LoggedInHeader'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import { BsArrowLeft, BsCameraVideo } from 'react-icons/bs';
@@ -27,15 +28,25 @@ const UserProfile = () => {
         <div className="d-flex mr-2 ml-2 ">
             <Sidebar />
             <div className='user-profile-center-content-wrapper'>
+            {/* <div className='user-profile-mobile-bg-img'>
+                <img src={hookup1} alt="" />
+            </div> */}
                 <div className='user-profile-sect-heading-nav'>
                     <BsArrowLeft className='back-arrow' />
                     <div className='user-profile-heading'>Profile</div>
                 </div>
 
+                
+
                 <div className='user-profile-center-content'>
                     <div>
-
                         <div className='user-profile-top-card'>
+                            <div className='user-profile-mobile-bg-img'>
+                                <img src={hookup1} alt="" />
+                            </div>
+                            
+                            <BsArrowLeft className='back-arrow-two' />
+
                             <div className='user-profile-img-container'>
                                 <img className='user-profile-img' src={sidenav_profile} alt="" />
                             </div>
@@ -65,7 +76,26 @@ const UserProfile = () => {
                                           <div>10</div>
                                       </div>
                                 </div>
+
                                 <button className='profile-nots-btn'>Open Chat</button>
+                                
+                                <div className='nots-container-mobile'>
+                                    <div className='nots-mini-icon-wrapper'>
+                                        <VscDeviceCamera className='nots-mini-icon' />
+                                        <div>10</div>
+                                    </div>
+
+                                    <div className='nots-mini-icon-wrapper'>
+                                        <BsCameraVideo className='nots-mini-icon' />
+                                        <div>10</div>
+                                    </div>
+
+                                    <div className='nots-mini-icon-wrapper'>
+                                        <MdOutlineMessage className='nots-mini-icon' />
+                                        <div>10</div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
 

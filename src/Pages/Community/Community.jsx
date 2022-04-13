@@ -13,6 +13,7 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import LoggedInHeader from "../../components/LoggedInHeader/LoggedInHeader";
 import HotpicksHolder from "../../components/HotpicksHolder/HotpicksHolder";
 import Status from "../../components/Status/Status";
+import SidebarMobile from "../../components/Sidebar/SidebarMobile";
 
 const Community = () => {
     const hotPicks = [{ image: testPic, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }]
@@ -23,7 +24,7 @@ const Community = () => {
             <LoggedInHeader />
             <div className="d-flex">
                 <Sidebar activeLink={'community'} />
-                <div className="w-75 m-4 left-content">
+                <div className="w-75 m-4 left-content community-holder">
                     <Status />
                     {/* hot pics below here */}
                     <section className="hot-picks-title">
@@ -62,6 +63,7 @@ const Community = () => {
                     }
                 </div>
             </div>
+            <SidebarMobile />
         </div>
     )
 }

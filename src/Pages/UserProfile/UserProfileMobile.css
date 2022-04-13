@@ -1,8 +1,20 @@
+@media only screen and (min-width: 990px){
+    .user-profile-mobile-bg-img {
+        display: none;
+    }
+    .user-profile-center-content-wrapper{
+        margin-top: 80px;
+    }
+}
 @media only screen and (max-width: 990px){
     .user-profile-sect-heading-nav{
         display: none;
     }
-    
+    .user-profile-center-content-wrapper{
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 90px;
+    }
 
     .user-profile-center-content .user-profile-top-card{
         border: none;

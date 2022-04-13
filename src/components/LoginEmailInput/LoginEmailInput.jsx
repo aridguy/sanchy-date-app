@@ -1,6 +1,8 @@
-import React from 'react'
+import React from 'react';
+import {useNavigate} from "react-router-dom";
 
 const LoginEmailInput = () => {
+  const navigate = useNavigate()
   return (
     <form className='login-input-form' action="">
         <div className='login-input-wrapper'>
@@ -15,7 +17,7 @@ const LoginEmailInput = () => {
 
         <div className='forgot-pword'>Forgot password?</div>
 
-        <button>Login</button>
+        <button onClick={() => navigate('/community')}>Login</button>
     </form>
   )
 }

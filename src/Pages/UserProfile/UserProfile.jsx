@@ -10,7 +10,7 @@ import midImgOne from '../../assets/images/prof-placeholder-one.png'
 import midImgTwo from '../../assets/images/prof-placeholder-two.png'
 
 
-import sidenav_profile from "../../assets/images/sidenav-profile.svg";
+// import sidenav_profile from "../../assets/images/sidenav-profile.svg";
 import ProfileAboutSection from '../../components/ProfileAboutSection/ProfileAboutSection';
 import UserContentSection from '../../components/UserContentSection/UserContentSection';
 import HotpicksHolder from '../../components/HotpicksHolder/HotpicksHolder';
@@ -18,6 +18,7 @@ import HotpicksHolder from '../../components/HotpicksHolder/HotpicksHolder';
 import hookup1 from "../../assets/images/hookup1.svg";
 import hookup2 from "../../assets/images/hookup2.svg";
 import testPic from "../../assets/images/test.png";
+import SidebarMobile from '../../components/Sidebar/SidebarMobile'
 
 const UserProfile = () => {
     const hotPicks = [{ image: testPic, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: false }]
@@ -25,7 +26,7 @@ const UserProfile = () => {
     <div>
         <LoggedInHeader />
 
-        <div className="d-flex mr-2 ml-2 ">
+        <div className="d-flex">
             <Sidebar />
             <div className='user-profile-center-content-wrapper'>
             {/* <div className='user-profile-mobile-bg-img'>
@@ -48,7 +49,7 @@ const UserProfile = () => {
                             <BsArrowLeft className='back-arrow-two' />
 
                             <div className='user-profile-img-container'>
-                                <img className='user-profile-img' src={sidenav_profile} alt="" />
+                                <img className='user-profile-img' src={hookup1} alt="" />
                             </div>
 
                             <div className='profile-name-details'>
@@ -134,6 +135,7 @@ const UserProfile = () => {
 
                 </div>
             </div>
+            <SidebarMobile />
         </div>
 
     </div>

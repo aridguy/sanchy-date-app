@@ -15,7 +15,11 @@
     align-items: center;
     margin-bottom: 20px;
 }
-
+.profile-image-part img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
 .user-single-post-container .post-top-section .profile-image-part{
     display: flex;
     align-items: center;

@@ -1,6 +1,6 @@
 import React from 'react'
 import { MdLocationPin } from 'react-icons/md'
-import sidenav_profile from "../../assets/images/sidenav-profile.svg";
+import hookup1 from "../../assets/images/hookup1.svg";
 import post_placeholder_img from "../../assets/images/post_placeholder_img.png";
 
 import './UserSinglePost.css';
@@ -11,7 +11,7 @@ const UserSinglePost = () => {
 
         <div className='post-top-section'>
             <div className='profile-image-part'>
-                <img className='' src={sidenav_profile} alt="" />
+                <img className='' src={hookup1} alt="" />
 
                 <div className='user-single-post-name-and-location'>
                     <div>Elena</div>

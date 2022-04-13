@@ -4,6 +4,8 @@
     position: relative;
     /* background-color: red; */
     padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .user-profile-sect-heading-nav{
@@ -26,10 +28,6 @@
     gap: 50px;
 }
 
-.user-profile-center-content > div {
-    /* background-color: blue; */
-}
-
 .user-profile-center-content .user-profile-top-card{
     display: flex;
     align-items:flex-start;
@@ -40,8 +38,8 @@
 .user-profile-center-content .user-profile-img-container{
     background-image: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
     border-radius: 50%;
-    width: 105px;
-    height: 105px;
+    width: 104px;
+    height: 104px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,6 +53,7 @@
 .user-profile-center-content .user-profile-img{
     border-radius: 50%;
     width: 100px;
+    height: 100px;
 }
 
 .user-profile-center-content .profile-name-details{
@@ -77,10 +76,6 @@
     align-items: center;
     color: #8B8B8B;
     font-size: 14px;
-}
-
-.user-profile-center-content .profile-name-details .location-icon{
-    /* font-s */
 }
 
 .user-profile-center-content .profile-name-details .nots-container{

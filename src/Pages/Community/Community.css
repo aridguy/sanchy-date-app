@@ -201,7 +201,10 @@ background: url(../../assets/images/man.png);
         grid-template-columns: repeat(3, 1fr);
     }
 }
-@media only screen and (max-width: 667px) {
+@media only screen and (max-width: 767px) {
+    .community-holder{
+        padding-bottom: 90px;
+    }
     .allhookpicksimages{
         grid-template-columns: repeat(2, 1fr);
         padding: 15px;

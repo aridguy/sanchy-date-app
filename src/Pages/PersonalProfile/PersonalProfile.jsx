@@ -18,6 +18,7 @@ import hookup1 from "../../assets/images/hookup1.svg";
 import hookup2 from "../../assets/images/hookup2.svg";
 import testPic from "../../assets/images/test.png";
 import ProfileBio from '../../components/ProfileBio/ProfileBio';
+import SidebarMobile from '../../components/Sidebar/SidebarMobile';
 
 const PersonalProfile = () => {
     const hotPicks = [{ image: testPic, id: 1, rate: true, verified: false }, 
@@ -93,7 +94,7 @@ const PersonalProfile = () => {
                 </div>
             </div>
         </div>
-
+        <SidebarMobile />
     </div>
   )
 }

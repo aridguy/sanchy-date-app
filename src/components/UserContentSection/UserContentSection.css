@@ -1,12 +1,8 @@
-
-.user-content-section-container{
-    
-}
-
 .user-content-section-container .profile-user-content-tab-control{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     /* justify-content: space-between; */
+    align-items: baseline;
     margin-bottom: 10px;
     cursor: pointer;
     color: #9E9E9E;
@@ -14,12 +10,6 @@
     /* background-color: red; */
     gap: 20px;
 }
-
-.user-content-section-container .profile-user-content-tab-control >div{
-    /* background-color: red; */
-    
-}
-
 
 .profile-user-content-tab-active{
     background-color: #6A52FD;

@@ -27,7 +27,7 @@ const AccountSetup = ()=>{
 
                         <div className="acct-setup-input-container">
                             <div className="acct-setup-heading-container">
-                                <div className="acct-setup-heading-one">A   ccount Set Up</div>
+                                <div className="acct-setup-heading-one">Account Set Up</div>
                                 <div className="acct-setup-heading-two">Kindly provide the required details to set up your account</div>
                             </div>
 

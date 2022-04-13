@@ -11,6 +11,7 @@ import testPic from "../../assets/images/test.png";
 
 // member section here
 import filter from "../../assets/images/filter.svg"
+import SidebarMobile from "../../components/Sidebar/SidebarMobile";
 
 const Post = () =>{
     const hotPicks = [{ image: testPic, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }]
@@ -55,6 +56,7 @@ const Post = () =>{
                     </div>
                 </div>
             </div>
+            <SidebarMobile />
         </div>
     )
 } 

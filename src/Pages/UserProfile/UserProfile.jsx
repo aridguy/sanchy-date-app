@@ -29,19 +29,15 @@ const UserProfile = () => {
         <div className="d-flex">
             <Sidebar />
             <div className='user-profile-center-content-wrapper'>
-            {/* <div className='user-profile-mobile-bg-img'>
-                <img src={hookup1} alt="" />
-            </div> */}
                 <div className='user-profile-sect-heading-nav'>
                     <BsArrowLeft className='back-arrow' />
                     <div className='user-profile-heading'>Profile</div>
                 </div>
 
-                
-
                 <div className='user-profile-center-content'>
                     <div>
                         <div className='user-profile-top-card'>
+                            
                             <div className='user-profile-mobile-bg-img'>
                                 <img src={hookup1} alt="" />
                             </div>

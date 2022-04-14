@@ -21,7 +21,6 @@
 .personal-prof-heading-nav-container{
     display: flex;
     align-items: center;
-
 }
 
 .personal-profile-toggle-wrapper{
@@ -30,11 +29,9 @@
 }
 
 .personal-profile-toggle-wrapper > div:first-child{
-    /* background-color: red; */
     margin-right: 20px;
     position: relative;
     display: inline-block;
-    /* width: 60px; */
     height: 30px;
 }
 
@@ -121,16 +118,6 @@ input.pers-profile-toggle:checked + .toggle-slider::before{
 
 
 
-.personal-profile-center-content .profile-name-details .profile-name-and-location{
-    margin-bottom: 10px;
-}
-
-
-.personal-profile-center-content .profile-name-details .profile-user-name{
-    font-size: 24px;
-    font-weight: 600;
-}
-
 .personal-profile-center-content .location-det{
     display: flex;
     align-items: center;
@@ -145,6 +132,7 @@ input.pers-profile-toggle:checked + .toggle-slider::before{
 
 .pers-profile-btn-container{
     display: flex;
+    align-items: center;
 }
 
 .profile-name-details  .pers-profile-btn-container .profile-nots-btn:first-child{
@@ -156,6 +144,7 @@ input.pers-profile-toggle:checked + .toggle-slider::before{
     border: none;
     outline: none;
     margin-right: 20px;
+    /* margin-top: 0; */
 }
 
 

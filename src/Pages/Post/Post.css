@@ -81,3 +81,29 @@ span {
     position: relative;
     width: 15px;
 }
+
+    /* media query section around here */
+
+
+    @media screen and (max-width: 767px) {
+        .medias {
+            position: absolute;
+            top: 20rem;
+            display: inline-flex;
+            margin-left: 10rem;
+        }
+
+        .d-p {
+            position: relative;
+            left: 13rem;
+        }
+
+        span {
+            font-size: 9px;
+            position: relative;
+            top: -143px;
+            right: -46px;
+            color: white;
+        }
+
+    }

@@ -62,7 +62,6 @@ const Post = () => {
                             </div>
                             <div className="col-sm-2"></div>
                         </div>
-                        
                     </div>
                     <div className="container upload-complete">
                         <div className="row">

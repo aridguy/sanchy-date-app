@@ -1,21 +1,20 @@
-import React from 'react'
-import './PersonalProfile.css'
+import React from 'react';
+import './PersonalProfile.css';
+import './PersonalProfileMobile.css';
 import LoggedInHeader from '../../components/LoggedInHeader/LoggedInHeader'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import { BsArrowLeft } from 'react-icons/bs';
 import { MdLocationPin } from 'react-icons/md';
-// import { VscDeviceCamera } from 'react-icons/vsc';
-// import midImgOne from '../../assets/images/prof-placeholder-one.png'
-// import midImgTwo from '../../assets/images/prof-placeholder-two.png'
+
 
 
 import sidenav_profile from "../../assets/images/sidenav-profile.svg";
-// import ProfileAboutSection from '../../components/ProfileAboutSection/ProfileAboutSection';
-// import UserContentSection from '../../components/UserContentSection/UserContentSection';
+
 import HotpicksHolder from '../../components/HotpicksHolder/HotpicksHolder';
 
 import hookup1 from "../../assets/images/hookup1.svg";
 import hookup2 from "../../assets/images/hookup2.svg";
+import mobile_profile from "../../assets/images/profile_placeholder_one.png";
 import testPic from "../../assets/images/test.png";
 import ProfileBio from '../../components/ProfileBio/ProfileBio';
 import SidebarMobile from '../../components/Sidebar/SidebarMobile';
@@ -53,6 +52,11 @@ const PersonalProfile = () => {
                 <div className='personal-profile-center-content'>
                     <div>
                         <div className='personal-profile-top-card'>
+
+                            <div className='personal-profile-mobile-bg-img'>
+                                <img src={mobile_profile} alt="" />
+                            </div>
+
                             <div className='personal-profile-and-name-container'>
                                 <div className='personal-profile-img-container'>
                                     <img className='personal-profile-img' src={sidenav_profile} alt="" />

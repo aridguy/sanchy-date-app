@@ -44,6 +44,12 @@
     justify-content: center;
     /* align-items:; */
     margin-bottom: 10px;
+    /* background-color: red; */
+    gap: 20%;
+}
+
+.profile-abt-section-container .profile-abt-section-info-container-two > div{
+    /* background-color: blue; */
 }
 
 .profile-abt-section-container .profile-abt-info-item{

@@ -1,6 +1,5 @@
 import React from 'react';
 import  './UserPostsGrid.css';
-import image_placeholder from '../../assets/images/image_placeholder.png'
 import UserSinglePost from '../UserSinglePost/UserSinglePost';
 
 

@@ -1,5 +1,9 @@
+.foot{
+    display: none;
+}
 @media screen and (max-width: 767px) {
 .foot {
+    display: block;
     position: fixed;
     bottom: 0;
     width: 100%;

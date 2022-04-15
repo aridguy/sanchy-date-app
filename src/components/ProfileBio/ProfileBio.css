@@ -1,7 +1,3 @@
-.profile-abt-section-container{
-
-}
-
 .profile-abt-section-container .profile-abt-info-tab-control{
     display: flex;
     color: #9E9E9E;
@@ -46,11 +42,6 @@
     /* background-color: red; */
     gap: 20%;
 }
-
-.profile-abt-section-container .profile-abt-section-info-container-two > div{
-    /* background-color: blue; */
-}
-
 .profile-abt-section-container .profile-abt-info-item{
     margin-bottom: 20px;
 }

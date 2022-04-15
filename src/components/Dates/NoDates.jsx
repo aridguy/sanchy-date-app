@@ -3,7 +3,7 @@ import empty_wishlist from "../../assets/images/Empty-Wishlist.svg";
 import "./NoDates.css";
 
 
-const NoDates = ({data}) => {
+const NoDates = ({data, clearDate}) => {
     return (
         <div className="no-dates">
             <div>
@@ -11,7 +11,7 @@ const NoDates = ({data}) => {
             </div>
             <h3>{data.title}</h3>
             <p>{data.subTitle}</p>
-            {data.showButton? <div><button >Find Dates</button></div> : null}
+            {data.showButton? <div><button onClick={clearDate}>Find Dates</button></div> : null}
         </div>
     )
 }

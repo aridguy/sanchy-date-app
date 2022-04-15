@@ -1,0 +1,9 @@
+.date-form-wrapper{
+    display: flex;
+    align-items: baseline;
+    gap: 30px;
+}
+.date-form-wrapper .title{
+    font-size: 30px;
+    
+}

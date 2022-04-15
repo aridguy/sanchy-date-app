@@ -11,7 +11,9 @@
     border-bottom: 2px solid #DAD9D9;
     color: #DAD9D9;
 }
-
+.date-content-wrapper .no-display-shadower{
+    height: 12.5%;
+}
 .date-content-wrapper .nav-buttons .current {
     border-bottom: 2px solid #A4A4A4;
     color: #292929;
@@ -36,65 +38,10 @@
     border: none;
     outline: none;
 }
-.available-dates-container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: 30px;
-    gap: 20px;
-}
-.available-dates-container .item{
-    text-align: center;
-    border: 1px solid #A4A4A4;
-    border-radius: 20px;
-    padding: 15px;
-}
-.available-dates-container .item img{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-.available-dates-container .item .age{
-    font-weight: 200;
-}
-.available-dates-container .item .mate{
-    width: 16px;
-}
-.available-dates-container .item .mode{
-    padding: 5px;
-    margin: 5px;
-    background: #A4A4A4;
-    color: #FEFEFE;
-    border: none;
-    outline: none;
-    font-size: 14px;
-}
-.available-dates-container .item .action-holder{
-    margin-top: 30px;
-    gap: 20px;
-    display: flex;
-    justify-content: center;
-}
-.available-dates-container .item .action-holder button{
-    background: none;
-    outline: none;
-    border-radius: 30px;
-    border: none;
-    padding: 10px;
-    color: #FEFEFE;
-    font-size: 14px;
-    width: 120px;
-}
-.available-dates-container .item .action-holder .apply{
-    background: #6A52FD;
-}
-.available-dates-container .item .action-holder .decline{
-    border: 1px solid #A4A4A4;;
-    color: #A4A4A4;
-}
 
 @media only screen and (max-width: 767px) {
     .date-content-wrapper{
-        margin-bottom: 90px;
+        margin-bottom: 150px;
     }
     .date-content-wrapper .nav-buttons, 
     .date-content-wrapper .nav-filter{

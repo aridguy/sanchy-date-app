@@ -1,12 +1,13 @@
 import React from "react";
 import male from "../../../assets/images/male.svg";
 import female from "../../../assets/images/female.svg";
+import hookup2 from "../../../assets/images/hookup1.svg";
+
 import "./DateApplications.css";
 import NoDates from "../NoDates";
 
 const DateApplications = () => {
-    const availableDates = []
-    // [{ time: '9PM(GMT+1)', image: hookup2 }, { time: '9PM(GMT+1)', image: hookup2 }, { time: '9PM(GMT+1)', image: hookup2 }, { time: '9PM(GMT+1)', image: hookup2 }, { time: '9PM(GMT+1)', image: hookup2 }, { time: '9PM(GMT+1)', image: hookup2 }];
+    const availableDates = [{ time: '9PM(GMT+1)', image: hookup2 }, { time: '9PM(GMT+1)', image: hookup2 }, { time: '9PM(GMT+1)', image: hookup2 }, { time: '9PM(GMT+1)', image: hookup2 }, { time: '9PM(GMT+1)', image: hookup2 }, { time: '9PM(GMT+1)', image: hookup2 }];
 
     return (
         <div>

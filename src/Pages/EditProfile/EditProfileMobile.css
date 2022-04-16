@@ -1,0 +1,16 @@
+@media only screen and (max-width: 990px){
+    .edit-profile-center-content-wrapper .edit-profile-heading{
+        display: none;
+    }
+
+    .edit-profile-center-content{
+        grid-template-columns: 1fr;
+        gap: 0px;
+    }
+    
+
+    .edit-profile-center-content > div:first-child {
+        display: none;
+    }
+    
+}

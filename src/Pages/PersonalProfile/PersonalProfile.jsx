@@ -31,7 +31,7 @@ const PersonalProfile = () => {
 
         <div className="d-flex mr-2 ml-2 ">
             <Sidebar />
-            <div className='personal-profile-center-content-wrapper'>
+            <div className='personal-profile-center-content-wrapper w-75'>
 
                 <div className='personal-prof-heading-nav-container'>
                     <div className='personal-profile-sect-heading-nav'>

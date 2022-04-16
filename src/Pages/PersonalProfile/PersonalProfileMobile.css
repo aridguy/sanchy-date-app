@@ -8,6 +8,7 @@
         display: grid;
         grid-template-columns:1fr;
         gap: 10px;
+        width: 97vw;
     }
     .personal-profile-center-content > div:nth-child(2) {
 
@@ -20,7 +21,6 @@
         grid-template-columns: 1fr 1fr;
         gap: 10px;
     }
-
 
 
     .personal-prof-heading-nav-container{
@@ -73,10 +73,12 @@
         justify-content: center;
     }
 
-    .profile-name-details  .pers-profile-btn-container .profile-nots-btn-two{
-        
+    .profile-name-details  .pers-profile-btn-container .profile-nots-btn-two{   
         margin-right: 0px;
     }
-
-
+}
+@media only screen and (max-width: 600px){
+    .personal-profile-center-content{
+        width: 96vw;
+    }
 }

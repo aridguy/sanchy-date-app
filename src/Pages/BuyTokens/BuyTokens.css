@@ -72,12 +72,58 @@ li{
     border: none;
     color: white;
     border-radius: 10px;
-    top: 12px;
+    top: 5px;
 }
 
+.htxt1 {
+    font-weight: bolder;
+    font-size: 20px;
+    display: inline-flex;
+}
 
+.token-amount {
+    font-weight: bolder;
+    margin-left: 43px;
+    font-size: 16px;
+}
 
-/* .ol{
-    margin-top: 30px;
-    padding-top: 3px;
-} */
+.sd-backg2 {
+    background-color: #221192;
+    color: white;
+    border-radius: 20px;
+    width: 14rem;
+    position: relative;
+    top: 50px;
+    left: 18px;
+}
+
+.second-description{
+    color: white;
+}
+
+.text-wrapper2 {
+    position: relative;
+    padding-top: 22px;
+    font-size: 12px;
+    font-family: fangsong;
+    color: white;
+}
+
+.chooseFormBtn2 {
+    position: relative;
+    width: 194px;
+    height: 48px;
+    background: #6A52FD;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    top: 19px;
+}
+
+.badge {
+    background-color: white;
+    float: right;
+    color: #221192;
+    margin-right: 32px;
+}

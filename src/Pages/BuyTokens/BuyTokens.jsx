@@ -26,13 +26,13 @@ const BuyTokens = () => {
                                 <div className="">
                                     <div className="text-wrapper1">
                                         <div>
-                                        <div><b>Basic</b></div>
+                                        <div className="htxt1">Basic</div>
                                         <div className="txt1"> <i className="fa fa-check"></i> Hot Pics Ranking</div>
                                         <div className="txt1"> <i className="fa fa-check"></i> Explore Community</div>
                                         <div className="txt1"> <i className="fa fa-check"></i> Unlimited Media Upload</div>
                                         <div className="txt1"> <i className="fa fa-check"></i> Limited Media Upload</div>
                                         <div className="txt1"> <i className="fa fa-check"></i> 28 Token</div>
-                                        <div className="txt1">500 Tokens</div>
+                                        <div className="txt1 token-amount"><b>500 Tokens</b></div>
                                         <button className="chooseFormBtn">Choose</button>
                                         </div>
                                         {/* <li>Hot pics ranking</li> */}
@@ -40,8 +40,24 @@ const BuyTokens = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-3">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum sapiente aliquam expedita alias tenetur, illum nam cupiditate adipisci. Ad eaque reiciendis expedita natus minima dignissimos! Quibusdam numquam reprehenderit quo accusantium.
+                        <div className="col-md-3 sd-backg2">
+                        <div className="second-description">
+                                <div className="">
+                                    <div className="text-wrapper2">
+                                        <div>
+                                        <div className="htxt1">Basic </div><span className="badge">Save $40</span>
+                                        <div className="txt1"> <i className="fa fa-check"></i> Hot Pics Ranking</div>
+                                        <div className="txt1"> <i className="fa fa-check"></i> Explore Community</div>
+                                        <div className="txt1"> <i className="fa fa-check"></i> Unlimited Media Upload</div>
+                                        <div className="txt1"> <i className="fa fa-check"></i> Limited Media Upload</div>
+                                        <div className="txt1"> <i className="fa fa-check"></i> 28 Token</div>
+                                        <div className="txt1 token-amount">1000 Tokens</div>
+                                        <button className="chooseFormBtn2">Choose</button>
+                                        </div>
+                                        {/* <li>Hot pics ranking</li> */}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div className="col-md-3">
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum sapiente aliquam expedita alias tenetur, illum nam cupiditate adipisci. Ad eaque reiciendis expedita natus minima dignissimos! Quibusdam numquam reprehenderit quo accusantium.

@@ -68,7 +68,7 @@ const Post = () => {
                         <div className="row">
                             <div className="col-sm-4">
                                 <img className="uploadImgComplete" src={upload} alt="" />
-                                <span>upload complete <img className="cancle" src={cancle} alt="" /></span>
+                                <span className="styled-span">upload complete <img className="cancle" src={cancle} alt="" /></span>
                             </div>
                             <div className="col-sm-8"></div>
                         </div>

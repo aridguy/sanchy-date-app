@@ -11,6 +11,26 @@
     padding-bottom: 20px;
     /* width: 280px; */
 }
+.available-dates-request-container p{
+    margin: 0;
+    margin-bottom: 5px;
+}
+.available-dates-request-container .looking-for{
+    color: #727272;
+    font-size: 12px;
+}
+.available-dates-request-container .request-card .content{
+    position: relative;
+}
+.available-dates-request-container .firstname-age{
+    position: absolute;
+    left: 10px;
+    bottom: 15px;
+    color: #FEFEFE;
+}
+.available-dates-request-container .firstname{
+    margin-right: 8px;
+}
 .available-dates-request-container .request-card img{
     width: 100%;
 }

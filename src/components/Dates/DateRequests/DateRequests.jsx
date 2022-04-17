@@ -10,7 +10,7 @@ const DateRequests = ({ hideContent }) => {
     const clearDate = () => {
         hideContent();
     }
-    const availableRequests = [{ time: '9PM(GMT+1)', image: hookup2, city: 'Berlin, DE' }, { time: '9PM(GMT+1)', image: hookup2, city: 'Berlin, DE' }, { time: '9PM(GMT+1)', image: hookup2, city: 'Berlin, DE' },{ time: '9PM(GMT+1)', image: hookup2, city: 'Berlin, DE' }];
+    const availableRequests = [{ time: '9PM(GMT+1)', firstname: 'Elena', image: hookup2, city: 'Berlin, DE' }, { time: '9PM(GMT+1)', firstname: 'Elena', image: hookup2, city: 'Berlin, DE' }, { time: '9PM(GMT+1)', image: hookup2, firstname: 'Elena', city: 'Berlin, DE' }, { time: '9PM(GMT+1)', image: hookup2, firstname: 'Elena', city: 'Berlin, DE' }];
     // [];
     return (
         <div>
@@ -25,10 +25,16 @@ const DateRequests = ({ hideContent }) => {
                                     <p>Today at 7:30 PM (GMT+2)</p>
                                     <p>Time remaining 1hr 30 mins</p>
                                     <p>City: {request.city}</p>
-                                    <p><button className="drinks">Drinks</button></p>
-                                    <p>I am looking for: <span>I am looking for</span> <img src={male} alt="male" /> <img src={female} alt="female" /></p>
+                                    <div><button className="drinks">Drinks</button></div>
+                                    <p>I am looking for: <span className="looking-for">I am looking for</span> <img src={male} alt="male" /> <img src={female} alt="female" /></p>
                                     <div className="request-card">
-                                        <div><img src={request.image} alt="" /></div>
+                                        <div className="content">
+                                            <img src={request.image} alt="date" />
+                                            <div className="firstname-age">
+                                                <span className="firstname">{request.firstname}</span>
+                                                <sup className="age">30</sup>
+                                            </div>
+                                        </div>
                                         <div><button className="open">Open Chat</button></div>
                                         <div><button className="decline">Decline</button></div>
                                     </div>

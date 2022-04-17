@@ -1,0 +1,83 @@
+span{
+    cursor: pointer;
+    padding-top: 6px;
+    position: relative;
+    left: 24px;
+    display: inline-block;
+    
+}
+
+.parent{
+    margin-top: 60px;
+    display: inline-block;
+}
+
+.wallet, .m-wallet, .subscribe, .payment {
+    margin-top: 4px;
+    font-size: 15px;
+}
+.subscribe{
+    background-color: #F6F4FF;
+    margin-top: 12px;
+    width: 55%;
+}
+.text3 {
+    position: relative;
+    top: -3px;
+}
+
+.first-description {
+    position: relative;
+    bottom: 40px;
+}
+
+/* second column on on the first row */
+
+.second-description{
+    position: relative;
+}
+
+li{
+    list-style-type: none;
+}
+
+.sd-backg {
+    background-color: #F6F4FF;
+    height: 23rem;
+    position: relative;
+    top: 90px;
+    padding-top: 38px;
+    width: 17%;
+    border-radius: 14px;
+}
+.text-wrapper1 {
+    position: relative;
+    padding-top: 4px;
+    font-size: 12px;
+    font-family: fangsong;
+    color: #6A52FD;
+}
+
+.txt1 {
+    padding-top: 20px;
+    margin-left: 22px;
+}
+
+.chooseFormBtn {
+    position: relative;
+    width: 194px;
+    height: 48px;
+    background: #6A52FD;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    top: 12px;
+}
+
+
+
+/* .ol{
+    margin-top: 30px;
+    padding-top: 3px;
+} */

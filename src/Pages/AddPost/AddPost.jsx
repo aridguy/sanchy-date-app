@@ -1,13 +1,8 @@
 import React, { useState } from "react";
-import HotpicksHolder from "../../components/HotpicksHolder/HotpicksHolder";
 import LoggedInHeader from "../../components/LoggedInHeader/LoggedInHeader";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import Status from "../../components/Status/Status";
-
-// hookup images around this section
-import hookup1 from "../../assets/images/hookup1.svg";
-import hookup2 from "../../assets/images/hookup2.svg";
-import testPic from "../../assets/images/test.png";
+import MediaOptions from "../../components/MediaOptions/MediaOptions";
+import PriceOption from "../../components/PriceOption/PriceOption";
 
 import media from "../../assets/images/addmedia.svg";
 import price from "../../assets/images/setprice.svg";
@@ -19,14 +14,11 @@ import cancle from '../../assets/images/cancle.svg'
 import './AddPost.css';
 
 // member section here
-import filter from "../../assets/images/filter.svg"
 import SidebarMobile from "../../components/Sidebar/SidebarMobile";
 
 const AddPost = () => {
-    const hotPicks = [{ image: testPic, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }]
-    const members = [{ image: testPic, id: 1, rate: false, verified: true }, { image: hookup1, id: 1, rate: false, verified: true }, { image: hookup2, id: 1, rate: false, verified: false }, { image: hookup1, id: 1, rate: false, verified: true }, { image: hookup2, id: 1, rate: false, verified: false }, { image: hookup1, id: 1, rate: false, verified: false }, { image: hookup2, id: 1, rate: false, verified: false }, { image: hookup1, id: 1, rate: false, verified: false }, { image: hookup2, id: 1, rate: false, verified: false }]
-    const [showMoreHotpicks, setShowMoreHotpicks] = useState(false);
-
+    const [showMediaOptions, setShowMediaOptions] = useState(false);
+    const [showPriceOption, setShowPriceOption] = useState(false);
     return (
         <div>
             <LoggedInHeader />
@@ -41,41 +33,50 @@ const AddPost = () => {
                             <div className="col-sm-9"></div>
                         </div>
 
-                        <div className="row">
+                        <div className="add-post-top">
                             <div className="col-sm-1"></div>
-                            <div className="col-sm-9 d-flex">
-                                <div><p>Cancel</p></div>
-                                <div className="d-p">
-                                    <p className="draft">Drafts</p>
+                            <div className="btn-container d-flex justify-content-between align-items-center">
+                                <div><button className="cancel">Cancel</button></div>
+                                <div>
+                                    <button className="draft">Drafts</button>
                                     <button className="posts">Post</button>
                                 </div>
                             </div>
-                            <div className="col-sm-2"></div>
                         </div>
-                        <div className="row">
+                        <div>
                             <div className="col-sm-1"></div>
-                            <div className="col-sm-9">
-                                <textarea className="composenewpost" placeholder="compose new post" name="text" id="" cols="30" rows="10"></textarea>
+                            <div>
+                                <div>
+                                    <textarea className="composenewpost" placeholder="Compose new post" name="text" cols="30" rows="10"></textarea>
+                                </div>
                                 <div className="medias">
-                                    <img className="media" src={media} alt="add media" />
-                                    <img className="price" src={price} alt="add media" />
+                                    <div className="media-holder">
+                                        <img className="media" onClick={()=> setShowPriceOption(false)&setShowMediaOptions(!showMediaOptions)} src={media} alt="add media" />
+                                        <div className="options">
+                                            {showMediaOptions? <MediaOptions /> : null}
+                                        </div>
+                                    </div>
+                                    <div className="media-holder">
+                                        <img className="price" onClick={()=> setShowMediaOptions(false)&setShowPriceOption(!showPriceOption)} src={price} alt="add media" />
+                                        <div className="options">
+                                            {showPriceOption? <PriceOption /> : null}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="col-sm-2"></div>
                         </div>
                     </div>
-                    <div className="container upload-complete">
-                        <div className="row">
-                            <div className="col-sm-4">
-                                <img className="uploadImgComplete" src={upload} alt="" />
+                    <div>
+                        <div className="upload-complete">
+                            <div>
+                                <img className="uploadImgComplete" src={upload} alt="uploaded" />
                                 <span className="styled-span">upload complete <img className="cancle" src={cancle} alt="" /></span>
                             </div>
-                            <div className="col-sm-8"></div>
                         </div>
-                        </div>
+                    </div>
 
                 </div>
-                
+
             </div>
             <SidebarMobile />
         </div>

@@ -37,7 +37,7 @@ const Post = () => {
             <LoggedInHeader />
 
             <div className="d-flex">
-                <Sidebar />
+                <Sidebar activeLink={'post'}/>
                 <div className='user-profile-center-content-wrapper w-75'>
                     <div className='user-profile-sect-heading-nav'>
                         <BsArrowLeft className='back-arrow' />

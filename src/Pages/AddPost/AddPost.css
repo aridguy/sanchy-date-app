@@ -1,0 +1,107 @@
+
+
+.posts{
+    width: 100px;
+    height: 40px;
+    border-radius: 50px;
+    border-color: #6A52FD;
+    background-color: white;
+    border-width: thin;
+    left: 40px;
+    position: relative;
+    color: #6A52FD;
+}
+.d-p{
+    position: relative;
+    left: 43rem;
+}
+
+.draft{
+    color: #6A52FD;
+}
+.composenewpost {
+    width: 58%;
+    min-height: 50px;
+    position: absolute;
+    padding: 8px;
+    border-right: none;
+    border-left: none;
+    border-width: thin;
+    border-color: #A4A4A4;
+    background-color: #ff000000;
+    z-index: 1;
+}
+.composenewpost::-webkit-resizer{
+    display: none;
+}
+textarea:focus{
+    border-left: none;
+    border-right: none;
+    border-width: thin;
+    outline: none;
+}
+
+.medias {
+    position: absolute;
+    top: 27rem;
+    display: inline-flex;
+    margin-left: 22rem;
+}
+
+.media, .price {
+    width: 80px;
+    margin-left: 8px;
+}
+
+/* complete */
+
+.upload-complete {
+    width: 87%;
+    position: relative;
+    left: 7px;
+    top: 281px;
+}
+
+.uploadImgComplete{
+    width: 150px;
+    height: 150px;
+}
+
+.styled-span {
+    font-size: 9px;
+    position: relative;
+    top: -64px;
+    right: 100px;
+    color: white;
+}
+
+.cancle {
+    position: relative;
+    width: 15px;
+}
+
+    /* media query section around here */
+
+
+    @media screen and (max-width: 767px) {
+        .medias {
+            position: absolute;
+            top: 27rem;
+            display: inline-flex;
+            margin-left: 10rem;
+        }
+
+        .d-p {
+            position: relative;
+            left: 13rem;
+        }
+
+        .styled-span {
+            font-size: 9px;
+            position: relative;
+            top: -143px;
+            right: -46px;
+            color: white;
+        }
+
+    }

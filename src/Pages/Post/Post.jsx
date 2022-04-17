@@ -1,83 +1,73 @@
-import React, { useState } from "react";
-import HotpicksHolder from "../../components/HotpicksHolder/HotpicksHolder";
-import LoggedInHeader from "../../components/LoggedInHeader/LoggedInHeader";
-import Sidebar from "../../components/Sidebar/Sidebar";
-import Status from "../../components/Status/Status";
+import React, { useEffect, useState } from 'react'
+import './Post.css'
+import './PostMobile.css'
+import LoggedInHeader from '../../components/LoggedInHeader/LoggedInHeader'
+import Sidebar from '../../components/Sidebar/Sidebar'
+import { BsArrowLeft, BsCameraVideo } from 'react-icons/bs';
+import { MdLocationPin, MdOutlineMessage } from 'react-icons/md';
+import { VscDeviceCamera } from 'react-icons/vsc';
+import midImgOne from '../../assets/images/prof-placeholder-one.png'
+import midImgTwo from '../../assets/images/prof-placeholder-two.png'
 
-// hookup images around this section
+
+// import sidenav_profile from "../../assets/images/sidenav-profile.svg";
+import ProfileAboutSection from '../../components/ProfileAboutSection/ProfileAboutSection';
+import UserContentSection from '../../components/UserContentSection/UserContentSection';
+import HotpicksHolder from '../../components/HotpicksHolder/HotpicksHolder';
+
 import hookup1 from "../../assets/images/hookup1.svg";
 import hookup2 from "../../assets/images/hookup2.svg";
 import testPic from "../../assets/images/test.png";
-
-import media from "../../assets/images/addmedia.svg";
-import price from "../../assets/images/setprice.svg";
-// upload complete image 
-import upload from '../../assets/images/uploaded.png';
-import cancle from '../../assets/images/cancle.svg'
-
-// css file here
-import './Post.css';
-
-// member section here
-import filter from "../../assets/images/filter.svg"
-import SidebarMobile from "../../components/Sidebar/SidebarMobile";
+import SidebarMobile from '../../components/Sidebar/SidebarMobile'
+import RequestChatModal from '../../components/RequestChatModal/RequestChatModal'
+import UserPostsGrid from '../../components/UserPostsGrid/UserPostsGrid'
 
 const Post = () => {
-    const hotPicks = [{ image: testPic, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }]
-    const members = [{ image: testPic, id: 1, rate: false, verified: true }, { image: hookup1, id: 1, rate: false, verified: true }, { image: hookup2, id: 1, rate: false, verified: false }, { image: hookup1, id: 1, rate: false, verified: true }, { image: hookup2, id: 1, rate: false, verified: false }, { image: hookup1, id: 1, rate: false, verified: false }, { image: hookup2, id: 1, rate: false, verified: false }, { image: hookup1, id: 1, rate: false, verified: false }, { image: hookup2, id: 1, rate: false, verified: false }]
-    const [showMoreHotpicks, setShowMoreHotpicks] = useState(false);
+    const [displayChatRequest, setDisplayChatRequest] = useState(false);
+    const [userData, setUserData] = useState({});
 
+    useEffect(() => {
+        setUserData({ image: hookup1, id: 1, rate: true, verified: true, firstname: 'Elena' })
+    }, [userData])
+
+
+    const hotPicks = [{ image: testPic, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: false }]
     return (
         <div>
             <LoggedInHeader />
+
             <div className="d-flex">
-                <Sidebar activeLink={'post'} />
-                <div className="container">
-                    <div className="col-sm-12">
-                        <div className="row">
-                            <div className="col-sm-3">
-                                <h3><b>Posts</b></h3>
-                            </div>
-                            <div className="col-sm-9"></div>
-                        </div>
-
-                        <div className="row">
-                            <div className="col-sm-1"></div>
-                            <div className="col-sm-9 d-flex">
-                                <div><p>Cancel</p></div>
-                                <div className="d-p">
-                                    <p className="draft">Drafts</p>
-                                    <button className="posts">Post</button>
-                                </div>
-                            </div>
-                            <div className="col-sm-2"></div>
-                        </div>
-                        <div className="row">
-                            <div className="col-sm-1"></div>
-                            <div className="col-sm-9">
-                                <textarea className="composenewpost" placeholder="compose new post" name="text" id="" cols="30" rows="10"></textarea>
-                                <div className="medias">
-                                    <img className="media" src={media} alt="add media" />
-                                    <img className="price" src={price} alt="add media" />
-                                </div>
-                            </div>
-                            <div className="col-sm-2"></div>
-                        </div>
+                <Sidebar />
+                <div className='user-profile-center-content-wrapper w-75'>
+                    <div className='user-profile-sect-heading-nav'>
+                        <BsArrowLeft className='back-arrow' />
+                        <div className='user-profile-heading'>Post</div>
                     </div>
-                    <div className="container upload-complete">
-                        <div className="row">
-                            <div className="col-sm-4">
-                                <img className="uploadImgComplete" src={upload} alt="" />
-                                <span className="styled-span">upload complete <img className="cancle" src={cancle} alt="" /></span>
+
+                    <div className='user-profile-center-content'>
+                        <div><UserPostsGrid /></div>
+                        <div>
+
+                            <div>Recommendations</div>
+
+                            <div className='profile-recommended-section'>
+                                {hotPicks.map((user, userID) =>
+                                    <div key={userID}> <HotpicksHolder userData={user} /></div>
+                                )}
                             </div>
-                            <div className="col-sm-8"></div>
-                        </div>
+
                         </div>
 
+                    </div>
                 </div>
-                
+                {
+                    displayChatRequest ?
+                        <RequestChatModal member={userData} closeModal={() => setDisplayChatRequest(false)} /> : null
+                }
+
+                <SidebarMobile />
             </div>
-            <SidebarMobile />
+
         </div>
     )
 }

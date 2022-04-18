@@ -28,7 +28,7 @@ const ChatArea = ({ selectedFriendMessages }) => {
                         }
                         <div className="input-holder">
                             <div className="emoji-input">
-                                <img src={emoji} alt="emoji" />
+                                <img src={emoji} alt="emoji" className="emoji" />
                                 <input placeholder="Type a message" />
                             </div>
                             <img src={send_message} alt="send message" />

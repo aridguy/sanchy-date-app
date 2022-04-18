@@ -59,7 +59,7 @@ const handleProfileImgUpload = (e) => {
             
             <Sidebar />
             
-            <div className='edit-profile-center-content-wrapper'>
+            <div className='edit-profile-center-content-wrapper w-75'>
                 <div className='edit-profile-heading'>Account</div>
 
                 <div className='edit-profile-center-content'>

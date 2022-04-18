@@ -64,6 +64,18 @@
 
 @media only screen and (max-width: 900px) {    
     .chat-area .input-holder .emoji-input{
-        width: auto;
-    }   
+        width: 35vw;
+    }
+}
+@media only screen and (max-width: 800px) {    
+    
+    .emoji{
+        width: 15px;
+    }
+}
+@media only screen and (max-width: 730px) {    
+
+    .chat-area .input-holder .emoji-input{
+        width: 50vw;
+    }
 }

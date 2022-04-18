@@ -22,6 +22,7 @@ const Chats = () => {
                             <img src={search} alt="search" />
                             <input className="friend-search" placeholder="Search Chats" />
                         </div>
+                        <div></div>
                         <button className="request-token">Request Token</button>
                     </div>
                     <div className="chat-wrapper">

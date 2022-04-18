@@ -24,7 +24,7 @@ const Community = () => {
             <LoggedInHeader />
             <div className="d-flex">
                 <Sidebar activeLink={'community'} />
-                <div className="w-75 m-4 left-content community-holder">
+                <div className="w-75 left-content community-holder">
                     <Status />
                     {/* hot pics below here */}
                     <section className="hot-picks-title">

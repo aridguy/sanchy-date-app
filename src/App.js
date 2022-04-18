@@ -20,6 +20,7 @@ import BuyTokens from "./Pages/BuyTokens/BuyTokens";
 import UserProfile from "./Pages/UserProfile/UserProfile";
 import MemberProfile from "./Pages/MemberProfile/MemberProfile";
 import PersonalProfile from "./Pages/PersonalProfile/PersonalProfile";
+import EditProfile from "./Pages/EditProfile/EditProfile";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/personal-profile" element={<PersonalProfile />} />
           <Route path="/user/:username" element={<MemberProfile />} />
+          <Route path="/edit-profile" element={<EditProfile />} />
         </Routes>
       </Router>
     </div>

@@ -79,6 +79,7 @@ li{
     font-weight: bolder;
     font-size: 20px;
     display: inline-flex;
+    font-family: Arial;
 }
 
 .token-amount {
@@ -88,7 +89,7 @@ li{
 }
 
 .sd-backg2 {
-    background-color: #221192;
+    background-color: #6A52FD;
     color: white;
     border-radius: 20px;
     width: 14rem;
@@ -113,10 +114,10 @@ li{
     position: relative;
     width: 194px;
     height: 48px;
-    background: #6A52FD;
+    background: #ffffff;
     outline: none;
     border: none;
-    color: white;
+    color: #6A52FD;
     border-radius: 10px;
     top: 19px;
 }
@@ -126,4 +127,35 @@ li{
     float: right;
     color: #221192;
     margin-right: 32px;
+}
+.text-wrapper3 {
+    position: relative;
+    padding-top: 22px;
+    font-size: 12px;
+    font-family: fangsong;
+    color: #6a52fd;
+}
+
+.sd-backg3 {
+    background: #f6f4ff;
+    color: #6A52FD;
+    border-radius: 20px;
+    width: 14rem;
+    position: relative;
+    top: 90px;
+    left: 36px;
+}
+.chooseFormBtn3 {
+    position: relative;
+    width: 194px;
+    height: 48px;
+    background: #6a52fd;
+    outline: none;
+    border: none;
+    color: #ffffff;
+    border-radius: 10px;
+    top: 19px;
+}
+.t3s{
+    padding-top: 15px;
 }

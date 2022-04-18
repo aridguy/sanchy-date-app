@@ -9,56 +9,77 @@ import hookup1 from "../../assets/images/hookup1.svg";
 import hookup2 from "../../assets/images/hookup2.svg";
 import testPic from "../../assets/images/test.png";
 
+import media from "../../assets/images/addmedia.svg";
+import price from "../../assets/images/setprice.svg";
+// upload complete image 
+import upload from '../../assets/images/uploaded.png';
+import cancle from '../../assets/images/cancle.svg'
+
+// css file here
+import './Post.css';
+
 // member section here
 import filter from "../../assets/images/filter.svg"
 import SidebarMobile from "../../components/Sidebar/SidebarMobile";
 
-const Post = () =>{
+const Post = () => {
     const hotPicks = [{ image: testPic, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }]
     const members = [{ image: testPic, id: 1, rate: false, verified: true }, { image: hookup1, id: 1, rate: false, verified: true }, { image: hookup2, id: 1, rate: false, verified: false }, { image: hookup1, id: 1, rate: false, verified: true }, { image: hookup2, id: 1, rate: false, verified: false }, { image: hookup1, id: 1, rate: false, verified: false }, { image: hookup2, id: 1, rate: false, verified: false }, { image: hookup1, id: 1, rate: false, verified: false }, { image: hookup2, id: 1, rate: false, verified: false }]
     const [showMoreHotpicks, setShowMoreHotpicks] = useState(false);
-    
-    return(
+
+    return (
         <div>
             <LoggedInHeader />
             <div className="d-flex">
                 <Sidebar activeLink={'post'} />
-                <div className="w-75 m-4 left-content">
-                    <Status />
-                    {/* hot pics below here */}
-                    <section className="hot-picks-title">
-                        <div className="d-flex justify-content-center gap-2 align-items-baseline">
-                            <h3 className="hpicks">Hot Picks</h3>
-                            <p className="genderbackgd"><b>Gender</b>: Female</p>
+                <div className="container">
+                    <div className="col-sm-12">
+                        <div className="row">
+                            <div className="col-sm-3">
+                                <h3><b>Posts</b></h3>
+                            </div>
+                            <div className="col-sm-9"></div>
                         </div>
-                        <p className="viewall" onClick={() => setShowMoreHotpicks(!showMoreHotpicks)}> {!showMoreHotpicks? 'View all' : 'View less'} </p>
-                    </section>
-                    {/* hotpicks images */}
-                    <div className="allhookpicksimages">
-                        {hotPicks.map((user, userID) =>
-                            <div key={userID}>{showMoreHotpicks || userID < 4 ? <HotpicksHolder userData={user} /> : null}</div>
-                        )}
-                    </div>
 
-                    {/*member head section */}
-                    <section className="hot-picks-title">
-                        <div className="d-flex justify-content-center gap-2 align-items-baseline">
-                            <h3 className="hpicks">Members</h3>
-                            <p className="genderbackgd"><b>Gender</b>: Female</p>
+                        <div className="row">
+                            <div className="col-sm-1"></div>
+                            <div className="col-sm-9 d-flex">
+                                <div><p>Cancel</p></div>
+                                <div className="d-p">
+                                    <p className="draft">Drafts</p>
+                                    <button className="posts">Post</button>
+                                </div>
+                            </div>
+                            <div className="col-sm-2"></div>
                         </div>
-                        <span className="searchusers"><input className="usersearchbox" placeholder="search members" type="text" /></span>
-                        <img className="filter" src={filter} alt="filter.svg" />
-                    </section>
-                    <div className="allhookpicksimages">
-                        {members.map((user, userID) =>
-                            <div key={userID}><HotpicksHolder userData={user} /></div>
-                        )}
+                        <div className="row">
+                            <div className="col-sm-1"></div>
+                            <div className="col-sm-9">
+                                <textarea className="composenewpost" placeholder="compose new post" name="text" id="" cols="30" rows="10"></textarea>
+                                <div className="medias">
+                                    <img className="media" src={media} alt="add media" />
+                                    <img className="price" src={price} alt="add media" />
+                                </div>
+                            </div>
+                            <div className="col-sm-2"></div>
+                        </div>
                     </div>
+                    <div className="container upload-complete">
+                        <div className="row">
+                            <div className="col-sm-4">
+                                <img className="uploadImgComplete" src={upload} alt="" />
+                                <span>upload complete <img className="cancle" src={cancle} alt="" /></span>
+                            </div>
+                            <div className="col-sm-8"></div>
+                        </div>
+                        </div>
+
                 </div>
+                
             </div>
             <SidebarMobile />
         </div>
     )
-} 
+}
 
 export default Post;

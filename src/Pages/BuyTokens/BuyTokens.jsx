@@ -81,7 +81,6 @@ const BuyTokens = () => {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     {/* parent row 1 up here */}
                 </div>

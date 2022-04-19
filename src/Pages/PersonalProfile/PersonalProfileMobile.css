@@ -20,8 +20,8 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
-        /* background-color: red; */
     }
+
 
     .personal-prof-heading-nav-container{
         justify-content: center;

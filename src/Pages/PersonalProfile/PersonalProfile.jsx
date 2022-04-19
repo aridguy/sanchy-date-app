@@ -18,8 +18,10 @@ import mobile_profile from "../../assets/images/profile_placeholder_one.png";
 import testPic from "../../assets/images/test.png";
 import ProfileBio from '../../components/ProfileBio/ProfileBio';
 import SidebarMobile from '../../components/Sidebar/SidebarMobile';
+import { useNavigate } from 'react-router-dom';
 
 const PersonalProfile = () => {
+    const navigate = useNavigate();
     const hotPicks = [{ image: testPic, id: 1, rate: true, verified: false }, 
                         { image: hookup1, id: 1, rate: true, verified: false }, 
                         { image: hookup2, id: 1, rate: true, verified: false }, 
@@ -73,7 +75,7 @@ const PersonalProfile = () => {
 
                             <div className='profile-name-details'>
                                 <div className='pers-profile-btn-container'>
-                                    <button className='profile-nots-btn'>Edit Profile</button>
+                                    <button className='profile-nots-btn' onClick={()=> navigate('/edit-profile')}>Edit Profile</button>
                                     <button className='profile-nots-btn-two'>Share</button>
                                 </div>
                             </div>

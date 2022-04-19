@@ -13,6 +13,7 @@ import './App.css';
 import OtpVerification from "./Pages/OtpVerification/OtpVerification";
 import AccountSetup from "./Pages/AccountSetup/AccountSetup";
 import Notification from "./Pages/Notification/Notification";
+import AddPost from "./Pages/AddPost/AddPost";
 import Post from "./Pages/Post/Post";
 import Dates from "./Pages/Dates/Dates";
 import Chats from "./Pages/Chats/Chats";
@@ -20,6 +21,7 @@ import BuyTokens from "./Pages/BuyTokens/BuyTokens";
 import UserProfile from "./Pages/UserProfile/UserProfile";
 import MemberProfile from "./Pages/MemberProfile/MemberProfile";
 import PersonalProfile from "./Pages/PersonalProfile/PersonalProfile";
+import EditProfile from "./Pages/EditProfile/EditProfile";
 
 function App() {
   return (
@@ -34,6 +36,7 @@ function App() {
           <Route path="/community" element={<Community />} />
           <Route path="/notification" element={<Notification />} />
           <Route path="/community" element={<Community />} />
+          <Route path="/add-post" element={<AddPost />} />
           <Route path="/post" element={<Post />} />
           <Route path="/dates" element={<Dates />} />
           <Route path="/chats" element={<Chats />} />
@@ -41,6 +44,7 @@ function App() {
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/personal-profile" element={<PersonalProfile />} />
           <Route path="/user/:username" element={<MemberProfile />} />
+          <Route path="/edit-profile" element={<EditProfile />} />
         </Routes>
       </Router>
     </div>

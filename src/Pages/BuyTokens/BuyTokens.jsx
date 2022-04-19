@@ -92,8 +92,6 @@ const BuyTokens = () => {
                         <div className="col-md-2">jjj</div>
                         <div className="col-md-4">nn</div>
                         <div className="col-md-4">nn</div>
-                        
-
                     </div>
                 </div>
         </div>

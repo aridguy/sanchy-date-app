@@ -56,3 +56,9 @@
 .friend-list .item .message{
     font-size: 12px;
 }
+
+@media only screen and (max-width: 767px) {
+    .friend-list{
+        display: none;
+    }
+}

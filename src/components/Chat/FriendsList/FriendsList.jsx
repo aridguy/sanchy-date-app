@@ -1,20 +1,10 @@
 import React, { useState } from "react";
-import dp from "../../../assets/images/chat-dp.png";
 import "./FriendsList.css";
 
-const FriendsList = ({emitSelectedFriend}) => {
+const FriendsList = ({emitSelectedFriend, friendsList}) => {
     const [selectedFriendKey, setSelectedFriendKey] = useState('');
 
-    const friendsList =
-        [
-            { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
-            { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
-            { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
-            { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
-            { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
-            { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
-            { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true }
-        ];
+    
     return (
         <div className="friend-list">
             {friendsList.map((friend, key) =>

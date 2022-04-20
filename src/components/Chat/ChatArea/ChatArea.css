@@ -73,6 +73,11 @@
         width: 15px;
     }
 }
+@media only screen and (max-width: 767px) {
+    .chat-area{
+        display: none;
+    }   
+}
 @media only screen and (max-width: 730px) {    
 
     .chat-area .input-holder .emoji-input{

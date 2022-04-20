@@ -33,4 +33,7 @@
     .chat-header .search-holder{
         display: none;
     }
+    .chat-header .request-token{
+        display: none;
+    }
 }

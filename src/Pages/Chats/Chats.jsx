@@ -7,6 +7,8 @@ import FriendsList from "../../components/Chat/FriendsList/FriendsList";
 import ChatArea from "../../components/Chat/ChatArea/ChatArea";
 import RequestToken from "../../components/Chat/RequestToken/RequestToken";
 import SidebarMobile from "../../components/Sidebar/SidebarMobile";
+import dp from "../../assets/images/chat-dp.png";
+import FriendsListMobile from "../../components/Chat/FriendsList/FriendListMobile";
 
 const Chats = () => {
     const [selectedFriendMessages, setSelectedFriendMessages] = useState();
@@ -14,7 +16,16 @@ const Chats = () => {
     const emittedFriend = (friend) => {
         setSelectedFriendMessages(friend);
     }
-
+    const friendsList =
+    [
+        { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
+        { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
+        { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
+        { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
+        { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
+        { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
+        { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true }
+    ];
     return (
         <div>
             <LoggedInHeader />
@@ -30,8 +41,9 @@ const Chats = () => {
                             <div></div>
                             <button className="request-token" onClick={() => setRequestToken(true)}>Request Token</button>
                         </div>
+                        <FriendsListMobile chatList={friendsList} />
                         <div className="chat-wrapper">
-                            <FriendsList emitSelectedFriend={emittedFriend} />
+                            <FriendsList emitSelectedFriend={emittedFriend} friendsList={friendsList} />
                             <ChatArea selectedFriendMessages={selectedFriendMessages} />
                         </div>
                     </div>

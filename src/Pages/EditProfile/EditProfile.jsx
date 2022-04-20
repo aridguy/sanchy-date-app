@@ -10,6 +10,8 @@ import edit_profile_img from "../../assets/images/sidenav-profile.svg";
 
 import {IoIosCheckmark} from 'react-icons/io'
 import EditProfileCont from './EditProfileCont';
+import ProfileStatusCard from '../../components/ProfileStatusCard/ProfileStatusCard';
+import AccountOptionTab from '../../components/AccountOptionTab/AccountOptionTab';
 
 
 const EditProfile = () => {
@@ -27,10 +29,6 @@ const EditProfile = () => {
   }
 
 
-  useEffect(()=> {
-    progPercTwo.current.style.width=perc + '%';
-    progPercThree.current.style.left= `calc(${perc}% - 30px)`;
-  },[perc])
 
 
   const encodeFileToBase64 = (file) => {
@@ -64,34 +62,19 @@ const handleProfileImgUpload = (e) => {
 
                 <div className='edit-profile-center-content'>
                   
-                  <div>
+                  {/* <div>
                     <div className='edit-profile-active' >Profile Information</div>
                     <div>Profile Images</div>
                     <div>Verify Profile</div>
-                  </div>
+                  </div> */}
 
-{/* heeee### */}
+                  <AccountOptionTab opt={1} />
+
+
                   {
                     toggle === 1 ? (
                       <div>
-                      <div className='edit-profile-top-card'>
-                        <div>
-                          <div className='edit-desc-wrapper'>
-                            <div>Profile Information</div>
-                            <div><span>Profile Completion Status:</span> <span ref={progPercOne}>{perc}%</span></div>
-                          </div>
-                          <button>Save Profile</button>
-                        </div>
-  
-                        <div>
-                          <div className='edit-profile-progress-bar'>
-                              <div className='edit-prof-progressing' ref={progPercTwo}></div>
-                              <span className='circle-with-mark' ref={progPercThree}>
-                                <IoIosCheckmark className='edit-profile-mark' />
-                              </span>
-                          </div>
-                        </div>
-                      </div>
+                      <ProfileStatusCard />
   
                       <div className='edit-prof-img-section'>
   

@@ -22,12 +22,11 @@ import UserProfile from "./Pages/UserProfile/UserProfile";
 import MemberProfile from "./Pages/MemberProfile/MemberProfile";
 import PersonalProfile from "./Pages/PersonalProfile/PersonalProfile";
 import EditProfile from "./Pages/EditProfile/EditProfile";
-<<<<<<< HEAD
+
 import VerifyProfile from "./Pages/VerifyProfile/VerifyProfile";
 import ProfileImages from "./Pages/ProfileImages/ProfileImages";
-=======
+
 import Imprint from "./Pages/Imprint/Imprint";
->>>>>>> master
 
 function App() {
   return (

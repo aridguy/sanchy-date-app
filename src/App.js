@@ -27,6 +27,7 @@ import VerifyProfile from "./Pages/VerifyProfile/VerifyProfile";
 import ProfileImages from "./Pages/ProfileImages/ProfileImages";
 
 import Imprint from "./Pages/Imprint/Imprint";
+import Voucher from "./Pages/Voucher/Voucher";
 
 function App() {
   return (
@@ -51,9 +52,10 @@ function App() {
           <Route path="/user/:username" element={<MemberProfile />} />
           <Route path="/edit-profile" element={<EditProfile />} />
 
+          <Route path="/imprint" element={<Imprint />} /> 
+          <Route path="/Voucher" element={<Voucher />} />
           <Route path="/verify-profile" element={<VerifyProfile />} />
           <Route path="/profile-images" element={<ProfileImages />} />
-          <Route path="/imprint" element={<Imprint />} />
         </Routes>
       </Router>
     </div>

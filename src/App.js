@@ -23,6 +23,7 @@ import MemberProfile from "./Pages/MemberProfile/MemberProfile";
 import PersonalProfile from "./Pages/PersonalProfile/PersonalProfile";
 import EditProfile from "./Pages/EditProfile/EditProfile";
 import Imprint from "./Pages/Imprint/Imprint";
+import Voucher from "./Pages/Voucher/Voucher";
 
 function App() {
   return (
@@ -46,7 +47,8 @@ function App() {
           <Route path="/personal-profile" element={<PersonalProfile />} />
           <Route path="/user/:username" element={<MemberProfile />} />
           <Route path="/edit-profile" element={<EditProfile />} />
-          <Route path="/imprint" element={<Imprint />} />
+          <Route path="/imprint" element={<Imprint />} /> 
+          <Route path="/Voucher" element={<Voucher />} />
         </Routes>
       </Router>
     </div>

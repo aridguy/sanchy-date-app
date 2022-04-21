@@ -7,7 +7,7 @@ import SettingsPassword from "../../components/Settings/SettingsPassword/Setting
 import SettingsKyc from "../../components/Settings/SettingsKyc/SettingsKyc";
 import SettingsVoucher from "../../components/Settings/SettingsVoucher/SettingsVoucher";
 import SidebarMobile from "../../components/Sidebar/SidebarMobile";
- 
+import SettingsTabMobile from "../../components/Settings/SettingsTab/SettingsTabMobile";
 
 const Settings = () => {
     const [opt, setOpt] = useState(0);
@@ -19,6 +19,7 @@ const Settings = () => {
                 <Sidebar activeLink={''} />
                 <div className='edit-profile-center-content-wrapper w-75'>
                     <div className='edit-profile-center-content'>
+                        <SettingsTabMobile />
                         <SettingsTab title={'Settings'} opt={opt} tabList={tabList} currentTab={(a) => setOpt(a)} />
 
                         {opt === 0 ? 

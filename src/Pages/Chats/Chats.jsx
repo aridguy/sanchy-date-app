@@ -9,6 +9,7 @@ import RequestToken from "../../components/Chat/RequestToken/RequestToken";
 import SidebarMobile from "../../components/Sidebar/SidebarMobile";
 import dp from "../../assets/images/chat-dp.png";
 import FriendsListMobile from "../../components/Chat/FriendsList/FriendListMobile";
+import ChatAreaMobile from "../../components/Chat/ChatAreaMobile/ChatAreaMobile";
 
 const Chats = () => {
     const [selectedFriendMessages, setSelectedFriendMessages] = useState();
@@ -17,15 +18,15 @@ const Chats = () => {
         setSelectedFriendMessages(friend);
     }
     const friendsList =
-    [
-        { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
-        { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
-        { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
-        { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
-        { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
-        { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
-        { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true }
-    ];
+        [
+            { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
+            { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
+            { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
+            { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
+            { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
+            { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true },
+            { firstName: 'Elena', lastMessage: 'When should we meet', time: '12:39', profileImage: dp, online: true }
+        ];
     return (
         <div>
             <LoggedInHeader />
@@ -33,6 +34,12 @@ const Chats = () => {
                 <Sidebar activeLink={'chats'} />
                 {!requestToken ?
                     <div className="w-75">
+                        {/* Small Screens */}
+                        {
+                            !selectedFriendMessages ?
+                                <FriendsListMobile chatList={friendsList} emitSelectedFriend={emittedFriend} /> :
+                                <ChatAreaMobile selectedFriendMessages={selectedFriendMessages} backToFriendList={() => setSelectedFriendMessages('')} />
+                        }
                         <div className="chat-header">
                             <div className="search-holder">
                                 <img src={search} alt="search" />
@@ -41,7 +48,8 @@ const Chats = () => {
                             <div></div>
                             <button className="request-token" onClick={() => setRequestToken(true)}>Request Token</button>
                         </div>
-                        <FriendsListMobile chatList={friendsList} />
+
+                        {/* Large Screens */}
                         <div className="chat-wrapper">
                             <FriendsList emitSelectedFriend={emittedFriend} friendsList={friendsList} />
                             <ChatArea selectedFriendMessages={selectedFriendMessages} />
@@ -49,7 +57,7 @@ const Chats = () => {
                     </div>
                     :
                     <div className="w-75">
-                        <RequestToken closeRequest={()=> setRequestToken(false)} />
+                        <RequestToken closeRequest={() => setRequestToken(false)} />
                     </div>
                 }
             </div>

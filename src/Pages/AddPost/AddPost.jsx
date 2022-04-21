@@ -28,7 +28,7 @@ const AddPost = () => {
                     <div className="col-sm-12">
                         <div className="row">
                             <div className="col-sm-3">
-                                <h3><b>Posts</b></h3>
+                                <h3><b>Add Post</b></h3>
                             </div>
                             <div className="col-sm-9"></div>
                         </div>

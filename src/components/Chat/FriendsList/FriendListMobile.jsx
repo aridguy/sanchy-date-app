@@ -12,7 +12,7 @@ const FriendsListMobile = ({chatList, emitSelectedFriend}) => {
                     <input className="friend-search" placeholder="Search Chats" />
                 </div>
                 {chatList.map((friend, key) =>
-                    <div key={key} onClick={() => setSelectedFriendKey(key) & emitSelectedFriend(friend)} className={`item-wrapper ${selectedFriendKey === key ? 'selected-friend' : ''}`}>
+                    <div key={key} onClick={() => setSelectedFriendKey(key) & emitSelectedFriend(friend)} className={`item-wrapper-mobile ${selectedFriendKey === key ? 'selected-friend-mobile' : ''}`}>
                         <time className="time">{friend.time}</time>
                         <div className="item">
                             <img src={friend.profileImage} alt="dp" />

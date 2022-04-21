@@ -25,7 +25,7 @@
 }
 
 .friend-list .item-wrapper:last-child{
-    border-radius: 0 0 40px 40px;
+    /* border-radius: 0 0 40px 40px; */
     border-bottom: 0;
     margin-bottom: 0;
 }

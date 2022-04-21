@@ -35,7 +35,7 @@ const Post = () => {
                 <div className='user-profile-center-content-wrapper w-75'>
                     <div className='user-profile-sect-heading-nav'>
                         <BsArrowLeft className='back-arrow' />
-                        <div className='user-profile-heading'>Post</div>
+                        <div className='user-profile-heading'>Posts</div>
                     </div>
 
                     <div className='user-profile-center-content'>

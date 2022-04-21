@@ -7,7 +7,7 @@ const ChatArea = ({ selectedFriendMessages }) => {
     if (selectedFriendMessages) {
         selectedFriendMessages['chats'] =
             [
-                { text: 'hello lkdfvn;okref onwefefl kwef lepfiepwe pe23o2=3npwekfcsdc wkpcwe dpwe', owner: 'friend' },
+                { text: 'hello lkdfvn;okref onwefefl kwef lepfiepwe pe23o2pwekfcsdc wkpcwe dpwe', owner: 'friend' },
                 { text: 'How are you', owner: 'me' }
             ];
     }

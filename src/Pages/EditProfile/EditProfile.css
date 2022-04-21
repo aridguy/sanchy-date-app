@@ -15,11 +15,15 @@
     gap: 40px;
 }
 
-.edit-profile-center-content > div:first-child > div{
+.edit-profile-center-content > div:first-child > .edit-prof-link-nav{
     padding: 13px 25px;
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+    color: black;
 }
 
-.edit-profile-center-content > div > div.edit-profile-active{
+.edit-profile-center-content > div > .edit-profile-active{
     border-left: 5px solid #6A52FD;
     background-color: #F6F4FF;
 }

@@ -20,6 +20,7 @@
 
     .edit-profile-center-content .edit-prof-img-section{
         margin: 0 10px;
+        margin-bottom: 20px;
     }
 
     .edit-profile-center-content .edit-prof-img-section-card .edit-prof-upload-btn{
@@ -41,6 +42,9 @@
         margin-right: 8px;
     }
     
+    .edit-profile-center-content .edit-profile-detail-section{
+        margin: 0 10px;
+    }
 
     /* .edit-profile-center-content .edit-profile-detail-section .edit-prof-top-form-container{} */
 

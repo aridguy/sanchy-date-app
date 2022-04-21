@@ -18,15 +18,15 @@ const Settings = () => {
             <div className="d-flex mr-2 ml-2 ">
                 <Sidebar activeLink={''} />
                 <div className='edit-profile-center-content-wrapper w-75'>
+                    <SettingsTabMobile  opt={opt} currentTab={(a) => setOpt(a)}/>
                     <div className='edit-profile-center-content'>
-                        <SettingsTabMobile />
                         <SettingsTab title={'Settings'} opt={opt} tabList={tabList} currentTab={(a) => setOpt(a)} />
 
-                        {opt === 0 ? 
-                        <SettingsPassword /> :
-                        opt === 1 ? 
-                        <SettingsKyc /> : 
-                        <SettingsVoucher />}
+                        {opt === 0 ?
+                            <SettingsPassword /> :
+                            opt === 1 ?
+                                <SettingsKyc /> :
+                                <SettingsVoucher />}
                     </div>
                 </div>
             </div>

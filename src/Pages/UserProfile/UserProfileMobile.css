@@ -2,9 +2,6 @@
     .user-profile-mobile-bg-img {
         display: none;
     }
-    .user-profile-center-content-wrapper{
-        margin-top: 80px;
-    }
 }
 @media only screen and (max-width: 990px){
     .user-profile-sect-heading-nav{

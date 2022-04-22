@@ -26,8 +26,9 @@ import EditProfile from "./Pages/EditProfile/EditProfile";
 import VerifyProfile from "./Pages/VerifyProfile/VerifyProfile";
 import ProfileImages from "./Pages/ProfileImages/ProfileImages";
 
-import Imprint from "./Pages/Imprint/Imprint";
+import Legal from "./Pages/Legal/Legal";
 import Settings from "./Pages/Settings/Settings";
+import Referrals from "./Pages/Referrals/Referrals";
 
 function App() {
   return (
@@ -52,10 +53,11 @@ function App() {
           <Route path="/user/:username" element={<MemberProfile />} />
           <Route path="/edit-profile" element={<EditProfile />} />
 
-          <Route path="/imprint" element={<Imprint />} /> 
+          <Route path="/legal" element={<Legal />} /> 
           <Route path="/settings" element={<Settings />} />
           <Route path="/verify-profile" element={<VerifyProfile />} />
           <Route path="/profile-images" element={<ProfileImages />} />
+          <Route path="/referrals" element={<Referrals />} />
         </Routes>
       </Router>
     </div>

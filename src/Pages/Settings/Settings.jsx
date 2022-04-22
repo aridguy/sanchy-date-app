@@ -11,14 +11,14 @@ import SettingsTabMobile from "../../components/Settings/SettingsTab/SettingsTab
 
 const Settings = () => {
     const [opt, setOpt] = useState(0);
-    const tabList = [{ to: '/settings', value: 'Password' }, { to: 'KYC', value: 'KYC' }, { to: 'voucher', value: 'Voucher' }]
+    const tabList = [{ value: 'Password' }, { value: 'KYC' }, { value: 'Voucher' }];
     return (
         <div>
             <LoggedInHeader />
             <div className="d-flex mr-2 ml-2 ">
                 <Sidebar activeLink={''} />
                 <div className='edit-profile-center-content-wrapper w-75'>
-                    <SettingsTabMobile  opt={opt} currentTab={(a) => setOpt(a)}/>
+                    <SettingsTabMobile tabList={tabList}  opt={opt} currentTab={(a) => setOpt(a)}/>
                     <div className='edit-profile-center-content'>
                         <SettingsTab title={'Settings'} opt={opt} tabList={tabList} currentTab={(a) => setOpt(a)} />
 

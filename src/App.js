@@ -29,6 +29,7 @@ import ProfileImages from "./Pages/ProfileImages/ProfileImages";
 import Legal from "./Pages/Legal/Legal";
 import Settings from "./Pages/Settings/Settings";
 import Referrals from "./Pages/Referrals/Referrals";
+import Support from "./Pages/Support/Support";
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
           <Route path="/verify-profile" element={<VerifyProfile />} />
           <Route path="/profile-images" element={<ProfileImages />} />
           <Route path="/referrals" element={<Referrals />} />
+          <Route path="/support" element={<Support />} />
         </Routes>
       </Router>
     </div>

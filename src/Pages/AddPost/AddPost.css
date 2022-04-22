@@ -24,15 +24,14 @@
 }
 .composenewpost {
     padding: 8px;
+    width: 100%;
+    outline: none;
+    border: none;
+    resize: none;
     
 }
 .composenewpost::-webkit-resizer{
     display: none;
-}
-textarea{
-    width: 100%;
-    outline: none;
-    border: none;
 }
 
 .medias {

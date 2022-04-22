@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import LoggedInHeader from '../../components/LoggedInHeader/LoggedInHeader';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import SidebarMobile from '../../components/Sidebar/SidebarMobile';

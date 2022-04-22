@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import LoggedInHeader from '../../components/LoggedInHeader/LoggedInHeader';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import SidebarMobile from '../../components/Sidebar/SidebarMobile';
@@ -8,7 +8,6 @@ import {BsImageFill} from 'react-icons/bs';
 
 import edit_profile_img from "../../assets/images/sidenav-profile.svg";
 
-import {IoIosCheckmark} from 'react-icons/io'
 import EditProfileCont from './EditProfileCont';
 import ProfileStatusCard from '../../components/ProfileStatusCard/ProfileStatusCard';
 import AccountOptionTab from '../../components/AccountOptionTab/AccountOptionTab';
@@ -16,13 +15,13 @@ import AccountOptionTab from '../../components/AccountOptionTab/AccountOptionTab
 
 const EditProfile = () => {
   const [toggle, setToggle] = useState(1);
-  const [perc, setPerc] = useState(46);
+  // const [perc, setPerc] = useState(46);
   const [selectedProfileImg, setSelectedProfileImg] = useState('');
 
 
-  const progPercOne = useRef(null);
-  const progPercTwo = useRef(null);
-  const progPercThree = useRef(null);
+  // const progPercOne = useRef(null);
+  // const progPercTwo = useRef(null);
+  // const progPercThree = useRef(null);
 
   const togglePage = (v) => {
     setToggle(v)

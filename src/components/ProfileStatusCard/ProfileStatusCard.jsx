@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import {IoIosCheckmark} from 'react-icons/io'
-import edit_profile_img from "../../assets/images/sidenav-profile.svg";
 import './ProfileStatusCard.css';
 import './ProfileStatusCardMobile.css';
 
 const ProfileStatusCard = () => {
-    const [perc, setPerc] = useState(46);
+    const [perc, ] = useState(46);
     const progPercOne = useRef(null);
     const progPercTwo = useRef(null);
     const progPercThree = useRef(null);

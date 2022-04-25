@@ -11,7 +11,7 @@ const Footer =()=>{
         <div className="footer-container">
             <div className="footer-item-one d-flex justify-content-between gap-4">
                 <div className="f-title">
-                    <div><img src={footer_quick_date} alt="quick dates" /></div>
+                    <div><img src={footer_quick_date} alt="quick dates" className="footer-main-img" /></div>
                     <button onClick={linkToSignUp} className="footer-signup-btn mt-4 mb-4 p-4 border-0 rounded-pill">Create an Account</button>
                 </div>
                 <div className="d-flex gap-4 justify-content-center">

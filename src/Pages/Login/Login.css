@@ -19,6 +19,10 @@
 
 }
 
+.back-arrow-login{
+    font-size: 25px;
+}
+
 .login-btm-right-img{
     position: absolute;
     bottom: 0%;
@@ -53,7 +57,7 @@
 }
 
 .login-input-container .login-heading{
-    /* font-weight: bold; */
+    font-weight: bold;
     margin-bottom: 40px;
     font-size: 24px;
 }
@@ -64,6 +68,7 @@
     border-radius: 10px;
     margin-bottom: 30px;
     cursor: pointer;
+    width: 84%;
 }
 
 .login-input-container .input-option-tab > div{
@@ -72,14 +77,10 @@
     border-radius: 10px;
 }
 
-
-.login-input-container .input-option-tab > div:first-child{
-
-}
-
 .login-input-container .input-option-tab > div:nth-child(2){
-    /* padding: 20px 80px; */
-    border-radius: 10px;
+    border-radius: 8px;
+    border: 0;
+    width: 50%;
 }
 
 .login-input-container .input-option-tab .login-tab-active,.em-selected{
@@ -110,7 +111,7 @@ form .login-input-wrapper input{
     border-radius: 50px;
     outline: none;
     padding: 10px 40px;
-    min-width: 400px;
+    min-width: 360px;
 }
 
 .forgot-pword{

@@ -6,20 +6,21 @@ import LoginImg from '../../assets/images/login_left_img.png';
 import LoginImgMobile from '../../assets/images/login_left_img_mobile.png';
 import LoginBtmRightImg from '../../assets/images/login_btm_right_img.png';
 
-import {AiOutlineArrowLeft} from 'react-icons/ai';
 import LoginEmailInput from "../../components/LoginEmailInput/LoginEmailInput";
-import {BiEnvelope} from 'react-icons/bi';
-import {BsPhone} from 'react-icons/bs'
+import { BiEnvelope } from 'react-icons/bi';
+import { BsArrowLeft, BsPhone } from 'react-icons/bs'
 import LoginPhoneInput from "../../components/LoginPhoneInput/LoginPhoneInput";
+import { useNavigate } from "react-router-dom";
 
-const Login =()=>{
+const Login = () => {
+    const navigate = useNavigate();
     const [toggleState, setToggleState] = useState(1);
 
-    const toggleTab = (tab) =>{
+    const toggleTab = (tab) => {
         setToggleState(tab)
     }
 
-    return(
+    return (
         <div className="login-container">
             {/* <Header /> */}
             <div className="login-content-wrapper">
@@ -28,23 +29,23 @@ const Login =()=>{
                 <div></div>
                 <div className="right-input-wrapper">
                     <div className="right-input-fields-wrapper">
-                        <AiOutlineArrowLeft />
+                        <BsArrowLeft className='back-arrow-login' onClick={()=> navigate('/')} />
 
                         <div className="login-input-container">
                             <div className="login-heading">Login</div>
 
-                            <div className={toggleState === 1 ?"input-option-tab em-selected" :"input-option-tab"}>
-                                <div onClick={()=> toggleTab(1)} className={toggleState === 1 ?"login-tab-active": ""} ><BiEnvelope size={'20px'} /></div>
-                                <div onClick={()=> toggleTab(2)} className={toggleState === 2 ?"login-tab-active": ""}><BsPhone size={'20px'} /></div>
+                            <div className={toggleState === 1 ? "input-option-tab em-selected" : "input-option-tab"}>
+                                <div onClick={() => toggleTab(1)} className={toggleState === 1 ? "login-tab-active" : ""} ><BiEnvelope size={'20px'} /></div>
+                                <div onClick={() => toggleTab(2)} className={toggleState === 2 ? "login-tab-active" : ""}><BsPhone size={'20px'} /></div>
                             </div>
 
                             {
                                 toggleState === 1
-                                ?(
+                                    ?
                                     <LoginEmailInput />
-                                ):(
+                                    :
                                     <LoginPhoneInput />
-                                )
+
                             }
 
                             <div className="ext-link-wrapper">

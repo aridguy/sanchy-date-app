@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Header from '../../components/Header/Header';
 import Banner from '../../components/Home/Banner';
 import HowItWorks from '../../components/Home/HowItWorks';
@@ -6,13 +6,25 @@ import Stat from '../../components/Home/Stat';
 import Review from '../../components/Home/Review';
 import Footer from '../../components/Home/Footer';
 
-const Home =()=>{
-    return(
+const Home = () => {
+    const [goto, setGoto] = useState('');
+    const howItWorks = useRef();
+    const gotoHowItWorks = (value) => setGoto(value);
+    
+    useEffect(() => {
+        if (goto === 'how it works') {
+          howItWorks.current.scrollIntoView();
+        }
+        setGoto('');
+    }, [goto]);
+    return (
         <div>
             <Header />
-            <Banner />
+            <Banner gotoHowItWorks={gotoHowItWorks} />
             <Stat />
-            <HowItWorks />
+            <div ref={howItWorks}>
+                <HowItWorks />
+            </div>
             <Review />
             <Footer />
         </div>

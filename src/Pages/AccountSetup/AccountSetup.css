@@ -58,23 +58,15 @@
 }
 
 .acct-setup-input-container .acct-setup-heading-one{
-    /* font-weight: bold; */
-    
+    font-weight: bold;
     font-size: 24px;
+    color: #292929;
 }
 
 .acct-setup-input-container .acct-setup-heading-two{
     /* font-weight: bold; */
     
     font-size: 14px;
-}
-
-
-
-
-
-.acct-setup-input-container .input-option-tab > div:first-child{
-
 }
 
 .acct-setup-input-container .input-option-tab > div:nth-child(2){
@@ -95,10 +87,6 @@ form .acct-setup-input-wrapper{
 .acct-setup-input-form{
     display: flex;
     flex-direction: column;
-}
-
-form .acct-setup-input-wrapper:nth-child(2){
-    /* margin-bottom: 10px; */
 }
 
 form .acct-setup-input-wrapper label{

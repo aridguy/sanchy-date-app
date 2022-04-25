@@ -13,6 +13,9 @@
         display: block !important;
         text-align: center;
     }
+    .footer-main-img{
+        width: 75%;
+    }
     .f-title{
         text-align: center;
     }

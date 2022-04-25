@@ -2,7 +2,6 @@
     .acct-setup-left-img{
         display: none;
     }   
-
     .acct-setup-left-img-mobile{
         display: block;
         position: absolute;
@@ -22,12 +21,14 @@
     }
 
     .right-input-wrapper{
-        padding:25px 50px;
+        padding: 30px 10px;
         /* background-color: red;     */
     }
 
     .right-input-fields-wrapper{
     padding: 20px;
+    width: 45vw;
+    margin: 0 auto;
 }
 
     .acct-setup-input-container .input-option-tab > div{
@@ -45,9 +46,9 @@
     }
 
     form .acct-setup-input-wrapper input{
-        
+        width: 100%;
         padding: 10px 40px;
-        min-width: 200px;
+        min-width: 100px;
     }
 
     .forgot-pword{
@@ -66,5 +67,14 @@
         margin-bottom: 18px;
         width: 50%;
         align-self: center;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .right-input-fields-wrapper{
+        width: 100%;
+    }
+    .login-input-container .input-option-tab{
+        width: 100%;
     }
 }

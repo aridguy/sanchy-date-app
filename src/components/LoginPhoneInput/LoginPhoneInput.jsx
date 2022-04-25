@@ -7,7 +7,7 @@ const LoginPhoneInput = () => {
       <form className='login-input-form'>
           <div className='login-input-wrapper'>
               <label htmlFor="phone">Phone Number</label>
-              <input type="tel" />
+              <input type="number" placeholder='Enter phone number' />
           </div>
 
           <div className='login-input-wrapper'>

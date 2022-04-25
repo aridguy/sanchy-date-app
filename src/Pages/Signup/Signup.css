@@ -58,23 +58,12 @@
 }
 
 .signup-input-container .signup-heading-one{
-    /* font-weight: bold; */
-    
+    font-weight: bold;
     font-size: 24px;
 }
 
-.signup-input-container .signup-heading-two{
-    /* font-weight: bold; */
-    
+.signup-input-container .signup-heading-two{    
     font-size: 14px;
-}
-
-
-
-
-
-.signup-input-container .input-option-tab > div:first-child{
-
 }
 
 .signup-input-container .input-option-tab > div:nth-child(2){
@@ -95,10 +84,6 @@ form .signup-input-wrapper{
 .signup-input-form{
     display: flex;
     flex-direction: column;
-}
-
-form .signup-input-wrapper:nth-child(2){
-    /* margin-bottom: 10px; */
 }
 
 form .signup-input-wrapper label{

@@ -19,6 +19,7 @@ import testPic from "../../assets/images/test.png";
 import ProfileBio from '../../components/ProfileBio/ProfileBio';
 import SidebarMobile from '../../components/Sidebar/SidebarMobile';
 import { useLocation, useNavigate } from 'react-router-dom';
+import ToggleSwitch from '../../components/ToggleSwitch/ToggleSwitch';
 
 const PersonalProfile = () => {
     const pathname = useLocation();
@@ -48,11 +49,8 @@ const PersonalProfile = () => {
                     </div>
 
                     <div className='personal-profile-toggle-wrapper'>
-                        <div>                        
-                            <input type="checkbox"  className='pers-profile-toggle'/>
-                            <span className='toggle-slider'></span>
-                        </div>
-
+                        
+                        <ToggleSwitch />
                         <div>Stealth mode</div>
                     </div>
                 </div>

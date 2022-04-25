@@ -30,6 +30,8 @@ import Legal from "./Pages/Legal/Legal";
 import Settings from "./Pages/Settings/Settings";
 import Referrals from "./Pages/Referrals/Referrals";
 import Support from "./Pages/Support/Support";
+import Subscription from "./Pages/Subscription/Subscription";
+import BuyToken from "./Pages/BuyToken/BuyToken";
 
 function App() {
   return (
@@ -48,7 +50,7 @@ function App() {
           <Route path="/post" element={<Post />} />
           <Route path="/dates" element={<Dates />} />
           <Route path="/chats" element={<Chats />} />
-          <Route path="/buy-tokens" element={<BuyTokens />} />
+          {/* <Route path="/buy-tokens" element={<BuyTokens />} /> */}
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/personal-profile" element={<PersonalProfile />} />
           <Route path="/user/:username" element={<MemberProfile />} />
@@ -60,6 +62,9 @@ function App() {
           <Route path="/profile-images" element={<ProfileImages />} />
           <Route path="/referrals" element={<Referrals />} />
           <Route path="/support" element={<Support />} />
+
+          <Route path="/subscription" element={<Subscription />} />
+          <Route path="/buy-token" element={<BuyToken />} />
         </Routes>
       </Router>
     </div>

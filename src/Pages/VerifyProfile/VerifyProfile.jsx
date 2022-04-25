@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import LoggedInHeader from '../../components/LoggedInHeader/LoggedInHeader';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import SidebarMobile from '../../components/Sidebar/SidebarMobile';
@@ -7,14 +7,17 @@ import './VerifyProfileMobile.css';
 
 import verify_placeholder from '../../assets/images/verify_image_placeholder.png'
 
-
-
 import ProfileStatusCard from '../../components/ProfileStatusCard/ProfileStatusCard';
 import AccountOptionTab from '../../components/AccountOptionTab/AccountOptionTab';
+import { useLocation } from 'react-router-dom';
 
 
 const VerifyProfile = () => {
+  const pathname = useLocation();
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname]);
 
   return (
     <div>

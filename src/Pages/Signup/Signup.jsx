@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import Header from "../../components/Header/Header";
 import './Signup.css';
 import './SignupMobile.css';
@@ -6,6 +6,7 @@ import LoginImg from '../../assets/images/login_left_img.png';
 import LoginImgMobile from '../../assets/images/login_left_img_mobile.png';
 import LoginBtmRightImg from '../../assets/images/login_btm_right_img.png';
 import Header from "../../components/Header/Header";
+import { useLocation } from "react-router-dom";
 
 // import {AiOutlineArrowLeft} from 'react-icons/ai';
 // import LoginEmailInput from "../../components/LoginEmailInput/LoginEmailInput";
@@ -14,6 +15,12 @@ import Header from "../../components/Header/Header";
 // import LoginPhoneInput from "../../components/LoginPhoneInput/LoginPhoneInput";
 
 const Signup =()=>{
+    const pathname = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [pathname]);
+
     // const [toggleState, setToggleState] = useState(1);
 
     // const toggleTab = (tab) =>{

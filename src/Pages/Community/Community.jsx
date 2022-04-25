@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Community.css";
 
 // hookup images around this section
@@ -14,8 +14,15 @@ import LoggedInHeader from "../../components/LoggedInHeader/LoggedInHeader";
 import HotpicksHolder from "../../components/HotpicksHolder/HotpicksHolder";
 import Status from "../../components/Status/Status";
 import SidebarMobile from "../../components/Sidebar/SidebarMobile";
+import { useLocation } from "react-router-dom";
 
 const Community = () => {
+    const pathname = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [pathname])
+
     const hotPicks = [{ image: testPic, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }, { image: hookup1, id: 1, rate: true, verified: true }, { image: hookup2, id: 1, rate: true, verified: true }]
     const members = [{ image: testPic, id: 1, rate: false, verified: true }, { image: hookup1, id: 1, rate: false, verified: true }, { image: hookup2, id: 1, rate: false, verified: false }, { image: hookup1, id: 1, rate: false, verified: true }, { image: hookup2, id: 1, rate: false, verified: false }, { image: hookup1, id: 1, rate: false, verified: false }, { image: hookup2, id: 1, rate: false, verified: false }, { image: hookup1, id: 1, rate: false, verified: false }, { image: hookup2, id: 1, rate: false, verified: false }]
     const [showMoreHotpicks, setShowMoreHotpicks] = useState(false);

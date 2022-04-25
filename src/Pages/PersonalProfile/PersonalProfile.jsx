@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './PersonalProfile.css';
 import './PersonalProfileMobile.css';
 import LoggedInHeader from '../../components/LoggedInHeader/LoggedInHeader'
@@ -18,9 +18,15 @@ import mobile_profile from "../../assets/images/profile_placeholder_one.png";
 import testPic from "../../assets/images/test.png";
 import ProfileBio from '../../components/ProfileBio/ProfileBio';
 import SidebarMobile from '../../components/Sidebar/SidebarMobile';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const PersonalProfile = () => {
+    const pathname = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [pathname]);
+
     const navigate = useNavigate();
     const hotPicks = [{ image: testPic, id: 1, rate: true, verified: false }, 
                         { image: hookup1, id: 1, rate: true, verified: false }, 

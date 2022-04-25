@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import LoggedInHeader from "../../components/LoggedInHeader/LoggedInHeader";
 import "./Settings.css";
@@ -8,8 +8,15 @@ import SettingsKyc from "../../components/Settings/SettingsKyc/SettingsKyc";
 import SettingsVoucher from "../../components/Settings/SettingsVoucher/SettingsVoucher";
 import SidebarMobile from "../../components/Sidebar/SidebarMobile";
 import SettingsTabMobile from "../../components/Settings/SettingsTab/SettingsTabMobile";
+import { useLocation } from "react-router-dom";
 
 const Settings = () => {
+    const pathname = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [pathname]);
+
     const [opt, setOpt] = useState(0);
     const tabList = [{ value: 'Password' }, { value: 'KYC' }, { value: 'Voucher' }];
     return (

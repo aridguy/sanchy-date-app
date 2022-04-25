@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LoggedInHeader from "../../components/LoggedInHeader/LoggedInHeader";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import "./Chats.css";
@@ -10,8 +10,15 @@ import SidebarMobile from "../../components/Sidebar/SidebarMobile";
 import dp from "../../assets/images/chat-dp.png";
 import FriendsListMobile from "../../components/Chat/FriendsList/FriendListMobile";
 import ChatAreaMobile from "../../components/Chat/ChatAreaMobile/ChatAreaMobile";
+import { useLocation } from "react-router-dom";
 
 const Chats = () => {
+    const pathname = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [pathname])
+
     const [selectedFriendMessages, setSelectedFriendMessages] = useState();
     const [requestToken, setRequestToken] = useState(false);
     const emittedFriend = (friend) => {

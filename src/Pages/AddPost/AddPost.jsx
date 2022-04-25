@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LoggedInHeader from "../../components/LoggedInHeader/LoggedInHeader";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import MediaOptions from "../../components/MediaOptions/MediaOptions";
@@ -15,8 +15,14 @@ import './AddPost.css';
 
 // member section here
 import SidebarMobile from "../../components/Sidebar/SidebarMobile";
+import { useLocation } from "react-router-dom";
 
 const AddPost = () => {
+    const pathname = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [pathname])
     const [showMediaOptions, setShowMediaOptions] = useState(false);
     const [showPriceOption, setShowPriceOption] = useState(false);
     return (

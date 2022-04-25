@@ -20,8 +20,15 @@ import hookup2 from "../../assets/images/hookup2.svg";
 import testPic from "../../assets/images/test.png";
 import SidebarMobile from '../../components/Sidebar/SidebarMobile'
 import RequestChatModal from '../../components/RequestChatModal/RequestChatModal'
+import { useLocation } from 'react-router-dom'
 
 const UserProfile = () => {
+    const pathname = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [pathname]);
+
     const [displayChatRequest, setDisplayChatRequest] = useState(false);
     const [userData, setUserData] = useState({});
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import Header from "../../components/Header/Header";
 import './OtpVerification.css';
 import './OtpVerificationMobile.css';
@@ -8,13 +8,14 @@ import LoginBtmRightImg from '../../assets/images/login_btm_right_img.png';
 
 import {AiOutlineArrowLeft} from 'react-icons/ai';
 import Header from "../../components/Header/Header";
-// import LoginEmailInput from "../../components/LoginEmailInput/LoginEmailInput";
-// import {BiEnvelope} from 'react-icons/bi';
-// import {BsPhone} from 'react-icons/bs'
-// import LoginPhoneInput from "../../components/LoginPhoneInput/LoginPhoneInput";
+import { useLocation } from "react-router-dom";
 
 const OtpVerification =()=>{
+    const pathname = useLocation();
 
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [pathname]);
     return(
         <div className="otp-ver-container">
             <Header />

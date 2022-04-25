@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Dates.css";
 import LoggedInHeader from "../../components/LoggedInHeader/LoggedInHeader";
 import DateApplications from "../../components/Dates/DateApplications/DateApplications";
@@ -8,6 +8,7 @@ import filter from "../../assets/images/filter.svg"
 import location from "../../assets/images/carbon_location.svg";
 import SidebarMobile from "../../components/Sidebar/SidebarMobile";
 import DateForm from "../../components/Dates/DateForm/DateForm";
+import { useLocation } from "react-router-dom";
 
 const Dates = () => {
     const [currentDateTab, setCurrentDateTab] = useState('apply-dates');
@@ -15,7 +16,12 @@ const Dates = () => {
     const hideContent = () => {
         setShowForm(true);
     }
+    const pathname = useLocation();
 
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [pathname])
+    
     return (
         <div>
             <LoggedInHeader />

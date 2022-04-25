@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import Header from "../../components/Header/Header";
 import './Login.css';
 import './LoginMobile.css';
@@ -10,10 +10,16 @@ import LoginEmailInput from "../../components/LoginEmailInput/LoginEmailInput";
 import { BiEnvelope } from 'react-icons/bi';
 import { BsArrowLeft, BsPhone } from 'react-icons/bs'
 import LoginPhoneInput from "../../components/LoginPhoneInput/LoginPhoneInput";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 
 const Login = () => {
+    const pathname = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [pathname]);
+
     const navigate = useNavigate();
     const [toggleState, setToggleState] = useState(1);
 

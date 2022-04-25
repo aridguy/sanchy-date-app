@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BsArrowLeft } from "react-icons/bs";
+import { useLocation } from "react-router-dom";
 import LoggedInHeader from "../../components/LoggedInHeader/LoggedInHeader";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import "./Support.css";
 
 const Support = () => {
+    const pathname = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [pathname]);
+
     return (
         <div>
             <LoggedInHeader />

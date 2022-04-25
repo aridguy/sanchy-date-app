@@ -15,8 +15,15 @@ import testPic from "../../assets/images/test.png";
 import SidebarMobile from '../../components/Sidebar/SidebarMobile'
 import RequestChatModal from '../../components/RequestChatModal/RequestChatModal'
 import UserPostsGrid from '../../components/UserPostsGrid/UserPostsGrid'
+import { useLocation } from 'react-router-dom'
 
 const Post = () => {
+    const pathname = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [pathname]);
+
     const [displayChatRequest, setDisplayChatRequest] = useState(false);
     const [userData, setUserData] = useState({});
 

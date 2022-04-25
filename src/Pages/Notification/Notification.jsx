@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LoggedInHeader from "../../components/LoggedInHeader/LoggedInHeader";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import SidebarMobile from "../../components/Sidebar/SidebarMobile";
@@ -6,9 +6,16 @@ import "./Notification.css";
 import chev1 from "../../assets/images/chevleft.svg";
 import mark from "../../assets/images/markasread.svg";
 import lock from "../../assets/images/lock.svg";
+import { useLocation } from "react-router-dom";
 
 
 const Notification = () => {
+    const pathname = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [pathname])
+
     const [currentNotification, setCurrentNotification] = useState(0); 
     let notificationsArray = [
         {text: 'Your password has been successfully changed', time: 'August 25, 2022 10:45pm'}, 

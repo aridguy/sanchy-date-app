@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import LoggedInHeader from "../../components/LoggedInHeader/LoggedInHeader";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import './BuyTokens.css';
 
 const BuyTokens = () => {
+    const pathname = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [pathname])
     return (
         <div>
             <LoggedInHeader />

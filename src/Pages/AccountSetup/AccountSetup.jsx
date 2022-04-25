@@ -1,20 +1,20 @@
-import React from "react";
-// import Header from "../../components/Header/Header";
+import React, { useEffect } from "react";
 import './AccountSetup.css';
 import './AccountSetupMobile.css';
 import LoginImg from '../../assets/images/login_left_img.png';
 import LoginImgMobile from '../../assets/images/login_left_img_mobile.png';
 import LoginBtmRightImg from '../../assets/images/login_btm_right_img.png';
 
-// import {AiOutlineArrowLeft} from 'react-icons/ai';
-// import LoginEmailInput from "../../components/LoginEmailInput/LoginEmailInput";
-// import {BiEnvelope} from 'react-icons/bi';
 import {BsGenderFemale, BsGenderMale} from 'react-icons/bs'
 import Header from "../../components/Header/Header";
-// import LoginPhoneInput from "../../components/LoginPhoneInput/LoginPhoneInput";
+import { useLocation } from "react-router-dom";
 
 const AccountSetup = ()=>{
+    const pathname = useLocation();
 
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [pathname])
     return(
         <div className="acct-setup-container">
             <Header />

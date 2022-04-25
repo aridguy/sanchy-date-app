@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import LoggedInHeader from '../../components/LoggedInHeader/LoggedInHeader';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import SidebarMobile from '../../components/Sidebar/SidebarMobile';
@@ -11,6 +11,7 @@ import edit_profile_img from "../../assets/images/sidenav-profile.svg";
 import EditProfileCont from './EditProfileCont';
 import ProfileStatusCard from '../../components/ProfileStatusCard/ProfileStatusCard';
 import AccountOptionTab from '../../components/AccountOptionTab/AccountOptionTab';
+import { useLocation } from 'react-router-dom';
 
 
 const EditProfile = () => {
@@ -47,6 +48,11 @@ const handleProfileImgUpload = (e) => {
           })
   }
 }
+const pathname = useLocation();
+
+useEffect(() => {
+  window.scrollTo(0, 0)
+}, [pathname])
 
 
   return (

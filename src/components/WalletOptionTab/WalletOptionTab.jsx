@@ -8,7 +8,7 @@ const WalletOptionTab = ({opt}) => {
     <div className='wallet-option-container'>
         <Link to='/edit-profile' className={opt===1?'wallet-option-active wallet-option-link-nav':"wallet-option-link-nav"} >My Wallet</Link>
         <Link to='/subscription' className={opt===2?'wallet-option-active wallet-option-link-nav':"wallet-option-link-nav"}>Subscription</Link>
-        <Link to='/verify-profile' className={opt===3?'wallet-option-active wallet-option-link-nav':"wallet-option-link-nav"}>Payment</Link>
+        <Link to='/buy-token' className={opt===3?'wallet-option-active wallet-option-link-nav':"wallet-option-link-nav"}>Payment</Link>
     </div>
   )
 }

@@ -5,6 +5,7 @@ import './SignupMobile.css';
 import LoginImg from '../../assets/images/login_left_img.png';
 import LoginImgMobile from '../../assets/images/login_left_img_mobile.png';
 import LoginBtmRightImg from '../../assets/images/login_btm_right_img.png';
+import Header from "../../components/Header/Header";
 
 // import {AiOutlineArrowLeft} from 'react-icons/ai';
 // import LoginEmailInput from "../../components/LoginEmailInput/LoginEmailInput";
@@ -21,7 +22,7 @@ const Signup =()=>{
 
     return(
         <div className="signup-container">
-            {/* <Header /> */}
+            <Header />
             <div className="signup-content-wrapper">
                 <img className="signup-left-img" src={LoginImg} alt="" />
                 <img className="signup-left-img-mobile" src={LoginImgMobile} alt="" />

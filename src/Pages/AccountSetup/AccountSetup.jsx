@@ -10,13 +10,14 @@ import LoginBtmRightImg from '../../assets/images/login_btm_right_img.png';
 // import LoginEmailInput from "../../components/LoginEmailInput/LoginEmailInput";
 // import {BiEnvelope} from 'react-icons/bi';
 import {BsGenderFemale, BsGenderMale} from 'react-icons/bs'
+import Header from "../../components/Header/Header";
 // import LoginPhoneInput from "../../components/LoginPhoneInput/LoginPhoneInput";
 
 const AccountSetup = ()=>{
 
     return(
         <div className="acct-setup-container">
-            {/* <Header /> */}
+            <Header />
             <div className="acct-setup-content-wrapper">
                 <img className="acct-setup-left-img" src={LoginImg} alt="" />
                 <img className="acct-setup-left-img-mobile" src={LoginImgMobile} alt="" />

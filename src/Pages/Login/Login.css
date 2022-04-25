@@ -104,6 +104,7 @@ form .login-input-wrapper:nth-child(2){
 
 form .login-input-wrapper label{
     margin-bottom: 10px;
+    font-weight: 500;
 }
 
 form .login-input-wrapper input{

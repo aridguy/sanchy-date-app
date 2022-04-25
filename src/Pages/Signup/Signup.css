@@ -78,7 +78,7 @@
 form .signup-input-wrapper{
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .signup-input-form{
@@ -88,6 +88,7 @@ form .signup-input-wrapper{
 
 form .signup-input-wrapper label{
     margin-bottom: 10px;
+    font-weight: 500;
 }
 
 form .signup-input-wrapper input{

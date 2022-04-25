@@ -7,6 +7,7 @@ import LoginImgMobile from '../../assets/images/login_left_img_mobile.png';
 import LoginBtmRightImg from '../../assets/images/login_btm_right_img.png';
 
 import {AiOutlineArrowLeft} from 'react-icons/ai';
+import Header from "../../components/Header/Header";
 // import LoginEmailInput from "../../components/LoginEmailInput/LoginEmailInput";
 // import {BiEnvelope} from 'react-icons/bi';
 // import {BsPhone} from 'react-icons/bs'
@@ -16,7 +17,7 @@ const OtpVerification =()=>{
 
     return(
         <div className="otp-ver-container">
-            {/* <Header /> */}
+            <Header />
             <div className="otp-ver-content-wrapper">
                 <img className="otp-ver-left-img" src={LoginImg} alt="" />
                 <img className="otp-ver-left-img-mobile" src={LoginImgMobile} alt="" />

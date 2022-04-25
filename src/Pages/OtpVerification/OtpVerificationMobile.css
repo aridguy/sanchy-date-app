@@ -9,6 +9,7 @@
         top: 0px;
         left: 0;
         width: 54%;
+        z-index: -1;
     }
 
     .otp-ver-btm-right-img{
@@ -61,7 +62,7 @@
         color: #fff;
         outline: none;
         margin-bottom: 18px;
-        width: 50%;
+        width: 100%;
         align-self: center;
     }
 }

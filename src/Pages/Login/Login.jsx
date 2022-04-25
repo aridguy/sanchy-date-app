@@ -11,6 +11,7 @@ import { BiEnvelope } from 'react-icons/bi';
 import { BsArrowLeft, BsPhone } from 'react-icons/bs'
 import LoginPhoneInput from "../../components/LoginPhoneInput/LoginPhoneInput";
 import { useNavigate } from "react-router-dom";
+import Header from "../../components/Header/Header";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -22,15 +23,14 @@ const Login = () => {
 
     return (
         <div className="login-container">
-            {/* <Header /> */}
+            <Header />
             <div className="login-content-wrapper">
                 <img className="login-left-img" src={LoginImg} alt="" />
                 <img className="login-left-img-mobile" src={LoginImgMobile} alt="" />
                 <div></div>
                 <div className="right-input-wrapper">
                     <div className="right-input-fields-wrapper">
-                        <BsArrowLeft className='back-arrow-login' onClick={()=> navigate('/')} />
-
+                        <div onClick={()=>navigate('/')}><BsArrowLeft className='back-arrow-login' /></div>
                         <div className="login-input-container">
                             <div className="login-heading">Login</div>
 

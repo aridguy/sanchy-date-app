@@ -62,7 +62,7 @@ const Sidebar = ({ activeLink }) => {
                     }
                      Chats
                 </button>
-                <button className={`inactive-side-nav ${activeLink === 'buy-tokens' ? 'active-side-nav' : ''}`} onClick={() => navigate('/buy-tokens')}> <img className="buy-tokenIcon" alt="token" src={token} /> Buy Tokens</button>
+                <button className={`inactive-side-nav ${activeLink === 'buy-token' ? 'active-side-nav' : ''}`} onClick={() => navigate('/buy-token')}> <img className="buy-tokenIcon" alt="token" src={token} /> Buy Tokens</button>
                 <button className={`inactive-side-nav ${activeLink === 'logout' ? 'active-side-nav' : ''}`} onClick={() => logoutUser()}> <img className="logoutIcon" alt="logout" src={logout} /> Logout</button>
             </div>
         </div>

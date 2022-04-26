@@ -4,10 +4,6 @@ import Sidebar from '../../components/Sidebar/Sidebar';
 import SidebarMobile from '../../components/Sidebar/SidebarMobile';
 import './BuyToken.css';
 import './BuyTokenMobile.css';
-import {ImCheckmark} from 'react-icons/im';
-
-
-import ToggleSwitch from '../../components/ToggleSwitch/ToggleSwitch'
 
 import WalletOptionTab from '../../components/WalletOptionTab/WalletOptionTab';
 import { useLocation } from 'react-router-dom';
@@ -25,7 +21,7 @@ const BuyToken = () => {
         <LoggedInHeader />
         <div className='d-flex'>
             
-            <Sidebar />
+            <Sidebar activeLink={'buy-token'} />
             
             <div className='buy-token-center-content-wrapper w-75'>
                 <div className='buy-token-heading'>Wallet</div>

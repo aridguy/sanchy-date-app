@@ -34,7 +34,15 @@
   .community-item-2{
     display: block !important;
   }
-  .img-test{
-    width: 50%
+}
+@media screen and (max-width: 600px) {
+  .i-f-s{
+    font-size: 16px;
+  }
+  .hiw-image-container {
+    padding: 10px;
+  }
+  .hiw-subtext{
+    padding: 10px;
   }
 }

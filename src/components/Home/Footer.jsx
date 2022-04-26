@@ -9,12 +9,12 @@ const Footer =()=>{
 
     return (
         <div className="footer-container">
-            <div className="footer-item-one d-flex justify-content-between gap-4">
+            <div className="footer-item-one">
                 <div className="f-title">
                     <div><img src={footer_quick_date} alt="quick dates" className="footer-main-img" /></div>
                     <button onClick={linkToSignUp} className="footer-signup-btn mt-4 mb-4 p-4 border-0 rounded-pill">Create an Account</button>
                 </div>
-                <div className="d-flex gap-4 justify-content-center">
+                <div className="footer-link-socials">
                     <div>
                         <p>Home</p>
                         <p>Contact</p>
@@ -22,7 +22,7 @@ const Footer =()=>{
                     </div>
                     <div>
                         <p>FAQ</p>
-                        <p>Terms and Conditions</p>
+                        <p className="change-content"><span>Terms and Conditions</span></p>
                         <p>Blogs</p>
                     </div>
                     <div>

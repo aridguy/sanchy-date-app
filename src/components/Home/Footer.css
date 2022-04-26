@@ -8,6 +8,16 @@
     color: #fff;
     ;
 }
+.footer-link-socials{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    text-align: left;
+}
+.footer-item-one{
+    display: flex;
+    gap: 200px;
+}
 @media only screen and (max-width: 767px) {
     .footer-item-one{
         display: block !important;
@@ -18,5 +28,18 @@
     }
     .f-title{
         text-align: center;
+    }
+    .footer-link-socials{
+        gap: 20px;
+    }
+    .footer-link-socials p{
+        font-size: 14px;
+        text-align: left;
+    }
+    .change-content span{
+        display: none;
+    }
+    .change-content:after{
+        content: 'Terms';
     }
 }

@@ -65,7 +65,7 @@ const HowItWorks = () => {
                         </div>
                     </div>
                     <div>
-                        <div className="hiw-chat_img"><img src={chat_img} className="img-test" alt="main" /></div>
+                        <div className="hiw-chat_img"><img src={chat_img} className="on-date" alt="main" /></div>
                     </div>
                 </div>
             </div>

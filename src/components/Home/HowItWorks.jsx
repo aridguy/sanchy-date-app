@@ -74,7 +74,7 @@ const HowItWorks = () => {
             <div className="mb-4">
                 <div className="d-flex hiw_sub_two hiw-image-container justify-content-between align">
                     <div>
-                        <div className="hiw-chat_img"><img src={hiw_profile_three} className="rounded img-test" alt="main" /></div>
+                        <div className="hiw-chat_img"><img src={hiw_profile_three} className="on-date" alt="main" /></div>
                     </div>
                     <div className="d-flex community-item-2 justify-content-center align-items-start pt-4">
                         <div className="m-2">

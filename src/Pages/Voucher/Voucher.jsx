@@ -23,6 +23,7 @@ const Voucher = () =>{
                         <div className="col-md-8">
                             <div><h4 className="httext-imprint">{pageTitle}</h4></div>
                             <div className="texts-contents">
+                                <b>How do i get a voucher?</b> <p></p>
                                 <p>
                                  ipsum dolor sit amet consectetur adipisicing elit. Cumque maxime eaque, saepe nisi ex odit delectus libero ipsa quos est ab aperiam adipisci rem tempore? Debitis ducimus dolor ex laboriosam!
                                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam laborum consequuntur, repellat dolorem reprehenderit neque cumque sit delectus placeat vitae nesciunt laudantium ad voluptatum fugit? Quos quidem eos provident inventore.
@@ -30,17 +31,22 @@ const Voucher = () =>{
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque maxime eaque, saepe nisi ex odit delectus libero ipsa quos est ab aperiam adipisci rem tempore? Debitis ducimus dolor ex laboriosam!
                                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam laborum consequuntur, repellat dolorem reprehenderit neque cumque sit delectus placeat vitae nesciunt laudantium ad voluptatum fugit? Quos quidem eos provident inventore.
                                 </p>
+                               
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque maxime eaque, saepe nisi ex odit delectus libero ipsa quos est ab aperiam adipisci rem tempore? Debitis ducimus dolor ex laboriosam!
                                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam laborum consequuntur, repellat dolorem reprehenderit neque cumque sit delectus placeat vitae nesciunt laudantium ad voluptatum fugit? Quos quidem eos provident inventore.
                                 </p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque maxime eaque, saepe nisi ex odit delectus libero ipsa quos est ab aperiam adipisci rem tempore? Debitis ducimus dolor ex laboriosam!
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam laborum consequuntur, repellat dolorem reprehenderit neque cumque sit delectus placeat vitae nesciunt laudantium ad voluptatum fugit? Quos quidem eos provident inventore.
-                                </p>
+                                <form>
+                                    <p>Voucher Code</p>
+                                    <input className="form-control"/>
+                                    <button className="activateBtn">activate</button>
+                                </form>
+
                             </div>
                         </div>
                         <div className="col-md-1"></div>
                     </div>
                 </div>
+                <sideBarMobile />
 
             </div>
         </div>

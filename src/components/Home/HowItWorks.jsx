@@ -4,8 +4,7 @@ import hiw_profile_two from "../../assets/images/hiw_profile_two.png";
 import hiw_main_img from "../../assets/images/hiw_main.svg";
 import hiw_sub_two from "../../assets/images/three-girls.svg";
 import chat_img from "../../assets/images/hiw_chat.png";
-import chat_img_two from "../../assets/images/chat-with-people.png";
-import hiw_profile_three from "../../assets/images/hiw_chat_three.svg";
+import hiw_profile_three from "../../assets/images/chat-on.svg";
 
 import "./HowItWorks.css";
 
@@ -14,7 +13,10 @@ const HowItWorks = () => {
         <div className="how-it-works">
             <div className="bg-white justify-content-center align-items-center text-center pt-4 d-flex flex-column">
                 <h2 className="m-4">How It Works</h2>
-                <p className="w-75 i-f-s hiw-subtext">Your experience here is of the ultimate priority. Quickdate has decided to make it a simple yet memorable one for you. </p>
+                <p className="w-75 i-f-s hiw-subtext">
+                    Your experience here is of the ultimate priority. 
+                    Quickdate has decided to make it a simple yet memorable one for you. 
+                </p>
             </div>
             <div className="mb-4">
                 <div className="d-flex hiw-image-container justify-content-between align">
@@ -72,10 +74,9 @@ const HowItWorks = () => {
             <div className="mb-4">
                 <div className="d-flex hiw_sub_two hiw-image-container justify-content-between align">
                     <div>
-                        <div className="hiw-chat_img"><img src={chat_img_two} className="rounded img-test" alt="main" /></div>
+                        <div className="hiw-chat_img"><img src={hiw_profile_three} className="rounded img-test" alt="main" /></div>
                     </div>
                     <div className="d-flex community-item-2 justify-content-center align-items-start pt-4">
-                        <img className="m-2" src={hiw_profile_three} alt="profile" />
                         <div className="m-2">
                             <h3>Chat with people</h3>
                             <p>

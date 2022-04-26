@@ -9,9 +9,7 @@
   bottom: -40px;
   right: 18%;
 }
-.hiw-chat_img {
-  box-shadow: 12px 12px 24px rgba(106, 82, 253, 0.15);
-}
+
 .i-f-s{
   font-size: 24px;
 }
@@ -34,7 +32,20 @@
   .community-item-2{
     display: block !important;
   }
-  .img-test{
-    width: 50%
+}
+@media screen and (max-width: 600px) {
+  .i-f-s{
+    font-size: 16px;
+    padding: 10px;
+  }
+  .hiw-image-container {
+    padding: 10px;
+  }
+  .hiw-subtext{
+    padding: 10px;
+  }
+  .on-date{
+    width: 100%;
+    padding: 10px;
   }
 }

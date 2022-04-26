@@ -25,7 +25,7 @@ const Subscription = () => {
         <LoggedInHeader />
         <div className='d-flex'>
             
-            <Sidebar />
+            <Sidebar activeLink={'buy-token'} />
             
             <div className='subscription-center-content-wrapper w-75'>
                 <div className='subscription-heading'>Wallet</div>

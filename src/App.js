@@ -31,6 +31,7 @@ import Referrals from "./Pages/Referrals/Referrals";
 import Support from "./Pages/Support/Support";
 import Subscription from "./Pages/Subscription/Subscription";
 import BuyToken from "./Pages/BuyToken/BuyToken";
+import Wallet from "./Pages/Wallet/Wallet";
 
 function App() {
   return (
@@ -63,6 +64,7 @@ function App() {
 
           <Route path="/subscription" element={<Subscription />} />
           <Route path="/buy-token" element={<BuyToken />} />
+          <Route path="/wallet" element={<Wallet />} />
         </Routes>
       </Router>
     </div>

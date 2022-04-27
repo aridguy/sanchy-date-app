@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import './ProfileOptionsModal.css';
 import './ProfileOptionsModalMobile.css';
 import ReactDom from 'react-dom';
@@ -12,7 +12,6 @@ import profile_menu_img from "../../assets/images/sidenav-profile.svg";
 const ProfileOptionsModal = ({open,onClose}) => {
 
   
-
 
     if(!open) return null;
     return ReactDom.createPortal(

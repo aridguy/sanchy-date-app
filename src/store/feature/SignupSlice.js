@@ -10,14 +10,17 @@ const initialState = {
 const signupSlice = createSlice({
     name: 'signup',
     initialState,
+    reducers: {
+      addUserData:(state, action) =>{
+        state['userData'] = action.payload;
+      }
+    },
     extraReducers(builder) {
         builder
           .addCase(getOtpCode.pending, (state, action) => {
             state.status = 'loading'
           })
           .addCase(getOtpCode.fulfilled, (state, action) => {
-            state.status = 'succeeded'
-            // Add any fetched posts to the array
             state.otpSuccess = state.otpMessage(action.payload);
             state.status = 'success'
           })
@@ -34,5 +37,5 @@ const signupSlice = createSlice({
     return response.data
   })
 
-//   export const { getOtpCode, verifyOtpCode } = signupSlice.actions
+  export const { addUserData } = signupSlice.actions
   export default signupSlice.reducer;

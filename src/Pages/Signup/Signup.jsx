@@ -6,15 +6,16 @@ import LoginImg from '../../assets/images/login_left_img.png';
 import LoginImgMobile from '../../assets/images/login_left_img_mobile.png';
 import LoginBtmRightImg from '../../assets/images/login_btm_right_img.png';
 import Header from "../../components/Header/Header";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getOtpCode } from "../../store/feature/loginSlice";
+import { getOtpCode, addUserData } from "../../store/feature/SignupSlice";
 import Modal from "../../components/ToastrModal/Modal";
 import ToastrMessage from "../../components/ToastrModal/ToastrMessage";
 
 
 const Signup = () => {
     const pathname = useLocation();
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const otpRequestStatus = useSelector(state => state.signup);
     const [username, setUsername] = useState('');
@@ -23,6 +24,8 @@ const Signup = () => {
     const [password, setPassword] = useState('');
     const [c_password, set_c_password] = useState('');
     const [countryCity, setCountryCity] = useState('');
+    const [guarantee, setGuarantee] = useState(false);
+    const [policy, setPolicy] = useState(false);
     const [error, setError] = useState({});
 
     // Toastr dependencies
@@ -30,10 +33,43 @@ const Signup = () => {
     const [toastrMsg, setToastrMsg] = useState('');
     const [status, setStatus] = useState(true);
 
-    const getOtp = () => {
-        dispatch(getOtpCode({ phone }));
-    }
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [pathname]);
+    useEffect(() => {
+
+    })
+    useEffect(() => {
+        if (otpRequestStatus.status === 'failed') {
+            setToastrMsg('Error sending OTP');
+            setStatus(false);
+            setShowToastr(true);
+        }
+        if (otpRequestStatus.status === 'success') {
+            setToastrMsg('OTP Sent to number');
+            setStatus(true);
+            setShowToastr(true);
+            navigate('/otp-verification');
+            dispatch(addUserData({username, countryCity, password, email, phone}));
+        }
+    }, [otpRequestStatus, dispatch, navigate, username, countryCity, password, email, phone]);
+
+    const handleCheckBox = (e) => {
+        const name = e.target.name;
+        const check = e.target.checked;
+
+        return name === 'policy' ? setPolicy(check) : setGuarantee(check);
+    }
+    const getOtp = () => {
+        if (guarantee && policy) {
+            dispatch(getOtpCode({ phone }));
+        } else {
+            setToastrMsg('Check the guarantee/policy box');
+            setStatus(false);
+            setShowToastr(true);
+        }
+    }
     const handleSubmit = (e) => {
         // e.preventDefault();
         const emailFormat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -45,7 +81,7 @@ const Signup = () => {
                 setError(prev => ({ ...prev, username: true }));
                 submit.push(field);
             }
-            if (field === 'countryCity' && (stepOne[`${field}`].length < 3 || !stepOne[`${field}`] || !stepOne[`${field}`].includes('/') )) {
+            if (field === 'countryCity' && (stepOne[`${field}`].length < 3 || !stepOne[`${field}`] || !stepOne[`${field}`].includes('/'))) {
                 setError(prev => ({ ...prev, countryCity: true }));
                 submit.push(field);
             }
@@ -70,20 +106,6 @@ const Signup = () => {
             setShowToastr(true);
         }
     }
-
-
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [pathname]);
-
-    useEffect(()=>{
-        if(otpRequestStatus.status === 'failed'){
-            setToastrMsg('Error sending OTP');
-            setStatus(false);
-            setShowToastr(true);
-        }
-    }, [otpRequestStatus]);
-
     const handleInputChange = (e) => {
         let name = e.target.name;
         let value = e.target.value;
@@ -96,13 +118,13 @@ const Signup = () => {
         } else if (name === 'username') {
             setUsername(value);
             setError({ ...error, username: false })
-        } else if(name === 'countryCity'){
+        } else if (name === 'countryCity') {
             setCountryCity(value);
             setError({ ...error, countryCity: false })
-        } else if (name === 'email'){
+        } else if (name === 'email') {
             setEmail(value);
             setError({ ...error, email: false })
-        } else if (name === 'c_password'){
+        } else if (name === 'c_password') {
             set_c_password(value);
             setError({ ...error, c_password: false })
         }
@@ -117,7 +139,6 @@ const Signup = () => {
                 <div></div>
                 <div className="right-input-wrapper">
                     <div className="right-input-fields-wrapper">
-                        {/* <AiOutlineArrowLeft /> */}
 
                         <div className="signup-input-container">
                             <div className="signup-heading-container">
@@ -158,17 +179,17 @@ const Signup = () => {
 
                                 <div className='signup-check-inputs'>
                                     <div className="signup-checkbox-wrapper">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="guarantee" onChange={handleCheckBox} />
                                         <div>I guarantee that I am at least 18 years old.</div>
                                     </div>
 
                                     <div className="signup-checkbox-wrapper">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="policy" onChange={handleCheckBox} />
                                         <div>I have read and accept the privacy policy and the general terms and conditions.</div>
                                     </div>
                                 </div>
 
-                                <button onClick={() => handleSubmit()} disabled={otpRequestStatus.status === 'loading'}>{otpRequestStatus.status === 'loading'? 'loading' : 'Request OTP'}</button>
+                                <button onClick={() => handleSubmit()} disabled={otpRequestStatus.status === 'loading'}>{otpRequestStatus.status === 'loading' ? 'loading' : 'Request OTP'}</button>
                             </div>
 
                         </div>

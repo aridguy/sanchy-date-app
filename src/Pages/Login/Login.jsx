@@ -12,8 +12,6 @@ import { BsArrowLeft, BsPhone } from 'react-icons/bs'
 import LoginPhoneInput from "../../components/LoginPhoneInput/LoginPhoneInput";
 import { useLocation, useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
-import ToastrMessage from "../../components/ToastrModal/ToastrMessage";
-import Modal from "../../components/ToastrModal/Modal";
 // import { useDispatch} from "react-redux";
 
 

@@ -75,6 +75,7 @@
     padding: 20px 80px;
     background-color: #fff;
     border-radius: 10px;
+    width: 50%;
 }
 
 .login-input-container .input-option-tab > div:nth-child(2){
@@ -85,6 +86,7 @@
 
 .login-input-container .input-option-tab .login-tab-active,.em-selected{
     background-color: #EAEAEA;
+    width: 50%;
 }
 
 form .login-input-wrapper{

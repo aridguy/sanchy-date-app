@@ -13,7 +13,7 @@ const HowItWorks = () => {
         <div className="how-it-works">
             <div className="bg-white justify-content-center align-items-center text-center pt-4 d-flex flex-column">
                 <h2 className="m-4">How It Works</h2>
-                <p className="w-75 i-f-s hiw-subtext">
+                <p className="your-expe hiw-subtext">
                     Your experience here is of the ultimate priority. 
                     Quickdate has decided to make it a simple yet memorable one for you. 
                 </p>
@@ -24,7 +24,7 @@ const HowItWorks = () => {
                         <img className="m-2" src={hiw_profile} alt="profile" />
                         <div className="m-2">
                             <h2>Set up profile details</h2>
-                            <p className="w-75 i-f-s">
+                            <p className="our-communi">
                                 Our community is filled with unique individuals such as yourself.
                                 Therefore, the need for you to provide neccessary information about yourself.
                             </p>
@@ -40,7 +40,7 @@ const HowItWorks = () => {
                     <div className="hiw-image ">
                         <div><img src={hiw_sub_two} className="" alt="main" /></div>
                     </div>
-                    <div className="d-flex community-item-2 justify-content-center align-items-start mt-4">
+                    <div className="d-flex you-expl community-item-2 justify-content-center align-items-start mt-4">
                         <img className="m-2" src={hiw_profile_two} alt="profile" />
                         <div className="mt-2">
                             <h3>Explore our commnity</h3>
@@ -59,7 +59,7 @@ const HowItWorks = () => {
                         <img className="m-2" src={hiw_profile_two} alt="profile" />
                         <div className="m-2 w-75">
                             <h3>Go On Date</h3>
-                            <p className="i-f-s">
+                            <p className="our-plat">
                                 Our platform allows you to post a date request to know people 
                                 that might be interested in going for drink, dinner or downtown. 
                                 You can talk more on the details in the chat.

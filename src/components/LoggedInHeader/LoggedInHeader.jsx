@@ -1,14 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import caret from "../../assets/images/caret.svg";
 import logo from "../../assets/images/Logo.svg";
 import testPic from "../../assets/images/hookup2.svg";
+import ProfileOptionsModal from "../ProfileOptionsModal/ProfileOptionsModal";
 
 
 const LoggedInHeader = () => {
     const navigate = useNavigate();
     const navigateToNotification = ()=> navigate('/notification');
+    const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(()=>{
+        if(isOpen){
+            document.body.style.overflow = 'hidden'
+        }else{
+            document.body.style.overflow = 'scroll'
+        }
+
+    },[isOpen])
+
+    const closeSuccessModal = () =>{
+        setIsOpen(false);
+    }
+
     return (
         <header>
             <nav className="shadow-sm p-4 mb-4 bg-white topNav">
@@ -23,10 +39,11 @@ const LoggedInHeader = () => {
                             </svg>
                         </div>
                         <div className="profilePicsHeader" onClick={()=> navigate('/personal-profile')}><img src={testPic} width="40px" height="40px" alt="user-profile" /></div>
-                        <img className="caret" src={caret} alt="caret.svg" />
+                        <img onClick={()=>setIsOpen(true)} className="caret" src={caret} alt="caret.svg" />
                     </div>
                 </div>
             </nav>
+            <ProfileOptionsModal  open={isOpen} onClose={closeSuccessModal} />
         </header>
     )
 }

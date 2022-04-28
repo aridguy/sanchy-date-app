@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 // import Header from "../../components/Header/Header";
 import './Signup.css';
 import './SignupMobile.css';
@@ -7,27 +7,108 @@ import LoginImgMobile from '../../assets/images/login_left_img_mobile.png';
 import LoginBtmRightImg from '../../assets/images/login_btm_right_img.png';
 import Header from "../../components/Header/Header";
 import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getOtpCode } from "../../store/feature/loginSlice";
+import Modal from "../../components/ToastrModal/Modal";
+import ToastrMessage from "../../components/ToastrModal/ToastrMessage";
 
-// import {AiOutlineArrowLeft} from 'react-icons/ai';
-// import LoginEmailInput from "../../components/LoginEmailInput/LoginEmailInput";
-// import {BiEnvelope} from 'react-icons/bi';
-// import {BsPhone} from 'react-icons/bs'
-// import LoginPhoneInput from "../../components/LoginPhoneInput/LoginPhoneInput";
 
-const Signup =()=>{
+const Signup = () => {
     const pathname = useLocation();
+    const dispatch = useDispatch();
+    const otpRequestStatus = useSelector(state => state.signup);
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [password, setPassword] = useState('');
+    const [c_password, set_c_password] = useState('');
+    const [countryCity, setCountryCity] = useState('');
+    const [error, setError] = useState({});
+
+    // Toastr dependencies
+    const [showToastr, setShowToastr] = useState(false);
+    const [toastrMsg, setToastrMsg] = useState('');
+    const [status, setStatus] = useState(true);
+
+    const getOtp = () => {
+        dispatch(getOtpCode({ phone }));
+    }
+
+    const handleSubmit = (e) => {
+        // e.preventDefault();
+        const emailFormat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        let stepOne = { email, phone, username, countryCity, c_password, password };
+        let submit = [];
+
+        Object.keys(stepOne).forEach((field) => {
+            if (field === 'username' && (stepOne[`${field}`].length < 3 || !stepOne[`${field}`])) {
+                setError(prev => ({ ...prev, username: true }));
+                submit.push(field);
+            }
+            if (field === 'countryCity' && (stepOne[`${field}`].length < 3 || !stepOne[`${field}`] || !stepOne[`${field}`].includes('/') )) {
+                setError(prev => ({ ...prev, countryCity: true }));
+                submit.push(field);
+            }
+            if (field === 'password' && (stepOne[`${field}`].length < 6 || !stepOne[`${field}`] || stepOne[`${field}`] !== stepOne[`c_password`])) {
+                setError(prev => ({ ...prev, password: true, c_password: true }));
+                submit.push(field);
+            }
+            if (phone.length !== 11 || !stepOne[`${field}`]) {
+                setError(prev => ({ ...prev, phone: true }));
+                submit.push(field);
+            }
+            if (!emailFormat.test(email)) {
+                setError(prev => ({ ...prev, email: true }));
+                submit.push(field);
+            }
+        });
+        if (submit.length === 0 && email && phone && username && countryCity && password && c_password) {
+            getOtp(phone);
+        } else {
+            setToastrMsg('Invalid Field(s)');
+            setStatus(false);
+            setShowToastr(true);
+        }
+    }
+
 
     useEffect(() => {
-      window.scrollTo(0, 0)
+        window.scrollTo(0, 0)
     }, [pathname]);
 
-    // const [toggleState, setToggleState] = useState(1);
+    useEffect(()=>{
+        if(otpRequestStatus.status === 'failed'){
+            setToastrMsg('Error sending OTP');
+            setStatus(false);
+            setShowToastr(true);
+        }
+    }, [otpRequestStatus]);
 
-    // const toggleTab = (tab) =>{
-    //     setToggleState(tab)
-    // }
+    const handleInputChange = (e) => {
+        let name = e.target.name;
+        let value = e.target.value;
+        if (name === 'phone') {
+            setPhone(value);
+            setError({ ...error, phone: false })
+        } else if (name === 'password') {
+            setPassword(value);
+            setError({ ...error, password: false })
+        } else if (name === 'username') {
+            setUsername(value);
+            setError({ ...error, username: false })
+        } else if(name === 'countryCity'){
+            setCountryCity(value);
+            setError({ ...error, countryCity: false })
+        } else if (name === 'email'){
+            setEmail(value);
+            setError({ ...error, email: false })
+        } else if (name === 'c_password'){
+            set_c_password(value);
+            setError({ ...error, c_password: false })
+        }
+    }
 
-    return(
+    return (
         <div className="signup-container">
             <Header />
             <div className="signup-content-wrapper">
@@ -44,30 +125,35 @@ const Signup =()=>{
                                 <div className="signup-heading-two">Please enter the details to verify your identity</div>
                             </div>
 
-                            <form className='signup-input-form' action="">
+                            <div className='signup-input-form'>
                                 <div className='signup-input-wrapper'>
                                     <label htmlFor="username">Username</label>
-                                    <input type="text" placeholder='Enter Username' />
+                                    <input type="text" className={`${error.username ? 'input-error' : 'field'} `} placeholder='Enter Username' name='username' onChange={handleInputChange} />
                                 </div>
 
                                 <div className='signup-input-wrapper'>
                                     <label htmlFor="username">Country/City</label>
-                                    <input type="text" placeholder='Enter Country/city name' />
+                                    <input type="text" className={`${error.countryCity ? 'input-error' : 'field'} `} placeholder='Enter Country/city name' name='countryCity' onChange={handleInputChange} />
                                 </div>
 
                                 <div className='signup-input-wrapper'>
                                     <label htmlFor="username">Email</label>
-                                    <input type="text" placeholder='Enter your email address' />
+                                    <input type="email" className={`${error.email ? 'input-error' : 'field'} `} placeholder='Enter your email address' name='email' onChange={handleInputChange} />
                                 </div>
 
                                 <div className='signup-input-wrapper'>
                                     <label htmlFor="password">Password</label>
-                                    <input type="password" placeholder='Enter your password' />
+                                    <input className={`${error.password ? 'input-error' : 'field'} `} type="password" placeholder='Enter your password' name='password' onChange={handleInputChange} />
                                 </div>
 
                                 <div className='signup-input-wrapper'>
-                                    <label htmlFor="password">Confirm Password</label>
-                                    <input type="password" placeholder='Enter your password' />
+                                    <label htmlFor="c_password">Confirm Password</label>
+                                    <input type="password" className={`${error.c_password ? 'input-error' : 'field'} `} placeholder='Enter your password' name='c_password' onChange={handleInputChange} />
+                                </div>
+
+                                <div className='signup-input-wrapper'>
+                                    <label htmlFor="phone">Phone</label>
+                                    <input type="number" className={`${error.phone ? 'input-error' : 'field'} `} placeholder='Phone 0803000000' name='phone' onChange={handleInputChange} />
                                 </div>
 
                                 <div className='signup-check-inputs'>
@@ -78,21 +164,26 @@ const Signup =()=>{
 
                                     <div className="signup-checkbox-wrapper">
                                         <input type="checkbox" />
-                                        <div>I guarantee that I am at least 18 years old.</div>
+                                        <div>I have read and accept the privacy policy and the general terms and conditions.</div>
                                     </div>
-
-
                                 </div>
 
-                                <button>Submit</button>
-                            </form>
-                            
+                                <button onClick={() => handleSubmit()} disabled={otpRequestStatus.status === 'loading'}>{otpRequestStatus.status === 'loading'? 'loading' : 'Request OTP'}</button>
+                            </div>
+
                         </div>
 
                     </div>
                 </div>
             </div>
             <img className="signup-btm-right-img" src={LoginBtmRightImg} alt="" />
+            <Modal open={showToastr} onClose={() => setShowToastr(false)}>
+                <ToastrMessage onClose={() => {
+                    setShowToastr(false);
+                }}
+                    toastrMsg={toastrMsg}
+                    status={status} />
+            </Modal>
         </div>
     )
 }

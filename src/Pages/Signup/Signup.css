@@ -75,7 +75,7 @@
     background-color: #EAEAEA;
 }
 
-form .signup-input-wrapper{
+.signup-input-wrapper{
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
@@ -86,18 +86,27 @@ form .signup-input-wrapper{
     flex-direction: column;
 }
 
-form .signup-input-wrapper label{
+.signup-input-wrapper label{
     margin-bottom: 10px;
     font-weight: 500;
 }
 
-form .signup-input-wrapper input{
+.signup-input-wrapper .field{
     border: none;
     border-radius: 10px;
     outline: none;
     padding: 10px 40px;
     min-width: 400px;
     background-color: #F6F4FF;
+}
+ .signup-input-wrapper .input-error{
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    padding: 10px 40px;
+    min-width: 400px;
+    background-color: #F6F4FF;
+    border: 1px solid tomato;
 }
 
 .forgot-pword{

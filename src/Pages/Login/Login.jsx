@@ -12,12 +12,18 @@ import { BsArrowLeft, BsPhone } from 'react-icons/bs'
 import LoginPhoneInput from "../../components/LoginPhoneInput/LoginPhoneInput";
 import { useLocation, useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
+import ToastrMessage from "../../components/ToastrModal/ToastrMessage";
+import Modal from "../../components/ToastrModal/Modal";
+// import { useDispatch} from "react-redux";
+
 
 const Login = () => {
     const pathname = useLocation();
+    // const dispatch = useDispatch();
+    
 
     useEffect(() => {
-      window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
     }, [pathname]);
 
     const navigate = useNavigate();
@@ -36,7 +42,7 @@ const Login = () => {
                 <div></div>
                 <div className="right-input-wrapper">
                     <div className="right-input-fields-wrapper">
-                        <div onClick={()=>navigate('/')}><BsArrowLeft className='back-arrow-login' /></div>
+                        <div onClick={() => navigate('/')}><BsArrowLeft className='back-arrow-login' /></div>
                         <div className="login-input-container">
                             <div className="login-heading">Login</div>
 

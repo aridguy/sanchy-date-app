@@ -10,9 +10,6 @@
   right: 18%;
 }
 
-.i-f-s{
-  font-size: 24px;
-}
 @media only screen and (max-width: 767px) {
   .hiw-image-container {
       display: block !important;

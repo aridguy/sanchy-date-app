@@ -16,22 +16,35 @@ import { useDispatch, useSelector } from "react-redux";
 const AccountSetup = ()=>{
     const pathname = useLocation();
     const dispatch = useDispatch();
+    const createUserStatus = useSelector(state => state.signup);
+    const {userData} = useSelector(state => state.signup)
     const [gender, setGender] = useState('');
     const [preference, setPreference] = useState('');
-    const {userData} = useSelector(state => state.signup)
     // Toastr dependencies
     const [showToastr, setShowToastr] = useState(false);
     const [toastrMsg, setToastrMsg] = useState('');
     const [status, setStatus] = useState(true);
 
+
     useEffect(() => {
       window.scrollTo(0, 0)
     }, [pathname])
-
+    useEffect(() => {
+        if(createUserStatus?.createUserStatus === 'failed'){
+            setToastrMsg(createUserStatus.createUserError);
+            setStatus(false);
+            setShowToastr(true);
+        }
+        if(createUserStatus?.createUserStatus === 'success'){
+            setToastrMsg(createUserStatus.userData.message);
+            setStatus(true);
+            setShowToastr(true);
+            
+        }  
+    }, [createUserStatus])
     const handleSubmit = ()=>{
         if(gender && preference){
             dispatch(addGenderPreference({gender, preference}));
-            console.log(userData);
             // Build post body
             let payload = {
                 email: userData.email,
@@ -112,9 +125,7 @@ const AccountSetup = ()=>{
                                     </div>
 
                                 </div>
-
-
-                                <button onClick={()=> handleSubmit()}>Continue</button>
+                                <button onClick={()=> handleSubmit()} disabled={createUserStatus?.createUserStatus === 'loading'}>{createUserStatus?.createUserStatus!== 'loading' ?'Continue' : 'Please Wait'}</button>
 
                             </div>
                             

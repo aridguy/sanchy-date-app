@@ -1,5 +1,5 @@
 import axios from "axios";
-let Base_URL = 'https://monstarpay-api.herokuapp.com/v1';
+let Base_URL = 'https://hookupbackend.sanchykreations.com/api';
 
 let token = localStorage.getItem('mtdLender') ? JSON.parse(localStorage.getItem('mtdLender')).data?.access : null
 const api = axios.create({

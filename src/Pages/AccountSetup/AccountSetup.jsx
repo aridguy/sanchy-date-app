@@ -1,20 +1,55 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import './AccountSetup.css';
 import './AccountSetupMobile.css';
 import LoginImg from '../../assets/images/login_left_img.png';
 import LoginImgMobile from '../../assets/images/login_left_img_mobile.png';
 import LoginBtmRightImg from '../../assets/images/login_btm_right_img.png';
-
+import { createUser } from "../../store/feature/SignupSlice";
 import {BsGenderFemale, BsGenderMale} from 'react-icons/bs'
 import Header from "../../components/Header/Header";
 import { useLocation } from "react-router-dom";
+import ToastrMessage from "../../components/ToastrModal/ToastrMessage";
+import Modal from "../../components/ToastrModal/Modal";
+import { addGenderPreference } from "../../store/feature/SignupSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const AccountSetup = ()=>{
     const pathname = useLocation();
+    const dispatch = useDispatch();
+    const [gender, setGender] = useState('');
+    const [preference, setPreference] = useState('');
+    const {userData} = useSelector(state => state.signup)
+    // Toastr dependencies
+    const [showToastr, setShowToastr] = useState(false);
+    const [toastrMsg, setToastrMsg] = useState('');
+    const [status, setStatus] = useState(true);
 
     useEffect(() => {
       window.scrollTo(0, 0)
     }, [pathname])
+
+    const handleSubmit = ()=>{
+        if(gender && preference){
+            dispatch(addGenderPreference({gender, preference}));
+            console.log(userData);
+            // Build post body
+            let payload = {
+                email: userData.email,
+                gender: gender,
+                gender_interest: preference,
+                country: userData.countryCity.split('/')[0],
+                city: userData.countryCity.split('/')[1],
+                country_code: '+234',
+                phone: userData.phone.substring(1),
+                password: userData.password
+            }
+            dispatch(createUser(payload));
+        }else{
+            setToastrMsg('Set Gender and Preference');
+            setStatus(false);
+            setShowToastr(true);
+        }
+    }
     return(
         <div className="acct-setup-container">
             <Header />
@@ -32,24 +67,24 @@ const AccountSetup = ()=>{
                                 <div className="acct-setup-heading-two">Kindly provide the required details to set up your account</div>
                             </div>
 
-                            <form className='acct-setup-input-form' action="">
+                            <div className='acct-setup-input-form'>
 
                                 <div className='acct-setup-input-wrapper'>
                                     <div className="label-wrapper">
-                                        <div>Gender</div>
+                                        <div><b>1. Gender</b></div>
                                         <div>Check one option that reflects your gender</div>
                                     </div>
 
                                     <div className="single-input-wrapper">
-                                        <input type="text" placeholder='I am a Man ' />
-                                        <div className="input-icon-wrapper">
+                                        <div className={`field ${gender==='man'? 'field-focus' : ''}`} onClick={()=>setGender('man')}>I am a Man</div>
+                                        <div className={`input-icon-wrapper ${gender==='man'? 'icon-focus' : ''}`}>
                                             <BsGenderMale className="input-icon" />
                                         </div>
                                     </div>
 
                                     <div className="single-input-wrapper">
-                                        <input type="text" placeholder='I am a Woman' />
-                                        <div className="input-icon-wrapper">
+                                        <div className={`field ${gender==='woman'? 'field-focus' : ''}`} onClick={()=>setGender('woman')}>I am a Woman</div>
+                                        <div className={`input-icon-wrapper ${gender==='woman'? 'icon-focus' : ''}`}>
                                             <BsGenderFemale className="input-icon" />
                                         </div>
                                     </div>
@@ -58,20 +93,20 @@ const AccountSetup = ()=>{
 
                                 <div className='acct-setup-input-wrapper'>
                                     <div className="label-wrapper">
-                                        <div>Preference</div>
+                                        <div><b>2. Preference</b></div>
                                         <div>Who are you looking for?</div>
                                     </div>
 
                                     <div className="single-input-wrapper">
-                                        <input type="text" placeholder='I am a Man ' />
-                                        <div className="input-icon-wrapper">
+                                        <div className={`field ${preference==='man'? 'field-focus' : ''}`} onClick={()=>setPreference('man')}>Man</div>
+                                        <div className={`input-icon-wrapper ${preference==='man'? 'icon-focus' : ''}`}>
                                             <BsGenderMale className="input-icon" />
                                         </div>
                                     </div>
 
                                     <div className="single-input-wrapper">
-                                        <input type="text" placeholder='I am a Woman' />
-                                        <div className="input-icon-wrapper">
+                                        <div className={`field ${preference==='woman'? 'field-focus' : ''}`} onClick={()=>setPreference('woman')}>Woman</div>
+                                        <div className={`input-icon-wrapper ${preference==='woman'? 'icon-focus' : ''}`}>
                                             <BsGenderFemale className="input-icon" />
                                         </div>
                                     </div>
@@ -79,9 +114,9 @@ const AccountSetup = ()=>{
                                 </div>
 
 
-                                <button>Continue</button>
+                                <button onClick={()=> handleSubmit()}>Continue</button>
 
-                            </form>
+                            </div>
                             
                         </div>
 
@@ -89,6 +124,13 @@ const AccountSetup = ()=>{
                 </div>
             </div>
             <img className="acct-setup-btm-right-img" src={LoginBtmRightImg} alt="" />
+            <Modal open={showToastr} onClose={() => setShowToastr(false)}>
+                <ToastrMessage onClose={() => {
+                    setShowToastr(false);
+                }}
+                    toastrMsg={toastrMsg}
+                    status={status} />
+            </Modal>
         </div>
     )
 }

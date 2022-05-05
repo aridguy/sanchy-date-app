@@ -93,7 +93,8 @@ form .acct-setup-input-wrapper label{
     margin-bottom: 10px;
 }
 
-form .acct-setup-input-wrapper input{
+form .acct-setup-input-wrapper input, 
+.acct-setup-input-wrapper .field{
     border: none;
     border-radius: 10px 0 0 10px;
     outline: none;
@@ -102,8 +103,8 @@ form .acct-setup-input-wrapper input{
     background-color: #F6F4FF;
 }
 
-form .acct-setup-input-wrapper input:focus{
-    border: 1px solid #7B61FF;
+form .acct-setup-input-wrapper input:focus, .field-focus{
+    border: 1px solid #7B61FF !important;
 }
 
 
@@ -117,7 +118,7 @@ form .acct-setup-input-wrapper input:focus{
 
 .acct-setup-input-wrapper .single-input-wrapper{
     display: flex;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .acct-setup-input-wrapper .single-input-wrapper .input-icon-wrapper {
@@ -126,10 +127,10 @@ form .acct-setup-input-wrapper input:focus{
     border-radius: 0 10px 10px 0;
 }
 
-form .acct-setup-input-wrapper input:focus~ .input-icon-wrapper{
-    background-color: #7B61FF;
-    color: #fff;
-    font-weight:700;
+form .acct-setup-input-wrapper input:focus~ .input-icon-wrapper, .icon-focus{
+    background-color: #7B61FF !important;
+    color: #fff !important;
+    font-weight:700 !important;
 }
 
 .acct-setup-input-form button{
@@ -137,9 +138,17 @@ form .acct-setup-input-wrapper input:focus~ .input-icon-wrapper{
     border-radius: 50px;
     border: 1px solid #7B61FF;
     padding: 19px;
+    margin-top: 20px;
     color: #fff;
     outline: none;
     margin-bottom: 18px;
     width: 90%;
-    /* align-self: center; */
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 767px){
+    .acct-setup-input-wrapper .field{
+        min-width: auto;
+        width: 100%;
+    }
 }

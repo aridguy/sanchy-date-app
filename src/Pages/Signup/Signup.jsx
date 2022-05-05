@@ -8,7 +8,7 @@ import LoginBtmRightImg from '../../assets/images/login_btm_right_img.png';
 import Header from "../../components/Header/Header";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getOtpCode, addUserData } from "../../store/feature/SignupSlice";
+import { addUserData } from "../../store/feature/SignupSlice";
 import Modal from "../../components/ToastrModal/Modal";
 import ToastrMessage from "../../components/ToastrModal/ToastrMessage";
 
@@ -37,38 +37,12 @@ const Signup = () => {
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [pathname]);
-    useEffect(() => {
-
-    })
-    useEffect(() => {
-        if (otpRequestStatus.status === 'failed') {
-            setToastrMsg('Error sending OTP');
-            setStatus(false);
-            setShowToastr(true);
-        }
-        if (otpRequestStatus.status === 'success') {
-            setToastrMsg('OTP Sent to number');
-            setStatus(true);
-            setShowToastr(true);
-            navigate('/otp-verification');
-            dispatch(addUserData({username, countryCity, password, email, phone}));
-        }
-    }, [otpRequestStatus, dispatch, navigate, username, countryCity, password, email, phone]);
-
+    
     const handleCheckBox = (e) => {
         const name = e.target.name;
         const check = e.target.checked;
 
         return name === 'policy' ? setPolicy(check) : setGuarantee(check);
-    }
-    const getOtp = () => {
-        if (guarantee && policy) {
-            dispatch(getOtpCode({ phone }));
-        } else {
-            setToastrMsg('Check the guarantee/policy box');
-            setStatus(false);
-            setShowToastr(true);
-        }
     }
     const handleSubmit = (e) => {
         // e.preventDefault();
@@ -99,7 +73,15 @@ const Signup = () => {
             }
         });
         if (submit.length === 0 && email && phone && username && countryCity && password && c_password) {
-            getOtp(phone);
+            if (guarantee && policy) {
+                dispatch(addUserData({ username, countryCity, password, email, phone }));
+                navigate('/acct-setup');
+            } else {
+                setToastrMsg('Check the guarantee/policy box');
+                setStatus(false);
+                setShowToastr(true);
+            }
+
         } else {
             setToastrMsg('Invalid Field(s)');
             setStatus(false);
@@ -189,7 +171,7 @@ const Signup = () => {
                                     </div>
                                 </div>
 
-                                <button onClick={() => handleSubmit()} disabled={otpRequestStatus.status === 'loading'}>{otpRequestStatus.status === 'loading' ? 'loading' : 'Request OTP'}</button>
+                                <button onClick={() => handleSubmit()} disabled={otpRequestStatus.status === 'loading'}>{otpRequestStatus.status === 'loading' ? 'loading' : 'Submit'}</button>
                             </div>
 
                         </div>

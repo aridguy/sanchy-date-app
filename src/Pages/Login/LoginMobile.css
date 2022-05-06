@@ -48,7 +48,7 @@
         width: 50%;
     }
 
-    form .login-input-wrapper input{
+    .login-input-wrapper input{
         border: 1px solid #535353;
         border-radius: 50px;
         outline: none;
@@ -82,7 +82,13 @@
 }
 
 @media only screen and (max-width: 990px){
-    form .login-input-wrapper input {
+    .login-input-wrapper input {
         width: 100%;
+    }
+    .login-input-wrapper .login-input {
+        min-width: auto;
+    } 
+    .login-input-container .input-option-tab {
+        width: 90%;
     }
 }

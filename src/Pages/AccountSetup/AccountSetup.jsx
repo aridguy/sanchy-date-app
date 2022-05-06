@@ -7,7 +7,7 @@ import LoginBtmRightImg from '../../assets/images/login_btm_right_img.png';
 import { createUser } from "../../store/feature/SignupSlice";
 import {BsGenderFemale, BsGenderMale} from 'react-icons/bs'
 import Header from "../../components/Header/Header";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import ToastrMessage from "../../components/ToastrModal/ToastrMessage";
 import Modal from "../../components/ToastrModal/Modal";
 import { addGenderPreference } from "../../store/feature/SignupSlice";
@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const AccountSetup = ()=>{
     const pathname = useLocation();
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const createUserStatus = useSelector(state => state.signup);
     const {userData} = useSelector(state => state.signup)
@@ -29,19 +30,30 @@ const AccountSetup = ()=>{
     useEffect(() => {
       window.scrollTo(0, 0)
     }, [pathname])
+
+    useEffect(() => {
+        if(Object.entries(userData).length === 0) navigate('/signup');
+      }, [userData, navigate])
+
     useEffect(() => {
         if(createUserStatus?.createUserStatus === 'failed'){
             setToastrMsg(createUserStatus.createUserError);
             setStatus(false);
             setShowToastr(true);
         }
+        if(createUserStatus?.createUserStatus === 'success' && createUserStatus.userData.message === "Account created successfully."){
+            setToastrMsg(createUserStatus.userData.message);
+            setStatus(true);
+            setShowToastr(true);
+
+            navigate('/login');
+        }
         if(createUserStatus?.createUserStatus === 'success'){
             setToastrMsg(createUserStatus.userData.message);
             setStatus(true);
             setShowToastr(true);
-            
         }  
-    }, [createUserStatus])
+    }, [createUserStatus, navigate])
     const handleSubmit = ()=>{
         if(gender && preference){
             dispatch(addGenderPreference({gender, preference}));
@@ -50,8 +62,8 @@ const AccountSetup = ()=>{
                 email: userData.email,
                 gender: gender,
                 gender_interest: preference,
-                country: userData.countryCity.split('/')[0],
-                city: userData.countryCity.split('/')[1],
+                country: userData.countryCity? userData.countryCity.split('/')[0] : '',
+                city: userData.countryCity? userData.countryCity.split('/')[1] : '',
                 country_code: '+234',
                 phone: userData.phone.substring(1),
                 password: userData.password
@@ -128,9 +140,7 @@ const AccountSetup = ()=>{
                                 <button onClick={()=> handleSubmit()} disabled={createUserStatus?.createUserStatus === 'loading'}>{createUserStatus?.createUserStatus!== 'loading' ?'Continue' : 'Please Wait'}</button>
 
                             </div>
-                            
                         </div>
-
                     </div>
                 </div>
             </div>

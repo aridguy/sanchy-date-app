@@ -68,7 +68,7 @@
     border-radius: 10px;
     margin-bottom: 30px;
     cursor: pointer;
-    width: 84%;
+    width: 76%;
 }
 
 .login-input-container .input-option-tab > div{
@@ -89,7 +89,7 @@
     width: 50%;
 }
 
-form .login-input-wrapper{
+.login-input-wrapper{
     display: flex;
     flex-direction: column;
     margin-bottom: 50px;
@@ -100,21 +100,36 @@ form .login-input-wrapper{
     flex-direction: column;
 }
 
-form .login-input-wrapper:nth-child(2){
+.login-input-wrapper:nth-child(2){
     margin-bottom: 10px;
 }
 
-form .login-input-wrapper label{
+.login-input-wrapper label{
     margin-bottom: 10px;
     font-weight: 500;
 }
 
-form .login-input-wrapper input{
+.login-input-wrapper .login-input{
     border: 1px solid #535353;
-    border-radius: 50px;
     outline: none;
     padding: 10px 40px;
     min-width: 360px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    padding: 10px 40px;
+    width: 100%;
+    background: #F6F4FF;
+}
+.input-error{
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    padding: 10px 40px;
+    /* min-width: 400px; */
+    width: 100%;
+    background-color: #F6F4FF;
+    border: 1px solid tomato;
 }
 
 .forgot-pword{

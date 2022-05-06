@@ -60,7 +60,7 @@ const Login = () => {
 
                             <div className="ext-link-wrapper">
                                 <div>Don't have an account yet?</div>
-                                <div>Sign up for free</div>
+                                <div onClick={()=>navigate('/signup')}>Sign up for free</div>
                             </div>
                         </div>
 
